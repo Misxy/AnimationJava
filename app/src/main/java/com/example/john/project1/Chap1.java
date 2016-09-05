@@ -1,9 +1,11 @@
 package com.example.john.project1;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,6 +19,10 @@ public class Chap1 extends AppCompatActivity {
     ImageButton playbtn,stopbtn;
     ScrollView sv_code;
     LinearLayout layout_code;
+    Chap1 obj_chap1;
+    EditText edt;
+    int a;
+
     //Declaring variables.
     Boolean checkControl = true; //Logically variable for controlling.
     int timeThread=5; //Time for delaying pointer's moving.
@@ -31,13 +37,27 @@ public class Chap1 extends AppCompatActivity {
         stopbtn = (ImageButton)findViewById(R.id.stopbtn);
         sv_code =(ScrollView)findViewById(R.id.sv_code);
         layout_code=(LinearLayout)findViewById(R.id.layout_code);
+        obj_chap1 = new Chap1();
+
+        edt = (EditText)findViewById(R.id.testText);
+
 
         //Using method onClickListener for event handler on play button.
         playbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Calling method 'startPointer()'.
-                startPointer();
+               /* startMoving();*/
+
+                try {
+                    a = Integer.parseInt(edt.getText().toString());
+                }
+                catch(NumberFormatException e)
+                {
+                    System.out.print("Cannot parse to Integer."+e);
+                }
+
+                testPointer(a);
             }
         });
         //Using method onClickListener for event handler on stop button.
@@ -49,8 +69,8 @@ public class Chap1 extends AppCompatActivity {
             }
         });
      }
-    //methd 'start'
-    private void startPointer()
+    //methd 'startMoving'
+    private void startMoving()
     {
         new Thread(new Runnable() {
             @Override
@@ -111,10 +131,27 @@ public class Chap1 extends AppCompatActivity {
     //method 'stopPlaying()'
     private void stopPlaying()
     {
+        //Cancelling scroll down the code example's picture. By using boolean = 'true'
         checkControl=true;
+        //taking a code's picture scrolls to the top.
         sv_code.scrollTo(0,0);
+        /*Calling object of Class 'Chap1' then
+        call method name 'testPointer' to make pointer go to startpoint*/
+        obj_chap1.testPointer(0);
+
     }
 
+    //method 'testPointer'
+    private void testPointer(int a)
+    {
+        /*Creating object of class 'ObjectAnimator' and configs these properties.
+        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
+        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
+        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
+        test1.setDuration(1000);
+        /*Starting a pointer's moving*/
+        test1.start();
+    }
     //Calling method 'OnBackPressed.
     @Override
     public void onBackPressed() {
