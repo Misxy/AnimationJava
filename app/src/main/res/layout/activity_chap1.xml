@@ -103,18 +103,77 @@
             android:src="@drawable/result_class_object"
             android:scaleType="fitXY"
             android:baselineAlignBottom="false"
-            android:paddingRight="100dp"
             android:paddingBottom="10dp" />
     </FrameLayout>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/testText"
-        android:layout_alignTop="@+id/layout_code"
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/pic_class"
+        android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/layout_code"
-        android:layout_marginStart="23dp" />
+        android:layout_alignParentTop="true"
+        android:background="#1F3A93"
+        android:layout_alignBottom="@+id/text_num1"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="10"
+        android:id="@+id/text_num1"
+        android:background="@drawable/shape_rec_num1"
+        android:textAlignment="center"
+        android:paddingTop="10dp"
+        android:textColor="#1F3A93"
+        android:textSize="22dp"
+        android:layout_alignTop="@+id/text_num2"
+        android:layout_alignStart="@+id/pic_class"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="5"
+        android:id="@+id/text_num2"
+        android:background="@drawable/shape_rec_num2"
+        android:textAlignment="center"
+        android:paddingTop="10dp"
+        android:textColor="#1F3A93"
+        android:textSize="22dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignBottom="@+id/layout_code"
+        android:layout_alignEnd="@+id/layout_output"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/text_result"
+        android:background="#F64747"
+        android:textAlignment="center"
+        android:paddingTop="10dp"
+        android:textColor="#1F3A93"
+        android:textSize="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/pic_class"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/text_sign"
+        android:textAlignment="center"
+        android:paddingTop="10dp"
+        android:textColor="#ECF0F1"
+        android:textSize="22dp"
+        android:layout_alignBottom="@+id/text_result"
+        android:layout_alignParentEnd="true"
+        android:text="+"
+        android:visibility="invisible" />
 
 </RelativeLayout>
