@@ -103,7 +103,8 @@
             android:src="@drawable/result_class_object"
             android:scaleType="fitXY"
             android:baselineAlignBottom="false"
-            android:paddingBottom="10dp" />
+            android:paddingBottom="10dp"
+            android:visibility="invisible" />
     </FrameLayout>
 
     <ImageView
@@ -174,6 +175,19 @@
         android:layout_alignBottom="@+id/text_result"
         android:layout_alignParentEnd="true"
         android:text="+"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="=15"
+        android:id="@+id/textReturn"
+        android:textSize="28dp"
+        android:textColor="#ECF0F1"
+        android:layout_above="@+id/text_num2"
+        android:layout_toStartOf="@+id/layout_output"
+        android:layout_marginRight="45dp"
         android:visibility="invisible" />
 
 </RelativeLayout>
