@@ -446,7 +446,7 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                Toast.makeText(Chap1.this, "Finished", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chap1.this, "Finished!!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
