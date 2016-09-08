@@ -55,8 +55,6 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Calling method 'startPointer()'.
-                /*startMoving();
-                testPointer(800);*/
                 /*output.setVisibility(View.VISIBLE);
                 movingtoOutput();*/
                 playstep1();
@@ -154,6 +152,18 @@ public class Chap1 extends AppCompatActivity {
      //Going to line 23
         testPointerLine23(740);
     }
+    //playstep10
+    private void playstep10()
+    {
+        testPointerLine24(800);
+    }
+    //method 'playstep11'
+    private void playstep11()
+    {
+        gotop();
+        //Going to testPointerLine8
+        testPointerLine8(410);
+    }
     //Method 'play'
     private void play()
     {
@@ -243,10 +253,11 @@ public class Chap1 extends AppCompatActivity {
     {
         ObjectAnimator t1 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,0);
         ObjectAnimator t2 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,0);
-        //Fade out picture of 'return'.
-        ObjectAnimator t3 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,0f);
+        //Fade in picture of 'return'.
+        ObjectAnimator t3 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);
+
         AnimatorSet am = new AnimatorSet();
-        am.playSequentially(t1,t2);
+        am.playSequentially(t1,t2,t3);
         am.setDuration(3000);
         am.start();
 
@@ -258,7 +269,7 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-
+                textReturn.setText("5");
             }
 
             @Override
@@ -278,10 +289,37 @@ public class Chap1 extends AppCompatActivity {
     {
         ObjectAnimator t1 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,-500);
         ObjectAnimator t2 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,-500);
+        ObjectAnimator t4 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,0);
+        ObjectAnimator t5 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,0);
+        //Return old position already.
+        ObjectAnimator t6 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);
+        //Adding its listener
+        t6.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+                textReturn.setVisibility(View.INVISIBLE);
+                textReturn.setText("5");
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
         //Fade out picture of 'return'.
         ObjectAnimator t3 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,0f);
         AnimatorSet am = new AnimatorSet();
-        am.playSequentially(t1,t2,t3);
+        am.playSequentially(t1,t2,t3,t4,t5,t6);
         am.setDuration(3000);
         am.start();
 
@@ -314,11 +352,14 @@ public class Chap1 extends AppCompatActivity {
     private void movingTextreturn2() {
         ObjectAnimator t1 = ObjectAnimator.ofFloat(textReturn, View.TRANSLATION_Y, -500);
         ObjectAnimator t2 = ObjectAnimator.ofFloat(textReturn, View.TRANSLATION_X, -500);
+
         //Fade out picture of 'return'.
         ObjectAnimator t3 = ObjectAnimator.ofFloat(textReturn, View.ALPHA, 0f);
+        ObjectAnimator t4 = ObjectAnimator.ofFloat(textReturn, View.TRANSLATION_X, 0);
+        ObjectAnimator t5 = ObjectAnimator.ofFloat(textReturn, View.TRANSLATION_Y, 0);
         AnimatorSet am = new AnimatorSet();
-        am.playSequentially(t1, t2, t3);
-        am.setDuration(2000);
+        am.playSequentially(t1, t2, t3,t4,t5);
+        am.setDuration(3000);
         am.start();
 
         am.addListener(new Animator.AnimatorListener() {
@@ -329,7 +370,8 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-
+                textResult.setText("5");
+               playstep11();
 
             }
 
@@ -355,7 +397,7 @@ public class Chap1 extends AppCompatActivity {
         ObjectAnimator t11 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,0);
         ObjectAnimator t12 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,0);
         AnimatorSet am = new AnimatorSet();
-        am.setDuration(2000);
+        am.setDuration(3000);
         am.setInterpolator(new LinearInterpolator());
         am.playSequentially(t1,t2,t11,t12);
         am.start();
@@ -368,6 +410,43 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 playstep8();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    //method 'movingtoOutput2'
+    private void movingtoOutput2()
+    {
+        ObjectAnimator t1 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,1000);
+        ObjectAnimator t2 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,700);
+        ObjectAnimator t3 = ObjectAnimator.ofFloat(textResult,View.ALPHA,0f);
+        //For going back to primary position.
+        ObjectAnimator t11 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,0);
+        ObjectAnimator t12 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,0);
+        AnimatorSet am = new AnimatorSet();
+        am.setDuration(3000);
+        am.setInterpolator(new LinearInterpolator());
+        am.playSequentially(t1,t2,t11,t12);
+        am.start();
+        am.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                Toast.makeText(Chap1.this, "Finished", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -510,7 +589,7 @@ public class Chap1 extends AppCompatActivity {
     {
         textnum1.setVisibility(View.VISIBLE);
         ObjectAnimator t1 = ObjectAnimator.ofFloat(textnum1,View.ROTATION_Y,360);
-        t1.setDuration(2000);;
+        t1.setDuration(3000);;
         t1.start();
        t1.addListener(new Animator.AnimatorListener() {
            @Override
@@ -540,7 +619,7 @@ public class Chap1 extends AppCompatActivity {
     {
         textnum1.setVisibility(View.VISIBLE);
         ObjectAnimator t1 = ObjectAnimator.ofFloat(textnum1,View.ROTATION_Y,360);
-        t1.setDuration(2000);;
+        t1.setDuration(3000);;
         t1.start();
         t1.addListener(new Animator.AnimatorListener() {
             @Override
@@ -570,7 +649,7 @@ public class Chap1 extends AppCompatActivity {
     {
         textnum2.setVisibility(View.VISIBLE);
         ObjectAnimator t2 = ObjectAnimator.ofFloat(textnum2,View.ROTATION_Y,360);
-        t2.setDuration(2000);
+        t2.setDuration(3000);
         t2.start();
         t2.addListener(new Animator.AnimatorListener() {
             @Override
@@ -600,7 +679,7 @@ public class Chap1 extends AppCompatActivity {
     {
         textnum2.setVisibility(View.VISIBLE);
         ObjectAnimator t2 = ObjectAnimator.ofFloat(textnum2,View.ROTATION_Y,360);
-        t2.setDuration(2000);
+        t2.setDuration(3000);
         t2.start();
         t2.addListener(new Animator.AnimatorListener() {
             @Override
@@ -658,7 +737,7 @@ public class Chap1 extends AppCompatActivity {
     private void flipnum1_2()
     {
         ObjectAnimator t2 = ObjectAnimator.ofFloat(textnum2,View.ROTATION_Y,360);
-        t2.setDuration(2000);
+        t2.setDuration(3000);
         t2.start();
         t2.addListener(new Animator.AnimatorListener() {
             @Override
@@ -667,7 +746,8 @@ public class Chap1 extends AppCompatActivity {
             }
 
             @Override
-            public void onAnimationEnd(Animator animator) {
+            public void onAnimationEnd(Animator animator)
+            {
                     testPointerLine16_2(320);
             }
 
@@ -763,7 +843,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -775,7 +855,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -843,7 +923,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -876,7 +956,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -888,7 +968,8 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                    testPointerLine15_2(260);
+
+                testPointerLine15_2(260);
             }
 
             @Override
@@ -910,7 +991,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -982,7 +1063,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1018,7 +1099,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1046,6 +1127,74 @@ public class Chap1 extends AppCompatActivity {
         });
     }
 
+    //method 'testPointerLine7_1'
+    private void testPointerLine7_1(int a)
+    {
+        /*Creating object of class 'ObjectAnimator' and configs these properties.
+        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
+        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
+        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
+        test1.setDuration(3000);
+        test1.setInterpolator(new LinearInterpolator());
+        /*Starting a pointer's moving*/
+        test1.start();
+        test1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                movingTextreturn2();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    //method 'testPointerLine8'
+    private void testPointerLine8(int a)
+    {
+        /*Creating object of class 'ObjectAnimator' and configs these properties.
+        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
+        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
+        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
+        test1.setDuration(3000);
+        test1.setInterpolator(new LinearInterpolator());
+        /*Starting a pointer's moving*/
+        test1.start();
+        test1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                movingtoOutput2();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
     //method 'testPointerLine15'
     private void testPointerLine15(int a)
     {
@@ -1053,7 +1202,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1087,7 +1236,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1122,7 +1271,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1157,7 +1306,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1190,7 +1339,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1224,7 +1373,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1258,7 +1407,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1295,7 +1444,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1328,7 +1477,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1341,6 +1490,8 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
               textsign.setText("-");
+                //Going to playstep10
+                playstep10();
             }
 
             @Override
@@ -1361,7 +1512,7 @@ public class Chap1 extends AppCompatActivity {
         * The important of this statement is parameter 'a' which will moving pointer on px mode*/
         ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
         /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(2000);
+        test1.setDuration(3000);
         test1.setInterpolator(new LinearInterpolator());
         /*Starting a pointer's moving*/
         test1.start();
@@ -1373,7 +1524,9 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                flipnum2();
+                textReturn.setVisibility(View.VISIBLE);
+                movingTextreturn2();
+
             }
 
             @Override
@@ -1387,6 +1540,7 @@ public class Chap1 extends AppCompatActivity {
             }
         });
     }
+
     //Calling method 'OnBackPressed.
     @Override
     public void onBackPressed() {
