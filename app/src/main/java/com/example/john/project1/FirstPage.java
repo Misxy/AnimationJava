@@ -17,7 +17,6 @@ public class FirstPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_page);
-        playmusic();
         //using findViewById() on btn_learn
         btn_learn = (ImageButton) findViewById(R.id.btnLearn);
         //using setOnClickListener's method
@@ -36,21 +35,16 @@ public class FirstPage extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    //playmusic's function
-    private void playmusic(){
-        mp = MediaPlayer.create(FirstPage.this,R.raw.song3_flc);
-        mp.start();
-    }
 
     @Override
     protected void onPause() {
         super.onPause();
-        mp.pause();
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        mp.start();
+
     }
 }
