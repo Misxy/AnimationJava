@@ -67,7 +67,7 @@ public class Chap1 extends AppCompatActivity {
                 /*output.setVisibility(View.VISIBLE);
                 movingtoOutput();*/
                 //Show message notified user
-                Toast.makeText(Chap1.this, "Start!", Toast.LENGTH_SHORT).show();
+
                testPointerLine1();
             }
         });
@@ -84,6 +84,7 @@ public class Chap1 extends AppCompatActivity {
     //play function
     private void testPointerLine1()
     {
+        Toast.makeText(Chap1.this, "Start!", Toast.LENGTH_SHORT).show();
         //Scroll to line1
         ObjectAnimator objline1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,0);
         objline1.setDuration(3000);
