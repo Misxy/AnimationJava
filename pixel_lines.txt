@@ -9,10 +9,10 @@ Line 6: 300 px
 Line 7: 350 px
 Line 8:  410 px
 
------------Scrolling down after line 11 ---------------------------------------
+-----------Scrolling down after line 14 ---------------------------------------
 Line 11: 595 px
 Line 12: 650 px
-Line 14: 200 px
+Line 14: 200 px 780 px
 Line 15: 260 px
 Line 16: 320px
 Line 19: 500 px 

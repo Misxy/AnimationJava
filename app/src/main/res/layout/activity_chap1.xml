@@ -100,7 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/output"
-            android:src="@drawable/result_class_object"
+            android:src="@drawable/result_class_object1"
             android:scaleType="fitXY"
             android:baselineAlignBottom="false"
             android:paddingBottom="10dp"
@@ -122,7 +122,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="10"
+        android:text="0"
         android:id="@+id/text_num1"
         android:background="@drawable/shape_rec_num1"
         android:textAlignment="center"
@@ -137,7 +137,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="5"
+        android:text="0"
         android:id="@+id/text_num2"
         android:background="@drawable/shape_rec_num2"
         android:textAlignment="center"
@@ -159,9 +159,9 @@
         android:paddingTop="10dp"
         android:textColor="#1F3A93"
         android:textSize="22dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/pic_class"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:layout_below="@+id/text_result_des"
+        android:layout_toEndOf="@+id/layout_code" />
 
     <TextView
         android:layout_width="50dp"
@@ -172,10 +172,10 @@
         android:paddingTop="10dp"
         android:textColor="#ECF0F1"
         android:textSize="22dp"
-        android:layout_alignBottom="@+id/text_result"
-        android:layout_alignParentEnd="true"
         android:text="+"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:layout_above="@+id/textReturn"
+        android:layout_alignEnd="@+id/textReturn" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -189,5 +189,58 @@
         android:layout_toStartOf="@+id/layout_output"
         android:layout_marginRight="45dp"
         android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Class"
+        android:id="@+id/text_class"
+        android:layout_alignTop="@+id/pic_class"
+        android:layout_alignEnd="@+id/layout_output"
+        android:textColor="#ECF0F1"
+        android:visibility="visible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Object"
+        android:id="@+id/text_object"
+        android:layout_alignTop="@+id/pic_class"
+        android:layout_alignEnd="@+id/text_sign"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="result"
+        android:id="@+id/text_result_des"
+        android:layout_alignTop="@+id/layout_code"
+        android:layout_toEndOf="@+id/layout_button"
+        android:visibility="invisible"
+        android:textColor="#ECF0F1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="num1"
+        android:id="@+id/text_construct1"
+        android:layout_above="@+id/text_sign"
+        android:layout_toEndOf="@+id/text_result_des"
+        android:visibility="invisible"
+        android:paddingLeft="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="num2"
+        android:id="@+id/text_construct2"
+        android:visibility="invisible"
+        android:layout_above="@+id/text_sign"
+        android:layout_toStartOf="@+id/text_num2" />
 
 </RelativeLayout>

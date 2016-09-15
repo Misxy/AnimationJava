@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationSet;
 import android.view.animation.LinearInterpolator;
@@ -25,11 +26,11 @@ public class Chap1 extends AppCompatActivity {
     ImageButton playbtn,stopbtn;
     ScrollView sv_code;
     LinearLayout layout_code;
-    TextView textnum1,textnum2,textResult,textsign,textReturn;
+    TextView textnum1,textnum2,textResult,textsign,textReturn,text_class,
+            text_object,text_construct1,text_construct2,text_result_des;
     int a;
-     Boolean control =true;
     //Declaring variables.
-    Boolean checkControl = true; //Logically variable for controlling.
+    Boolean checkControl = true,checkControlGo=true; //Logically variable for controlling.
     int timeThread=5; //Time for delaying pointer's moving.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,14 @@ public class Chap1 extends AppCompatActivity {
         textsign = (TextView)findViewById(R.id.text_sign);
         textReturn = (TextView)findViewById(R.id.textReturn);
         output = (ImageView)findViewById(R.id.output);
+        text_class =(TextView)findViewById(R.id.text_class);
+        text_object = (TextView)findViewById(R.id.text_object);
+        text_construct1 =(TextView)findViewById(R.id.text_construct1);
+        text_construct2 = (TextView)findViewById(R.id.text_construct2);
+        text_result_des = (TextView) findViewById(R.id.text_result_des);
+
+        //Fixing scroll on the top
+        sv_code.scrollTo(0,0);
 
         //Using method onClickListener for event handler on play button.
         playbtn.setOnClickListener(new View.OnClickListener() {
@@ -57,10 +66,9 @@ public class Chap1 extends AppCompatActivity {
                 //Calling method 'startPointer()'.
                 /*output.setVisibility(View.VISIBLE);
                 movingtoOutput();*/
-                playstep1();
-
-
-
+                //Show message notified user
+                Toast.makeText(Chap1.this, "Start!", Toast.LENGTH_SHORT).show();
+               testPointerLine1();
             }
         });
         //Using method onClickListener for event handler on stop button.
@@ -72,196 +80,16 @@ public class Chap1 extends AppCompatActivity {
             }
         });
      }
-    //method 'playstep1()'
-    private void playstep1()
+
+    //play function
+    private void testPointerLine1()
     {
-        pic_class.setVisibility(View.VISIBLE);
-        textnum1.setVisibility(View.VISIBLE);
-        textnum2.setVisibility(View.VISIBLE);
-        testPointer(50); //Going to ine2.
-        control = true;
-            playstep2();
-    }
-    private void playstep2()
-    {
-        if(control)
-        {
-            testPointer(110); //Going to line3.
-            //Showing object's picture.
-            pic_class.setImageResource(R.drawable.shape_circle_class);
-        }
-
-        control =false;
-
-        if(!control)
-        {
-        //Calling 'movingNums'
-        movingNums();
-        }
-    }
-    private void playstep3()
-    {
-            //Going to class 'Chapter' on line 11
-            testPointer(595);
-
-            //Going to line12.
-            testPointer(650);
-
-            //Going to line14.
-            testPointer(775);
-
-            //Setting pointer's position in 0 px and Scrolling down
-            startMoving();
-            testPointer(200);
-            //Calling playstep4()
-            playstep4();
-        }
-    //playstep4()'s method
-    private void playstep4() {
-        ///Going to line15
-        testPointerLine15(260);
-
-    }
-    private  void playstep5()
-    {
-        gotop();
-        //Going to line4
-        testPointerLine4_1(170);
-    }
-    //playstep6
-    private  void playstep6()
-    {
-        //Going to line 19
-        testPointerLine19(500);
-    }
-    //playrstep7
-    private void playstep7()
-    {
-        //Going to line 6
-        testPointerLine6(300);
-    }
-    //playstep8
-    private void playstep8()
-    {
-        //Going to line 7
-        gotop();
-        testPointerLine7(350);
-    }
-    private void playstep9()
-    {
-     //Going to line 23
-        testPointerLine23(740);
-    }
-    //playstep10
-    private void playstep10()
-    {
-        testPointerLine24(800);
-    }
-    //method 'playstep11'
-    private void playstep11()
-    {
-        gotop();
-        //Going to testPointerLine8
-        testPointerLine8(410);
-    }
-    //Method 'play'
-    private void play()
-    {
-
-
-        //Going to line4.
-        testPointer(170);
-        //Showing the result's picture and set its position.
-        textResult.setVisibility(View.VISIBLE);
-
-
-        //Going to line5.
-        testPointer(235);
-        //Going to class 'Chapter' on line 11
-        testPointer(595);
-        //Going to line14.
-        testPointer(775);
-
-        //Scrolling down code's picture to the bottom.
-        startMoving();
-        //Going to line 15.
-        testPointer(115);
-        flipnum1();
-        //Going to line 16.
-        testPointer(215);
-        flipnum2();
-
-        //Go to lime 19.
-        testPointer(395);
-        textsign.setVisibility(View.VISIBLE);
-        movingSign();
-
-        //Go to lime 20.
-        testPointer(455);
-        textReturn.setVisibility(View.VISIBLE);
-        movingTextreturn();
-
-        //Scrolling to the top.
-        gotop();
-        //Going to line 6.
-        testPointer(300);
-        output.setVisibility(View.VISIBLE);
-        //Moving red box into output
-        movingtoOutput();
-
-        //Going to line 7.
-        testPointer(350);
-        //Scrolling down
-        startMoving();
-
-        //Going to class 'Chapter' on line 11
-        testPointer(595);
-
-        //Going to line12.
-        testPointer(650);
-
-        //Going to line14.
-        testPointer(775);
-
-        //Going to line15 and playing animation on num1 and num2 's pictures
-        testPointer(115);
-        flipnum1();
-
-        //Going to line16
-        testPointer(215);
-        flipnum2();
-
-        //Going to line 23
-        testPointer(635);
-        textsign.setText("-");
-        //Changing text to return.
-        textReturn.setText("5");
-        testPointer(700);
-        //Returning a result into the red box.
-        movingTextreturn();
-
-        //Scrolling up
-        gotop();
-        //Going to line 8
-        testPointer(410);
-        //Moving red box into output
-        movingtoOutput();
-    }
-
-    //method 'movingTextStartpoint'
-    private void movingTextStartpoint()
-    {
-        ObjectAnimator t1 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,0);
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,0);
-        //Fade in picture of 'return'.
-        ObjectAnimator t3 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);
-
-        AnimatorSet am = new AnimatorSet();
-        am.playSequentially(t1,t2,t3);
-        am.setDuration(3000);
-        am.start();
-
-        am.addListener(new Animator.AnimatorListener() {
+        //Scroll to line1
+        ObjectAnimator objline1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,0);
+        objline1.setDuration(3000);
+        objline1.setInterpolator(new LinearInterpolator());
+        objline1.start();
+        objline1.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animator) {
 
@@ -269,7 +97,9 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                textReturn.setText("5");
+                pic_class.setVisibility(View.VISIBLE);
+                text_class.setVisibility(View.VISIBLE);
+                testPointerLine2();
             }
 
             @Override
@@ -283,47 +113,15 @@ public class Chap1 extends AppCompatActivity {
             }
         });
     }
-
-    //method 'movingTextreturn'
-    private void movingTextreturn()
+    //testpointerLine2
+    private void testPointerLine2()
     {
-        ObjectAnimator t1 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,-500);
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,-500);
-        ObjectAnimator t4 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,0);
-        ObjectAnimator t5 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,0);
-        //Return old position already.
-        ObjectAnimator t6 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);
-        //Adding its listener
-        t6.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-                textReturn.setVisibility(View.INVISIBLE);
-                textReturn.setText("5");
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-        //Fade out picture of 'return'.
-        ObjectAnimator t3 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,0f);
-        AnimatorSet am = new AnimatorSet();
-        am.playSequentially(t1,t2,t3,t4,t5,t6);
-        am.setDuration(3000);
-        am.start();
-
-        am.addListener(new Animator.AnimatorListener() {
+        //GotoLine2
+        ObjectAnimator objLine2 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y, 50);
+        objLine2.setDuration(3000);
+        objLine2.setInterpolator(new LinearInterpolator());
+        objLine2.start();
+        objLine2.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animator) {
 
@@ -331,10 +129,9 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                textResult.setText("15");
-                textResult.setTextColor(Color.parseColor("#ECF0F1"));
-                gotop();
-                playstep7();
+                pic_class.setImageResource(R.drawable.shape_circle_class);
+                text_object.setVisibility(View.VISIBLE);
+                testPointerLine3();
             }
 
             @Override
@@ -348,21 +145,15 @@ public class Chap1 extends AppCompatActivity {
             }
         });
     }
-    //method 'movingTextreturn2'
-    private void movingTextreturn2() {
-        ObjectAnimator t1 = ObjectAnimator.ofFloat(textReturn, View.TRANSLATION_Y, -500);
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textReturn, View.TRANSLATION_X, -500);
 
-        //Fade out picture of 'return'.
-        ObjectAnimator t3 = ObjectAnimator.ofFloat(textReturn, View.ALPHA, 0f);
-        ObjectAnimator t4 = ObjectAnimator.ofFloat(textReturn, View.TRANSLATION_X, 0);
-        ObjectAnimator t5 = ObjectAnimator.ofFloat(textReturn, View.TRANSLATION_Y, 0);
-        AnimatorSet am = new AnimatorSet();
-        am.playSequentially(t1, t2, t3,t4,t5);
-        am.setDuration(3000);
-        am.start();
-
-        am.addListener(new Animator.AnimatorListener() {
+    //testPointerLine3
+    private void testPointerLine3()
+    {
+        ObjectAnimator objLine3 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,110);
+        objLine3.setDuration(3000);
+        objLine3.setInterpolator(new LinearInterpolator());
+        objLine3.start();
+        objLine3.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animator) {
 
@@ -370,9 +161,8 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                textResult.setText("5");
-               playstep11();
-
+            //Scrolling down
+                testPointerLine14();
             }
 
             @Override
@@ -386,385 +176,8 @@ public class Chap1 extends AppCompatActivity {
             }
         });
     }
-
-    //method 'movingtoOutput'
-    private void movingtoOutput()
-    {
-        ObjectAnimator t1 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,1000);
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,700);
-        ObjectAnimator t3 = ObjectAnimator.ofFloat(textResult,View.ALPHA,0f);
-        //For going back to primary position.
-        ObjectAnimator t11 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,0);
-        ObjectAnimator t12 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,0);
-        AnimatorSet am = new AnimatorSet();
-        am.setDuration(3000);
-        am.setInterpolator(new LinearInterpolator());
-        am.playSequentially(t1,t2,t11,t12);
-        am.start();
-        am.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                playstep8();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //method 'movingtoOutput2'
-    private void movingtoOutput2()
-    {
-        ObjectAnimator t1 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,1000);
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,700);
-        ObjectAnimator t3 = ObjectAnimator.ofFloat(textResult,View.ALPHA,0f);
-        //For going back to primary position.
-        ObjectAnimator t11 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,0);
-        ObjectAnimator t12 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,0);
-        AnimatorSet am = new AnimatorSet();
-        am.setDuration(3000);
-        am.setInterpolator(new LinearInterpolator());
-        am.playSequentially(t1,t2,t11,t12);
-        am.start();
-        am.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                Toast.makeText(Chap1.this, "Finished!!", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-
-    //movingSign's method
-    private void movingSign()
-    {
-        ObjectAnimator t1 = ObjectAnimator.ofFloat(textsign,View.TRANSLATION_X,-510);
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textsign,View.TRANSLATION_Y,340);
-        AnimatorSet am = new AnimatorSet();
-        am.playTogether(t1,t2);
-        am.setDuration(1000);
-        am.start();
-        am.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                //Go to lime 20.
-                testPointerLine20(560);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //movingSign's method
-    private void movingSign2()
-    {
-        ObjectAnimator t1 = ObjectAnimator.ofFloat(textsign,View.TRANSLATION_X,-510);
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textsign,View.TRANSLATION_Y,340);
-        AnimatorSet am = new AnimatorSet();
-        am.playTogether(t1,t2);
-        am.setDuration(1000);
-        am.start();
-    }
-    //method 'gotop'
-    private void gotop()
-    {
-        sv_code.scrollTo(0,0);
-    }
-    //movingValue's method
-    private void movingValue()
-    {
-        /*textResult.setVisibility(View.VISIBLE);*/
-        ObjectAnimator t1 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,505);
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,570);
-        AnimatorSet am = new AnimatorSet();
-        am.playTogether(t1,t2);
-        am.setDuration(1000);
-        am.start();
-        am.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //method 'movingNums'
-    private void movingNums()
-    {
-        //Moving num 1 and num 2 into center of circle by using AnimatorSet.
-        ObjectAnimator t1 = ObjectAnimator.ofFloat(textnum1,View.TRANSLATION_X,250);
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textnum1,View.TRANSLATION_Y,-350);
-        AnimatorSet am = new AnimatorSet();
-        am.playTogether(t1,t2);
-        am.setInterpolator(new LinearInterpolator());
-        am.setDuration(5000);
-        am.start();
-
-        ObjectAnimator u1 = ObjectAnimator.ofFloat(textnum2,View.TRANSLATION_X,-250);
-        ObjectAnimator u2 = ObjectAnimator.ofFloat(textnum2,View.TRANSLATION_Y,-350);
-        AnimatorSet am1 = new AnimatorSet();
-        am1.playTogether(u1,u2);
-        am1.setInterpolator(new LinearInterpolator());
-        am1.setDuration(5000);
-        am1.start();
-
-        //Add animatorSet Listener
-        am1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                playstep3();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //method'flipnum1'
-    private void flipnum1()
-    {
-        textnum1.setVisibility(View.VISIBLE);
-        ObjectAnimator t1 = ObjectAnimator.ofFloat(textnum1,View.ROTATION_Y,360);
-        t1.setDuration(3000);;
-        t1.start();
-       t1.addListener(new Animator.AnimatorListener() {
-           @Override
-           public void onAnimationStart(Animator animator) {
-
-           }
-
-           @Override
-           public void onAnimationEnd(Animator animator) {
-               testPointerLine16(320);
-           }
-
-           @Override
-           public void onAnimationCancel(Animator animator) {
-
-           }
-
-           @Override
-           public void onAnimationRepeat(Animator animator) {
-
-           }
-       });
-
-    }
-    //method'flipnum1'
-    private void flipnum1_1()
-    {
-        textnum1.setVisibility(View.VISIBLE);
-        ObjectAnimator t1 = ObjectAnimator.ofFloat(textnum1,View.ROTATION_Y,360);
-        t1.setDuration(3000);;
-        t1.start();
-        t1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                testPointerLine16_1(320);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-
-    }
-    //method'flipnum2'
-    private void flipnum2()
-    {
-        textnum2.setVisibility(View.VISIBLE);
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textnum2,View.ROTATION_Y,360);
-        t2.setDuration(3000);
-        t2.start();
-        t2.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                //Starting at line 4
-                playstep5();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //method'flipnum2_1'
-    private void flipnum2_1()
-    {
-        textnum2.setVisibility(View.VISIBLE);
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textnum2,View.ROTATION_Y,360);
-        t2.setDuration(3000);
-        t2.start();
-        t2.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                playstep6();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //method'flipnum2_2'
-    private void flipnum2_2()
-    {
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textnum2,View.ROTATION_Y,360);
-        t2.setDuration(1000);
-        t2.start();
-        t2.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                playstep9();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //flipnum1_2
-    private void flipnum1_2()
-    {
-        ObjectAnimator t2 = ObjectAnimator.ofFloat(textnum2,View.ROTATION_Y,360);
-        t2.setDuration(3000);
-        t2.start();
-        t2.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator)
-            {
-                    testPointerLine16_2(320);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //methd 'startMoving'
-    private void startMoving()
+    //scrolling down
+    private void scrollingDown()
     {
         new Thread(new Runnable() {
             @Override
@@ -812,733 +225,741 @@ public class Chap1 extends AppCompatActivity {
                         catch (InterruptedException e) {}
                     }
                 }
-               //If 'checkControl' is not 'true' then makes it 'true'.
+                //If 'checkControl' is not 'true' then makes it 'true'.
                 else
                 {
                     checkControl =true;
                 }
             }
-        }
-        //This statement for starting the new thread execution.
+        }//This statement for starting the new thread execution.
         ).start();
     }
+    //testPointerLine14
+    private void testPointerLine14()
+    {
+        ObjectAnimator objLine14 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,770);
+        objLine14.setDuration(3000);
+        objLine14.setInterpolator(new LinearInterpolator());
+        objLine14.start();
+        objLine14.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
 
-    //method 'stopPlaying()'
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                textnum1.setVisibility(View.VISIBLE);
+                textnum2.setVisibility(View.VISIBLE);
+                movingNums();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+    private void movingNums()
+    {
+        ObjectAnimator objnum1_x = ObjectAnimator.ofFloat(textnum1,View.TRANSLATION_X,250);
+        ObjectAnimator objnum1_y = ObjectAnimator.ofFloat(textnum1,View.TRANSLATION_Y,-350);
+        AnimatorSet am = new AnimatorSet();
+        am.setDuration(3000);
+        am.setInterpolator(new LinearInterpolator());
+        am.playTogether(objnum1_x,objnum1_y);
+        am.start();
+
+        ObjectAnimator objnum2_x = ObjectAnimator.ofFloat(textnum2,View.TRANSLATION_X,-250);
+        ObjectAnimator objnum2_y = ObjectAnimator.ofFloat(textnum2,View.TRANSLATION_Y,-350);
+        AnimatorSet am2 = new AnimatorSet();
+        am2.setDuration(3000);
+        am2.setInterpolator(new LinearInterpolator());
+        am2.playTogether(objnum2_x,objnum2_y);
+        am2.start();
+        am2.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                scrollingDown();
+                testpointerLine15();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+    //Line15
+    private void testpointerLine15()
+    {
+        ObjectAnimator objLine15 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,250);
+        objLine15.setDuration(3000);
+
+        objLine15.start();
+        objLine15.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+
+                testpointerLine16();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+    //line16
+    private void testpointerLine16()
+    {
+        ObjectAnimator objLine16 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,320);
+        objLine16.setDuration(3000);
+
+        objLine16.start();
+        objLine16.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                textnum1.setText("10");
+                text_construct1.setVisibility(View.VISIBLE);
+                testpointerLine17();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+    //testLine17
+    private void testpointerLine17()
+    {
+        ObjectAnimator objLine17 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,370);
+        objLine17.setDuration(3000);
+        objLine17.start();
+        objLine17.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                textnum2.setText("5");
+                text_construct2.setVisibility(View.VISIBLE);
+                testpointerLine4();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+    //Line4
+    private void testpointerLine4()
+    {
+        //Going to the top
+        Scrollingup();
+        //Going to line4
+        ObjectAnimator objLine4 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,170);
+        objLine4.setDuration(3000);
+        objLine4.start();
+        objLine4.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                textResult.setVisibility(View.VISIBLE);
+                text_result_des.setVisibility(View.VISIBLE);
+                testpointerLine5();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+    //Go to Line5
+    private  void testpointerLine5()
+    {
+        ObjectAnimator objLine5 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,220);
+        objLine5.setDuration(3000);
+        objLine5.start();
+        objLine5.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+                scrollingDown();
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                scrollingDown();
+                testpointerLine19();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    //Line19
+    private void testpointerLine19()
+    {
+        ObjectAnimator objLine19 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,500);
+        objLine19.setDuration(3000);
+        objLine19.start();
+        objLine19.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                textsign.setVisibility(View.VISIBLE);
+                testpointerLine20();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    //line20
+    private void testpointerLine20()
+    {
+        ObjectAnimator objLine20 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,560);
+        objLine20.setDuration(3000);
+        objLine20.start();
+        objLine20.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+            textReturn.setVisibility(View.VISIBLE);
+                //Moving text into result's box
+                movingTextToResultBox();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    //movingTextToResultBox's function
+    private void movingTextToResultBox()
+    {
+        ObjectAnimator objMovingtext = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,-500);
+        ObjectAnimator objMovingtext2 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,-450);
+        //Fading in
+        ObjectAnimator objmovingtext3 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,0f);
+        objmovingtext3.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                    textResult.setTextColor(Color.parseColor("#ECF0F1"));
+                    textResult.setText("15");
+                    textReturn.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+        ObjectAnimator objMovingtext4 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,0);
+        ObjectAnimator objMovingtext5 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,0);
+        //Fading out
+        ObjectAnimator objMovingtext6 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);
+
+        AnimatorSet am = new AnimatorSet();
+        am.setDuration(2000);
+        am.playSequentially(objMovingtext,objMovingtext2,objmovingtext3,objMovingtext5,objMovingtext4,objMovingtext6);
+        am.start();
+        am.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                textReturn.setText("=5");
+                Scrollingup();
+                //Goto line6
+                testpointerLine6();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    //Line6
+    private void testpointerLine6()
+    {
+        ObjectAnimator objLine6 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,290);
+        objLine6.setDuration(3000);
+        objLine6.start();
+        objLine6.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                movingToOutput();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    //movingToOutput
+    private void movingToOutput()
+    {
+        ObjectAnimator objToY = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,900);
+        ObjectAnimator objToX = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,700);
+        objToX.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                output.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+        //Fading in
+        ObjectAnimator objHide = ObjectAnimator.ofFloat(textResult,View.ALPHA,0f);
+        ObjectAnimator objReturnX = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,0);
+        ObjectAnimator objReturnY = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,0);
+        //Fading out
+        ObjectAnimator objShow = ObjectAnimator.ofFloat(textResult,View.ALPHA,1f);
+        AnimatorSet am = new AnimatorSet();
+        am.playSequentially(objToY,objToX,objReturnX,objReturnY);
+        am.setDuration(3000);
+        am.start();
+        am.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                //Go to line7
+                testpointerLine7();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+
+    }
+
+    //Line7
+    private void testpointerLine7()
+    {
+        ObjectAnimator objLine7 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,350);
+        objLine7.setDuration(3000);
+        objLine7.start();
+        objLine7.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                scrollingDown();
+                testpointerLine23();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    //Line23
+    private void testpointerLine23()
+    {
+        ObjectAnimator objLine23 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,740);
+        objLine23.setDuration(3000);
+        objLine23.start();
+        objLine23.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                textsign.setText("-");
+                testpointerLine24();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    //Line24
+    private void testpointerLine24()
+    {
+        ObjectAnimator objLine24 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,800);
+        objLine24.setDuration(3000);
+        objLine24.start();
+        objLine24.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                textReturn.setVisibility(View.VISIBLE);
+                movingTextToResultBox2();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+    //movingTextToResultBox2
+    private void movingTextToResultBox2()
+    {
+        ObjectAnimator objGoX = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,-500);
+        ObjectAnimator objGoY = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,-450);
+        //Hidding
+        ObjectAnimator objHide = ObjectAnimator.ofFloat(textReturn,View.ALPHA,0f);
+        objHide.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                textResult.setText("5");
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+        ObjectAnimator objReturnX = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,0);
+        ObjectAnimator objReturnY = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,0);
+        //Showing
+        ObjectAnimator objShow = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);
+        AnimatorSet am = new AnimatorSet();
+        am.playSequentially(objGoX,objGoY,objHide,objReturnX,objReturnY,objShow);
+        am.setDuration(3000);
+        am.start();
+        am.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                Scrollingup();
+                //Going to line8
+                testpointerLine8();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    //line8
+    private void testpointerLine8()
+    {
+        ObjectAnimator objLine8 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,410);
+        objLine8.setDuration(3000);
+        objLine8.start();
+        objLine8.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+
+                movingToOutput2();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    // movingToOutput2's function
+    private void  movingToOutput2()
+    {
+        ObjectAnimator objGoY = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,900);
+        ObjectAnimator objGoX = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,700);
+        objGoX.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                output.setImageResource(R.drawable.result_class_object);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+        //Fading in
+        ObjectAnimator objHide = ObjectAnimator.ofFloat(textResult,View.ALPHA,0f);
+        ObjectAnimator objBackX = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,0);
+        ObjectAnimator objBackY = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,0);
+        //Fading out
+        ObjectAnimator objShow = ObjectAnimator.ofFloat(textResult,View.ALPHA,1f);
+
+        AnimatorSet am = new AnimatorSet();
+        am.setDuration(2000);
+        am.playSequentially(objGoY,objGoX,objBackX,objBackY);
+        am.start();
+        am.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                //Show message notified user
+                Toast.makeText(Chap1.this, "Finished", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+    }
+
+    //Stop playing
     private void stopPlaying()
     {
-        //Cancelling scroll down the code example's picture. By using boolean = 'true'
-        checkControl=true;
-        //taking a code's picture scrolls to the top.
-        sv_code.scrollTo(0,0);
-        /*Calling object of Class 'Chap1' then
-        call method name 'testPointer' to make pointer go to startpoint*/
-        testPointer(0);
 
     }
-
-    //method 'testPointer'
-    private void testPointer(int a)
+    //go up function
+    private void Scrollingup()
     {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-    }
-    //method 'testPointerLine4'
-    private void testPointerLine4(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                textResult.setVisibility(View.VISIBLE);
-                testPointerLine5(235);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //method 'testPointerLine4_1'
-    private void testPointerLine4_1(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                textResult.setVisibility(View.VISIBLE);
-                testPointerLine5_1(235);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //method 'testPointerLine14_1'
-    private void testPointerLine14_1(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                testPointerLine15_1(260);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //testpointerLine14_2
-    private void testPointerLine14_2(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-
-                testPointerLine15_2(260);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //method 'testPointerLine5'
-    private void testPointerLine5(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                textResult.setVisibility(View.VISIBLE);
-                movingValue();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //method 'testPointerLine5_1'
-    private void testPointerLine5_1(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                textResult.setVisibility(View.VISIBLE);
-                //Going down
-                startMoving();
-                //Going to line 14
-                testPointerLine14_1(200);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //method 'testPointerLine6'
-    private void testPointerLine6(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                //Showing output picture
-                output.setVisibility(View.VISIBLE);
-               movingtoOutput();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //method 'testPointerLine7'
-    private void testPointerLine7(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                startMoving();
-                testPointerLine14_2(200);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //method 'testPointerLine7_1'
-    private void testPointerLine7_1(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                movingTextreturn2();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //method 'testPointerLine8'
-    private void testPointerLine8(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                movingtoOutput2();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //method 'testPointerLine15'
-    private void testPointerLine15(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                flipnum1();
-
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //method 'testPointerLine15_1'
-    private void testPointerLine15_1(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-               testPointerLine16_1(320);
-
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //method 'testPointerLine15_2'
-    private void testPointerLine15_2(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                flipnum1_2();
-
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //TestPointerLine16
-    private void testPointerLine16(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                flipnum2();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //TestPointerLine16_1
-    private void testPointerLine16_1(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                playstep6();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //TestPointerLine16_2
-    private void testPointerLine16_2(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                flipnum2_2();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //TestPointer line 19
-    private void testPointerLine19(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                //Showing mathematical sign
-                textsign.setVisibility(View.VISIBLE);
-                //moving mathematical sign to a position.
-                movingSign();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-
-    //Testpointer line 20
-    private void testPointerLine20(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                textReturn.setVisibility(View.VISIBLE);
-                movingTextreturn();
-             }
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //testPointer line 23
-    private void testPointerLine23(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-              textsign.setText("-");
-                //Going to playstep10
-                playstep10();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-    }
-    //testpointer line 24
-    private void testPointerLine24(int a)
-    {
-        /*Creating object of class 'ObjectAnimator' and configs these properties.
-        * The important of this statement is parameter 'a' which will moving pointer on px mode*/
-        ObjectAnimator test1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,a);
-        /*Setting time for moving.This time is milliseconds,NOT seconds.*/
-        test1.setDuration(3000);
-        test1.setInterpolator(new LinearInterpolator());
-        /*Starting a pointer's moving*/
-        test1.start();
-        test1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                textReturn.setVisibility(View.VISIBLE);
-                movingTextreturn2();
-
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if(checkControlGo)
+                {
+                    checkControlGo =false;
+                    while(!checkControlGo) {
+                        try
+                        {
+                            runOnUiThread(new Runnable()
+                            {
+                                @Override
+                                public void run()
+                                {
+                                    sv_code.scrollBy(0,-1);
+                                    if(sv_code.getScrollY()==layout_code.getHeight()-870)
+                                    {
+                                        checkControlGo=true;
+                                        /*Toast.makeText(Chap1.this, "Stop", Toast.LENGTH_SHORT).show();*/
+                                    }
+                                }
+                            });
+                            Thread.sleep(timeThread);
+                        }
+                        catch (InterruptedException e)
+                        {
+                            Log.v("TAG","Cannot run Thread ");
+                        }
+                    }
+                }
+                else
+                {
+                    checkControl=true;
+                }
+            }
+        }).start();
     }
 
     //Calling method 'OnBackPressed.
