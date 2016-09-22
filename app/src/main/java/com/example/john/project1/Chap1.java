@@ -23,14 +23,13 @@ public class Chap1 extends AppCompatActivity {
     //Creating objects.
     Intent intent;
     ImageView imgPointer,pic_class,output;
-    ImageButton playbtn,stopbtn;
+    ImageButton playbtn,stopbtn,pausebtn;
     ScrollView sv_code;
     LinearLayout layout_code;
     TextView textnum1,textnum2,textResult,textsign,textReturn,text_class,
             text_object,text_construct1,text_construct2,text_result_des;
-    int a;
-    //Declaring variables.
-    Boolean checkControl = true,checkControlGo=true; //Logically variable for controlling.
+    Boolean checkControl = true,checkControlGo=true;//Logically variable for controlling.
+    Boolean checkPause=false;
     int timeThread=5; //Time for delaying pointer's moving.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +40,7 @@ public class Chap1 extends AppCompatActivity {
         imgPointer = (ImageView)findViewById(R.id.pointer);
         playbtn = (ImageButton)findViewById(R.id.playbtn);
         stopbtn = (ImageButton)findViewById(R.id.stopbtn);
+        pausebtn=(ImageButton)findViewById(R.id.pausebtn);
         sv_code =(ScrollView)findViewById(R.id.sv_code);
         layout_code=(LinearLayout)findViewById(R.id.layout_code);
         pic_class =(ImageView)findViewById(R.id.pic_class);
@@ -79,44 +79,58 @@ public class Chap1 extends AppCompatActivity {
                 stopPlaying();
             }
         });
+        //Pause button
+        pausebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callingPause();
+            }
+        });
      }
-
+    //Calling pause's function
+    private void callingPause()
+    {
+        Toast.makeText(Chap1.this,"Paused",Toast.LENGTH_SHORT).show();
+        checkPause=true;
+    }
     //play function
     private void testPointerLine1()
     {
-        Toast.makeText(Chap1.this, "Start!", Toast.LENGTH_SHORT).show();
-        //Scroll to line1
-        ObjectAnimator objline1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,0);
-        objline1.setDuration(3000);
-        objline1.setInterpolator(new LinearInterpolator());
-        objline1.start();
-        objline1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
+            Toast.makeText(Chap1.this, "Start!", Toast.LENGTH_SHORT).show();
+            //Scroll to line1
+            ObjectAnimator objline1 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 0);
+            objline1.setDuration(3000);
+            objline1.setInterpolator(new LinearInterpolator());
+            objline1.start();
+            objline1.addListener(new Animator.AnimatorListener() {
+                @Override
+                public void onAnimationStart(Animator animator) {
 
-            }
+                }
 
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                pic_class.setVisibility(View.VISIBLE);
-                text_class.setVisibility(View.VISIBLE);
-                testPointerLine2();
-            }
+                @Override
+                public void onAnimationEnd(Animator animator) {
+                    pic_class.setVisibility(View.VISIBLE);
+                    text_class.setVisibility(View.VISIBLE);
+                    testPointerLine2();
 
-            @Override
-            public void onAnimationCancel(Animator animator) {
+                }
 
-            }
+                @Override
+                public void onAnimationCancel(Animator animator) {
 
-            @Override
-            public void onAnimationRepeat(Animator animator) {
+                }
 
-            }
-        });
-    }
+                @Override
+                public void onAnimationRepeat(Animator animator) {
+
+                }
+            });
+        }
     //testpointerLine2
     private void testPointerLine2()
     {
+
         //GotoLine2
         ObjectAnimator objLine2 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y, 50);
         objLine2.setDuration(3000);
@@ -920,7 +934,10 @@ public class Chap1 extends AppCompatActivity {
     //Stop playing
     private void stopPlaying()
     {
-
+        //Show stop message
+        Toast.makeText(Chap1.this, "Stop!", Toast.LENGTH_SHORT).show();
+        sv_code.scrollTo(0,0);
+        recreate();
     }
     //go up function
     private void Scrollingup()
@@ -969,7 +986,7 @@ public class Chap1 extends AppCompatActivity {
         super.onBackPressed();
         //Going back to FirstPage's Activity.
         //Creating intent.
-        intent = new Intent(this,Content.class);
+        intent = new Intent(this,List_chapter.class);
         //Going to that activity's name in the intent that created.
         startActivity(intent);
         //Closing this activity.

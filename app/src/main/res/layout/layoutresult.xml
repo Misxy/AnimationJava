@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView15"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="366dp"
+        android:src="@drawable/testh"
+        android:scaleType="fitStart" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ทำอีกครั้ง"
+        android:id="@+id/button4"
+        android:layout_alignBottom="@+id/imageView16"
+        android:layout_alignStart="@+id/imageView16"
+        android:layout_toStartOf="@+id/button5"
+        android:layout_marginRight="10dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ดูคะแนนย้อนหลัง"
+        android:id="@+id/button5"
+        android:layout_alignBottom="@+id/imageView16"
+        android:layout_alignEnd="@+id/imageView16" />
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView16"
+        android:src="@drawable/result"
+        android:layout_marginBottom="73dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

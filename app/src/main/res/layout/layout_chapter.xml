@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/chap"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="25dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/Chapter1"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/chap1_1"
+            android:scaleType="fitXY"
+            android:background="#00ffffff"
+            android:baselineAlignBottom="false" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/Chapter2"
+            android:layout_marginTop="10dp"
+            android:background="#00ffffff"
+            android:src="@drawable/chapter2"
+            android:scaleType="fitXY" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/Chapter3"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:background="#00ffffff"
+            android:src="@drawable/chapter3" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/Chapter4"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:background="#00ffffff"
+            android:src="@drawable/chapter4" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/Chapter5"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:background="#00ffffff"
+            android:src="@drawable/chapter5" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/Chapter6"
+            android:layout_marginTop="10dp"
+            android:scaleType="fitXY"
+            android:background="#00ffffff"
+            android:src="@drawable/chapter6" />
+    </LinearLayout>
+
+</RelativeLayout>
