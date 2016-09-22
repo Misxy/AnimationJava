@@ -27,7 +27,7 @@ public class Chap1 extends AppCompatActivity {
     ScrollView sv_code;
     LinearLayout layout_code;
     TextView textnum1,textnum2,textResult,textsign,textReturn,text_class,
-            text_object,text_construct1,text_construct2,text_result_des;
+            text_object,text_construct1,text_construct2,text_result_des,textRes1,textRes2;
     Boolean checkControl = true,checkControlGo=true;//Logically variable for controlling.
     Boolean checkPause=false;
     int timeThread=5; //Time for delaying pointer's moving.
@@ -55,6 +55,8 @@ public class Chap1 extends AppCompatActivity {
         text_construct1 =(TextView)findViewById(R.id.text_construct1);
         text_construct2 = (TextView)findViewById(R.id.text_construct2);
         text_result_des = (TextView) findViewById(R.id.text_result_des);
+        textRes1 = (TextView)findViewById(R.id.result1);
+        textRes2 = (TextView)findViewById(R.id.result2);
 
         //Fixing scroll on the top
         sv_code.scrollTo(0,0);
@@ -289,6 +291,27 @@ public class Chap1 extends AppCompatActivity {
         am.setInterpolator(new LinearInterpolator());
         am.playTogether(objnum1_x,objnum1_y);
         am.start();
+        am.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                text_construct1.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
 
         ObjectAnimator objnum2_x = ObjectAnimator.ofFloat(textnum2,View.TRANSLATION_X,-250);
         ObjectAnimator objnum2_y = ObjectAnimator.ofFloat(textnum2,View.TRANSLATION_Y,-350);
@@ -305,6 +328,7 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
+                text_construct2.setVisibility(View.VISIBLE);
                 scrollingDown();
                 testpointerLine15();
             }
@@ -366,7 +390,6 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textnum1.setText("10");
-                text_construct1.setVisibility(View.VISIBLE);
                 testpointerLine17();
             }
 
@@ -396,7 +419,6 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textnum2.setText("5");
-                text_construct2.setVisibility(View.VISIBLE);
                 testpointerLine4();
             }
 

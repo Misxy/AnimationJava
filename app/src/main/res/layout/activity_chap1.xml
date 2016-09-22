@@ -164,20 +164,6 @@
         android:layout_toEndOf="@+id/layout_code" />
 
     <TextView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/text_sign"
-        android:textAlignment="center"
-        android:paddingTop="10dp"
-        android:textColor="#ECF0F1"
-        android:textSize="22dp"
-        android:text="+"
-        android:visibility="invisible"
-        android:layout_above="@+id/textReturn"
-        android:layout_alignEnd="@+id/textReturn" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -188,7 +174,7 @@
         android:layout_above="@+id/text_num2"
         android:layout_toStartOf="@+id/layout_output"
         android:layout_marginRight="45dp"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -199,7 +185,7 @@
         android:layout_alignTop="@+id/pic_class"
         android:layout_alignEnd="@+id/layout_output"
         android:textColor="#ECF0F1"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -242,5 +228,52 @@
         android:visibility="invisible"
         android:layout_above="@+id/text_sign"
         android:layout_toStartOf="@+id/text_num2" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="50dp"
+        android:layout_width="250dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/layout_button"
+        android:id="@+id/res_layout">
+
+        <TextView
+            android:text="ผลบวก คือ : 15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/result1"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textColor="#CF000F"
+            android:textAllCaps="false"
+            android:layout_marginLeft="100dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:text="ผลลบ คือ : 5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/result2"
+            android:layout_weight="1"
+            android:textColor="#CF000F"
+            android:layout_marginLeft="100dp"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+
+    <TextView
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/text_sign"
+        android:textAlignment="center"
+        android:paddingTop="10dp"
+        android:textColor="#ECF0F1"
+        android:textSize="40dp"
+        android:text="+"
+        android:visibility="visible"
+        android:layout_height="70dp"
+        android:layout_width="70dp"
+        android:layout_above="@+id/textReturn"
+        android:layout_alignEnd="@+id/textReturn"
+        android:paddingLeft="20dp" />
 
 </RelativeLayout>
