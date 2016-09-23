@@ -174,7 +174,7 @@
         android:layout_above="@+id/text_num2"
         android:layout_toStartOf="@+id/layout_output"
         android:layout_marginRight="45dp"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -269,7 +269,7 @@
         android:textColor="#ECF0F1"
         android:textSize="40dp"
         android:text="+"
-        android:visibility="visible"
+        android:visibility="invisible"
         android:layout_height="70dp"
         android:layout_width="70dp"
         android:layout_above="@+id/textReturn"

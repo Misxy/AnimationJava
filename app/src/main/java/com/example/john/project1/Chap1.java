@@ -9,9 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.AnimationSet;
 import android.view.animation.LinearInterpolator;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -92,7 +90,6 @@ public class Chap1 extends AppCompatActivity {
     //Calling pause's function
     private void callingPause()
     {
-        Toast.makeText(Chap1.this,"Paused",Toast.LENGTH_SHORT).show();
         checkPause=true;
     }
     //play function
@@ -100,8 +97,8 @@ public class Chap1 extends AppCompatActivity {
     {
             Toast.makeText(Chap1.this, "Start!", Toast.LENGTH_SHORT).show();
             //Scroll to line1
-            ObjectAnimator objline1 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 0);
-            objline1.setDuration(3000);
+             ObjectAnimator objline1 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 0);
+            objline1.setDuration(2000);
             objline1.setInterpolator(new LinearInterpolator());
             objline1.start();
             objline1.addListener(new Animator.AnimatorListener() {
@@ -112,6 +109,7 @@ public class Chap1 extends AppCompatActivity {
 
                 @Override
                 public void onAnimationEnd(Animator animator) {
+
                     pic_class.setVisibility(View.VISIBLE);
                     text_class.setVisibility(View.VISIBLE);
                     testPointerLine2();
@@ -132,10 +130,9 @@ public class Chap1 extends AppCompatActivity {
     //testpointerLine2
     private void testPointerLine2()
     {
-
         //GotoLine2
         ObjectAnimator objLine2 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y, 50);
-        objLine2.setDuration(3000);
+        objLine2.setDuration(2000);
         objLine2.setInterpolator(new LinearInterpolator());
         objLine2.start();
         objLine2.addListener(new Animator.AnimatorListener() {
@@ -167,7 +164,7 @@ public class Chap1 extends AppCompatActivity {
     private void testPointerLine3()
     {
         ObjectAnimator objLine3 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,110);
-        objLine3.setDuration(3000);
+        objLine3.setDuration(2000);
         objLine3.setInterpolator(new LinearInterpolator());
         objLine3.start();
         objLine3.addListener(new Animator.AnimatorListener() {
@@ -348,7 +345,7 @@ public class Chap1 extends AppCompatActivity {
     private void testpointerLine15()
     {
         ObjectAnimator objLine15 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,250);
-        objLine15.setDuration(3000);
+        objLine15.setDuration(2500);
 
         objLine15.start();
         objLine15.addListener(new Animator.AnimatorListener() {
@@ -378,7 +375,7 @@ public class Chap1 extends AppCompatActivity {
     private void testpointerLine16()
     {
         ObjectAnimator objLine16 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,320);
-        objLine16.setDuration(3000);
+        objLine16.setDuration(2500);
 
         objLine16.start();
         objLine16.addListener(new Animator.AnimatorListener() {
@@ -408,7 +405,7 @@ public class Chap1 extends AppCompatActivity {
     private void testpointerLine17()
     {
         ObjectAnimator objLine17 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,370);
-        objLine17.setDuration(3000);
+        objLine17.setDuration(2500);
         objLine17.start();
         objLine17.addListener(new Animator.AnimatorListener() {
             @Override
@@ -437,9 +434,9 @@ public class Chap1 extends AppCompatActivity {
     private void testpointerLine4()
     {
         //Going to the top
-        Scrollingup();
+        scrollingup();
         //Going to line4
-        ObjectAnimator objLine4 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,170);
+        ObjectAnimator objLine4 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,160);
         objLine4.setDuration(3000);
         objLine4.start();
         objLine4.addListener(new Animator.AnimatorListener() {
@@ -469,7 +466,7 @@ public class Chap1 extends AppCompatActivity {
     //Go to Line5
     private  void testpointerLine5()
     {
-        ObjectAnimator objLine5 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,220);
+        ObjectAnimator objLine5 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,225);
         objLine5.setDuration(3000);
         objLine5.start();
         objLine5.addListener(new Animator.AnimatorListener() {
@@ -499,7 +496,7 @@ public class Chap1 extends AppCompatActivity {
     //Line19
     private void testpointerLine19()
     {
-        ObjectAnimator objLine19 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,500);
+        ObjectAnimator objLine19 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,490);
         objLine19.setDuration(3000);
         objLine19.start();
         objLine19.addListener(new Animator.AnimatorListener() {
@@ -561,7 +558,9 @@ public class Chap1 extends AppCompatActivity {
     private void movingTextToResultBox()
     {
         ObjectAnimator objMovingtext = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,-500);
+        objMovingtext.setDuration(1000);
         ObjectAnimator objMovingtext2 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,-450);
+        objMovingtext2.setDuration(1000);
         //Fading in
         ObjectAnimator objmovingtext3 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,0f);
         objmovingtext3.addListener(new Animator.AnimatorListener() {
@@ -572,8 +571,6 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                    textResult.setTextColor(Color.parseColor("#ECF0F1"));
-                    textResult.setText("15");
                     textReturn.setVisibility(View.INVISIBLE);
             }
 
@@ -587,13 +584,16 @@ public class Chap1 extends AppCompatActivity {
 
             }
         });
+        //Moving back to original position
         ObjectAnimator objMovingtext4 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,0);
+        objMovingtext4.setDuration(50);
         ObjectAnimator objMovingtext5 = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,0);
+        objMovingtext5.setDuration(50);
         //Fading out
         ObjectAnimator objMovingtext6 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);
 
         AnimatorSet am = new AnimatorSet();
-        am.setDuration(2000);
+
         am.playSequentially(objMovingtext,objMovingtext2,objmovingtext3,objMovingtext5,objMovingtext4,objMovingtext6);
         am.start();
         am.addListener(new Animator.AnimatorListener() {
@@ -604,10 +604,9 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                textReturn.setText("=5");
-                Scrollingup();
-                //Goto line6
-                testpointerLine6();
+                scrollingup();
+                //Goto line5 again
+                testPointerLine5_1();
             }
 
             @Override
@@ -622,11 +621,41 @@ public class Chap1 extends AppCompatActivity {
         });
     }
 
+    private void  testPointerLine5_1()
+    {
+        ObjectAnimator objLine5_1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,225);
+        objLine5_1.setDuration(3000);
+        objLine5_1.start();
+        objLine5_1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                textResult.setTextColor(Color.parseColor("#ECF0F1"));
+                textResult.setText("15");
+                testpointerLine6();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
+
     //Line6
     private void testpointerLine6()
     {
         ObjectAnimator objLine6 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,290);
-        objLine6.setDuration(3000);
+        objLine6.setDuration(2500);
         objLine6.start();
         objLine6.addListener(new Animator.AnimatorListener() {
             @Override
@@ -650,72 +679,17 @@ public class Chap1 extends AppCompatActivity {
             }
         });
     }
-
     //movingToOutput
     private void movingToOutput()
     {
-        ObjectAnimator objToY = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,900);
-        ObjectAnimator objToX = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,700);
-        objToX.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                output.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-        //Fading in
-        ObjectAnimator objHide = ObjectAnimator.ofFloat(textResult,View.ALPHA,0f);
-        ObjectAnimator objReturnX = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,0);
-        ObjectAnimator objReturnY = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,0);
-        //Fading out
-        ObjectAnimator objShow = ObjectAnimator.ofFloat(textResult,View.ALPHA,1f);
-        AnimatorSet am = new AnimatorSet();
-        am.playSequentially(objToY,objToX,objReturnX,objReturnY);
-        am.setDuration(3000);
-        am.start();
-        am.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                //Go to line7
-                testpointerLine7();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-
+        textRes1.setVisibility(View.VISIBLE);
+        testpointerLine7();
     }
 
     //Line7
     private void testpointerLine7()
     {
-        ObjectAnimator objLine7 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,350);
+        ObjectAnimator objLine7 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,340);
         objLine7.setDuration(3000);
         objLine7.start();
         objLine7.addListener(new Animator.AnimatorListener() {
@@ -745,7 +719,7 @@ public class Chap1 extends AppCompatActivity {
     //Line23
     private void testpointerLine23()
     {
-        ObjectAnimator objLine23 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,740);
+        ObjectAnimator objLine23 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,730);
         objLine23.setDuration(3000);
         objLine23.start();
         objLine23.addListener(new Animator.AnimatorListener() {
@@ -786,6 +760,7 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
+                textReturn.setText("=5");
                 textReturn.setVisibility(View.VISIBLE);
                 movingTextToResultBox2();
             }
@@ -805,7 +780,9 @@ public class Chap1 extends AppCompatActivity {
     private void movingTextToResultBox2()
     {
         ObjectAnimator objGoX = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,-500);
+        objGoX.setDuration(1000);
         ObjectAnimator objGoY = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,-450);
+        objGoY.setDuration(1000);
         //Hidding
         ObjectAnimator objHide = ObjectAnimator.ofFloat(textReturn,View.ALPHA,0f);
         objHide.addListener(new Animator.AnimatorListener() {
@@ -816,7 +793,7 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                textResult.setText("5");
+
             }
 
             @Override
@@ -830,12 +807,13 @@ public class Chap1 extends AppCompatActivity {
             }
         });
         ObjectAnimator objReturnX = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_X,0);
+        objReturnX.setDuration(50);
         ObjectAnimator objReturnY = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,0);
+        objReturnY.setDuration(50);
         //Showing
         ObjectAnimator objShow = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);
         AnimatorSet am = new AnimatorSet();
         am.playSequentially(objGoX,objGoY,objHide,objReturnX,objReturnY,objShow);
-        am.setDuration(3000);
         am.start();
         am.addListener(new Animator.AnimatorListener() {
             @Override
@@ -845,9 +823,10 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                Scrollingup();
+                scrollingup();
                 //Going to line8
-                testpointerLine8();
+                testpointerLine7_1();
+
             }
 
             @Override
@@ -861,7 +840,35 @@ public class Chap1 extends AppCompatActivity {
             }
         });
     }
+    //Line7 again
+    private  void  testpointerLine7_1()
+    {
+        ObjectAnimator objLine7_1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,330);
+        objLine7_1.setDuration(3500);
+        objLine7_1.start();
+        objLine7_1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
 
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                textResult.setText("5");
+                testpointerLine8();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
     //line8
     private void testpointerLine8()
     {
@@ -895,62 +902,8 @@ public class Chap1 extends AppCompatActivity {
     // movingToOutput2's function
     private void  movingToOutput2()
     {
-        ObjectAnimator objGoY = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,900);
-        ObjectAnimator objGoX = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,700);
-        objGoX.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                output.setImageResource(R.drawable.result_class_object);
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
-        //Fading in
-        ObjectAnimator objHide = ObjectAnimator.ofFloat(textResult,View.ALPHA,0f);
-        ObjectAnimator objBackX = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_X,0);
-        ObjectAnimator objBackY = ObjectAnimator.ofFloat(textResult,View.TRANSLATION_Y,0);
-        //Fading out
-        ObjectAnimator objShow = ObjectAnimator.ofFloat(textResult,View.ALPHA,1f);
-
-        AnimatorSet am = new AnimatorSet();
-        am.setDuration(2000);
-        am.playSequentially(objGoY,objGoX,objBackX,objBackY);
-        am.start();
-        am.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animator) {
-                //Show message notified user
-                Toast.makeText(Chap1.this, "Finished", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animator) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animator) {
-
-            }
-        });
+       textRes2.setVisibility(View.VISIBLE);
+        Toast.makeText(this, "Finished", Toast.LENGTH_SHORT).show();
     }
 
     //Stop playing
@@ -962,7 +915,7 @@ public class Chap1 extends AppCompatActivity {
         recreate();
     }
     //go up function
-    private void Scrollingup()
+    private void scrollingup()
     {
         new Thread(new Runnable() {
             @Override
