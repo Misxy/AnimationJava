@@ -115,7 +115,9 @@ public class Chap1 extends AppCompatActivity {
             }
         }
         if(!checkPushPause)
-        {objline1.resume();
+        {
+            //Resuming animations
+            objline1.resume();
         Toast.makeText(this, "Resume", Toast.LENGTH_SHORT).show();
         }
     }
