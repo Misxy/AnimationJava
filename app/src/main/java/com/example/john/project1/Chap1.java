@@ -124,6 +124,47 @@ public class Chap1 extends AppCompatActivity {
                 //Showing pause text on the screen
                 Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             }
+            else if(checkState.equals("3"))
+            {
+                //Pausing animations
+                objLine3.pause();
+                Log.d("Success!","Pausing line3 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("14"))
+            {
+                //Pausing animations
+                objLine14.pause();
+                Log.d("Success!","Pausing line14 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("movingNums"))
+            {
+                //Pausing animations
+                amMovingNum.pause();
+                amMovingNum2.pause();
+                Log.d("Success!","Pausing NumberAnimation success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("15"))
+            {
+                //Pausing animations
+                objLine15.pause();
+                Log.d("Success!","Pausing line15 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("16"))
+            {
+                //Pausing animations
+                objLine16.pause();
+                Log.d("Success!","Pausing line16 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
             else
             {
                 Log.d("Error!","Can't pause");
@@ -136,9 +177,9 @@ public class Chap1 extends AppCompatActivity {
         {
             //Resuming animations
             objLine1.resume();
-            Log.d("Success!","Resume success");
+            Log.d("Success!","Resume line1 success");
             //Showing pause text on the screen
-            Toast.makeText(this, "Resuming", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
         }
         else if(checkState.equals("2"))
         {
@@ -146,7 +187,48 @@ public class Chap1 extends AppCompatActivity {
             objLine2.resume();
             Log.d("Success!","Resume line2 success");
             //Showing pause text on the screen
-            Toast.makeText(this, "Resuming", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("3"))
+        {
+            //Resuming animations
+            objLine3.resume();
+            Log.d("Success!","Resume line3 success");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("14"))
+        {
+            //Resuming animations
+            objLine14.resume();
+            Log.d("Success!","Resume line14 success");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("movingNums"))
+        {
+            //Pausing animations
+            amMovingNum.resume();
+            amMovingNum2.resume();
+            Log.d("Success!","Resuming NumberAnimation success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("15"))
+        {
+            //Pausing animations
+            objLine15.resume();
+            Log.d("Success!","Resuming line15 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("16"))
+        {
+            //Pausing animations
+            objLine16.resume();
+            Log.d("Success!","Resuming line16 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -318,7 +400,7 @@ public class Chap1 extends AppCompatActivity {
         objLine14 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,770);
         objLine14.setDuration(3000);
         objLine14.setInterpolator(new LinearInterpolator());
-        checkState="4";
+        checkState="14";
         objLine14.start();
         objLine14.addListener(new Animator.AnimatorListener() {
             @Override
@@ -346,13 +428,13 @@ public class Chap1 extends AppCompatActivity {
     }
     private void movingNums()
     {
+        checkState="movingNums";
         ObjectAnimator objnum1_x = ObjectAnimator.ofFloat(textnum1,View.TRANSLATION_X,250);
         ObjectAnimator objnum1_y = ObjectAnimator.ofFloat(textnum1,View.TRANSLATION_Y,-350);
         amMovingNum = new AnimatorSet();
         amMovingNum.setDuration(3000);
         amMovingNum.setInterpolator(new LinearInterpolator());
         amMovingNum.playTogether(objnum1_x,objnum1_y);
-        checkState="amMovingNum";
         amMovingNum.start();
         amMovingNum.addListener(new Animator.AnimatorListener() {
             @Override
@@ -381,8 +463,7 @@ public class Chap1 extends AppCompatActivity {
         amMovingNum2 = new AnimatorSet();
         amMovingNum2.setDuration(3000);
         amMovingNum2.setInterpolator(new LinearInterpolator());
-        amMovingNum2.playTogether(objnum2_x,objnum2_y);
-        checkState="amMovingNum2";
+        amMovingNum2.playTogether(objnum2_x,objnum2_y);;
         amMovingNum2.start();
         amMovingNum2.addListener(new Animator.AnimatorListener() {
             @Override
@@ -413,7 +494,7 @@ public class Chap1 extends AppCompatActivity {
     {
         objLine15 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,250);
         objLine15.setDuration(2500);
-
+        checkState="15";
         objLine15.start();
         objLine15.addListener(new Animator.AnimatorListener() {
             @Override
@@ -443,6 +524,7 @@ public class Chap1 extends AppCompatActivity {
     {
         objLine16 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,320);
         objLine16.setDuration(2500);
+        checkState="16";
         objLine16.start();
         objLine16.addListener(new Animator.AnimatorListener() {
             @Override
@@ -472,6 +554,7 @@ public class Chap1 extends AppCompatActivity {
     {
         objLine17 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,370);
         objLine17.setDuration(2500);
+        checkState="17";
         objLine17.start();
         objLine17.addListener(new Animator.AnimatorListener() {
             @Override
@@ -504,6 +587,7 @@ public class Chap1 extends AppCompatActivity {
         //Going to line4
         objLine4 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,160);
         objLine4.setDuration(3000);
+        checkState="14";
         objLine4.start();
         objLine4.addListener(new Animator.AnimatorListener() {
             @Override
@@ -534,6 +618,7 @@ public class Chap1 extends AppCompatActivity {
     {
         objLine5 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,225);
         objLine5.setDuration(3000);
+        checkState="5";
         objLine5.start();
         objLine5.addListener(new Animator.AnimatorListener() {
             @Override
@@ -564,6 +649,7 @@ public class Chap1 extends AppCompatActivity {
     {
         objLine19 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,490);
         objLine19.setDuration(3000);
+        checkState="19";
         objLine19.start();
         objLine19.addListener(new Animator.AnimatorListener() {
             @Override
@@ -594,6 +680,7 @@ public class Chap1 extends AppCompatActivity {
     {
         objLine20 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,560);
         objLine20.setDuration(3000);
+        checkState="20";
         objLine20.start();
         objLine20.addListener(new Animator.AnimatorListener() {
             @Override
@@ -657,10 +744,9 @@ public class Chap1 extends AppCompatActivity {
         objMovingtext5.setDuration(50);
         //Fading out
         ObjectAnimator objMovingtext6 = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);
-
         amMovingtextToResultBox = new AnimatorSet();
-
         amMovingtextToResultBox.playSequentially(objMovingtext,objMovingtext2,objmovingtext3,objMovingtext5,objMovingtext4,objMovingtext6);
+        checkState="amMovingtextToResultBox";
         amMovingtextToResultBox.start();
         amMovingtextToResultBox.addListener(new Animator.AnimatorListener() {
             @Override
@@ -670,7 +756,6 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                scrollingup();
                 //Goto line5 again
                 testPointerLine5_1();
             }
@@ -689,8 +774,10 @@ public class Chap1 extends AppCompatActivity {
 
     private void  testPointerLine5_1()
     {
+        scrollingup();
         objLine5_1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,225);
         objLine5_1.setDuration(3000);
+        checkState="5_1";
         objLine5_1.start();
         objLine5_1.addListener(new Animator.AnimatorListener() {
             @Override
@@ -722,6 +809,7 @@ public class Chap1 extends AppCompatActivity {
     {
         objLine6 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,290);
         objLine6.setDuration(2500);
+        checkState="6";
         objLine6.start();
         objLine6.addListener(new Animator.AnimatorListener() {
             @Override
@@ -731,7 +819,8 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                movingToOutput();
+                textRes1.setVisibility(View.VISIBLE);
+                testpointerLine7();
             }
 
             @Override
@@ -745,18 +834,12 @@ public class Chap1 extends AppCompatActivity {
             }
         });
     }
-    //movingToOutput
-    private void movingToOutput()
-    {
-        textRes1.setVisibility(View.VISIBLE);
-        testpointerLine7();
-    }
-
     //Line7
     private void testpointerLine7()
     {
         objLine7 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,340);
         objLine7.setDuration(3000);
+        checkState="7";
         objLine7.start();
         objLine7.addListener(new Animator.AnimatorListener() {
             @Override
@@ -787,6 +870,7 @@ public class Chap1 extends AppCompatActivity {
     {
         objLine23 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,730);
         objLine23.setDuration(3000);
+        checkState="23";
         objLine23.start();
         objLine23.addListener(new Animator.AnimatorListener() {
             @Override
@@ -817,6 +901,7 @@ public class Chap1 extends AppCompatActivity {
     {
         objLine24 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,800);
         objLine24.setDuration(3000);
+        checkState="24";
         objLine24.start();
         objLine24.addListener(new Animator.AnimatorListener() {
             @Override
@@ -880,6 +965,7 @@ public class Chap1 extends AppCompatActivity {
         ObjectAnimator objShow = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);
         amMovingtextToResultBox2 = new AnimatorSet();
         amMovingtextToResultBox2.playSequentially(objGoX,objGoY,objHide,objReturnX,objReturnY,objShow);
+        checkState="amMovingtextToResultBox2";
         amMovingtextToResultBox2.start();
         amMovingtextToResultBox2.addListener(new Animator.AnimatorListener() {
             @Override
@@ -889,7 +975,6 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                scrollingup();
                 //Going to line8
                 testpointerLine7_1();
 
@@ -909,8 +994,10 @@ public class Chap1 extends AppCompatActivity {
     //Line7 again
     private  void  testpointerLine7_1()
     {
+        scrollingup();
         objLine7_1 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,330);
         objLine7_1.setDuration(3500);
+        checkState="7_1";
         objLine7_1.start();
         objLine7_1.addListener(new Animator.AnimatorListener() {
             @Override
@@ -940,6 +1027,7 @@ public class Chap1 extends AppCompatActivity {
     {
         objLine8 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,410);
         objLine8.setDuration(3000);
+        checkState="8";
         objLine8.start();
         objLine8.addListener(new Animator.AnimatorListener() {
             @Override
@@ -949,7 +1037,8 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                movingToOutput2();
+                textRes2.setVisibility(View.VISIBLE);
+                Toast.makeText(Chap1.this, "Finished", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -962,13 +1051,6 @@ public class Chap1 extends AppCompatActivity {
 
             }
         });
-    }
-
-    // movingToOutput2's function
-    private void  movingToOutput2()
-    {
-       textRes2.setVisibility(View.VISIBLE);
-        Toast.makeText(this, "Finished", Toast.LENGTH_SHORT).show();
     }
 
     //Stop playing
