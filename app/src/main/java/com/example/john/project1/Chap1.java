@@ -17,7 +17,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class Chap1 extends AppCompatActivity {
+
     //Creating objects.
     Intent intent;
     ImageView imgPointer,pic_class,output;
@@ -43,6 +45,7 @@ public class Chap1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chap1);
+       
 
         //Selecting view by use findviewById
         imgPointer = (ImageView)findViewById(R.id.pointer);
@@ -134,8 +137,10 @@ public class Chap1 extends AppCompatActivity {
             }
             else if(checkState.equals("14"))
             {
+                scrollingup();
                 //Pausing animations
                 objLine14.pause();
+
                 Log.d("Success!","Pausing line14 success.");
                 //Showing pause text on the screen
                 Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
@@ -162,6 +167,118 @@ public class Chap1 extends AppCompatActivity {
                 //Pausing animations
                 objLine16.pause();
                 Log.d("Success!","Pausing line16 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("17"))
+            {
+                //Pausing animations
+                objLine17.pause();
+                Log.d("Success!","Pausing line17 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("4"))
+            {
+                //Pausing animations
+                objLine4.pause();
+                Log.d("Success!","Pausing line4 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("5"))
+            {
+                //Pausing animations
+                objLine5.pause();
+                Log.d("Success!","Pausing line5 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("19"))
+            {
+                //Pausing animations
+                objLine19.pause();
+                Log.d("Success!","Pausing line19 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("20"))
+            {
+                //Pausing animations
+                objLine20.pause();
+                Log.d("Success!","Pausing line20 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("amMovingtextToResultBox"))
+            {
+                //Pausing animations
+                amMovingtextToResultBox.pause();
+                Log.d("Success!","Pausing  result's showing success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("5_1"))
+            {
+                //Pausing animations
+                objLine5_1.pause();
+                Log.d("Success!","Pausing line 5_1 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("6"))
+            {
+                //Pausing animations
+                objLine6.pause();
+                Log.d("Success!","Pausing line 6 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("7"))
+            {
+                //Pausing animations
+                objLine7.pause();
+                Log.d("Success!","Pausing line 7 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("23"))
+            {
+                //Pausing animations
+                objLine23.pause();
+                Log.d("Success!","Pausing line 23 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("24"))
+            {
+                //Pausing animations
+                objLine24.pause();
+                Log.d("Success!","Pausing line 24 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("amMovingtextToResultBox2"))
+            {
+                //Pausing animations
+                amMovingtextToResultBox2.pause();
+                Log.d("Success!","Pausing  result2 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("7_1"))
+            {
+                //Pausing animations
+                objLine7_1.pause();
+                Log.d("Success!","Pausing  line7_1 success.");
+                //Showing pause text on the screen
+                Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+            }
+            else if(checkState.equals("8"))
+            {
+                //Pausing animations
+                objLine8.pause();
+                Log.d("Success!","Pausing  line8 success.");
                 //Showing pause text on the screen
                 Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             }
@@ -207,7 +324,7 @@ public class Chap1 extends AppCompatActivity {
         }
         else if(checkState.equals("movingNums"))
         {
-            //Pausing animations
+            //Resuming animations
             amMovingNum.resume();
             amMovingNum2.resume();
             Log.d("Success!","Resuming NumberAnimation success.");
@@ -216,7 +333,7 @@ public class Chap1 extends AppCompatActivity {
         }
         else if(checkState.equals("15"))
         {
-            //Pausing animations
+            //Resuming animations
             objLine15.resume();
             Log.d("Success!","Resuming line15 success.");
             //Showing pause text on the screen
@@ -224,9 +341,121 @@ public class Chap1 extends AppCompatActivity {
         }
         else if(checkState.equals("16"))
         {
-            //Pausing animations
+            //Resuming animations
             objLine16.resume();
             Log.d("Success!","Resuming line16 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("17"))
+        {
+            //Resuming animations
+            objLine17.resume();
+            Log.d("Success!","Resuming line17 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("4"))
+        {
+            //Resuming animations
+            objLine4.resume();
+            Log.d("Success!","Resuming line4 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("5"))
+        {
+            //Resuming animations
+            objLine5.resume();
+            Log.d("Success!","Resuming line5 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("19"))
+        {
+            //Resuming animations
+            objLine19.resume();
+            Log.d("Success!","Resuming line19 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("20"))
+        {
+            //Pausing animations
+            objLine20.resume();
+            Log.d("Success!","Resuming line20 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("amMovingtextToResultBox"))
+        {
+            //Pausing animations
+            amMovingtextToResultBox.resume();
+            Log.d("Success!","Resuming  result's showing success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("5_1"))
+        {
+            //Pausing animations
+            objLine5_1.resume();
+            Log.d("Success!","Resuming line5_1 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("6"))
+        {
+            //Pausing animations
+            objLine6.resume();
+            Log.d("Success!","Resuming line6 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("7"))
+        {
+            //Pausing animations
+            objLine7.resume();
+            Log.d("Success!","Resuming line7 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("23"))
+        {
+            //Pausing animations
+            objLine23.resume();
+            Log.d("Success!","Resuming line23 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("24"))
+        {
+            //Pausing animations
+            objLine24.resume();
+            Log.d("Success!","Resuming line24 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("amMovingtextToResultBox2"))
+        {
+            //Pausing animations
+            amMovingtextToResultBox2.resume();
+            Log.d("Success!","Resuming result's showing success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("7_1"))
+        {
+            //Pausing animations
+            objLine7_1.resume();
+            Log.d("Success!","Resuming line7_1 success.");
+            //Showing pause text on the screen
+            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+        }
+        else if(checkState.equals("8"))
+        {
+            //Pausing animations
+            objLine8.resume();
+            Log.d("Success!","Resuming line8 success.");
             //Showing pause text on the screen
             Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
         }
@@ -382,7 +611,10 @@ public class Chap1 extends AppCompatActivity {
                             Thread.sleep(timeThread);
                         }
                         //To handle ThreadException by handler 'InteruptException'.
-                        catch (InterruptedException e) {}
+                        catch (InterruptedException e)
+                        {
+                            e.printStackTrace();
+                        }
                     }
                 }
                 //If 'checkControl' is not 'true' then makes it 'true'.
@@ -587,7 +819,7 @@ public class Chap1 extends AppCompatActivity {
         //Going to line4
         objLine4 = ObjectAnimator.ofFloat(imgPointer,View.TRANSLATION_Y,160);
         objLine4.setDuration(3000);
-        checkState="14";
+        checkState="4";
         objLine4.start();
         objLine4.addListener(new Animator.AnimatorListener() {
             @Override
@@ -1090,7 +1322,7 @@ public class Chap1 extends AppCompatActivity {
                         }
                         catch (InterruptedException e)
                         {
-                            Log.v("TAG","Cannot run Thread ");
+                            e.printStackTrace();
                         }
                     }
                 }
@@ -1114,4 +1346,5 @@ public class Chap1 extends AppCompatActivity {
         //Closing this activity.
         finish();
     }
+
 }

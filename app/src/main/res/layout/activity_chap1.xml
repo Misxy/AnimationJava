@@ -37,7 +37,8 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:id="@+id/backstepbtn"
-            android:background="@drawable/backstepbtn" />
+            android:background="@drawable/backstepbtn"
+            android:visibility="invisible" />
 
         <ImageButton
             android:layout_width="60dp"
@@ -61,7 +62,8 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@drawable/nextstepbtn"
-            android:id="@+id/nextstepbtn" />
+            android:id="@+id/nextstepbtn"
+            android:visibility="invisible" />
 
     </LinearLayout>
 
