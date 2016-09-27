@@ -1,6 +1,7 @@
 package com.example.john.project1;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,7 @@ import android.widget.ImageButton;
 
 public class home extends AppCompatActivity {
     ImageButton btn_Go,btn_Test,btn_Score,btn_Exit;
+    MediaPlayer mp;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +23,13 @@ public class home extends AppCompatActivity {
         btn_Test= (ImageButton)findViewById(R.id.imageButton15);
         btn_Score= (ImageButton)findViewById(R.id.imageButton16);
         btn_Exit =(ImageButton)findViewById(R.id.imageButton17);
-
+        playsound();
         //Going to Chapter_List page
         btn_Go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(home.this,List_chapter.class);
-               startActivity(intent);
+                startActivity(intent);
                 //Closing this layout
                 finish();
             }
@@ -59,5 +61,17 @@ public class home extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    //playing sound on app
+    private void playsound()
+    {
+        mp = MediaPlayer.create(this,R.raw.enigma);
+        mp.start();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mp.release();
     }
 }

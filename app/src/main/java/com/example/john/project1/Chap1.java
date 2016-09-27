@@ -5,6 +5,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,11 +42,12 @@ public class Chap1 extends AppCompatActivity {
     AnimatorSet amMovingtextToResultBox2,amMovingtextToResultBox,amMovingNum,amMovingNum2;
     int timeThread=5; //Time for delaying pointer's moving.
     int timesPushPauseBtn =1; //Increasing it by one for pushing pause button each time.
+    MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chap1);
-       
+
 
         //Selecting view by use findviewById
         imgPointer = (ImageView)findViewById(R.id.pointer);
@@ -108,6 +110,16 @@ public class Chap1 extends AppCompatActivity {
             }
         });
      }
+
+    /**
+     * Dispatch onPause() to fragments.
+     */
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+
     //Calling pause's function
     private void  callingPause()
     {

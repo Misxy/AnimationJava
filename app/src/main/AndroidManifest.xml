@@ -11,24 +11,25 @@
         <activity
             android:name=".Chap1"
             android:screenOrientation="landscape">
-
         </activity>
-        <activity android:name=".FirstPage"></activity>
-        <activity android:name=".Content"></activity>
-        <activity android:name=".home">
+        <activity android:name=".FirstPage" />
+        <activity android:name=".Content" />
+        <activity android:name=".home" />
+        <activity android:name=".Java_Detail" />
+        <activity android:name=".java_stat" />
+        <activity android:name=".List_chapter" />
+        <activity android:name=".Quiz" />
+        <activity android:name=".Quiz_Correct" />
+        <activity android:name=".Quiz_Incorrect" />
+        <activity android:name=".Quiz_Result" />
+        <activity android:name=".Chapter2"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Java_Detail"></activity>
-        <activity android:name=".java_stat"></activity>
-        <activity android:name=".List_chapter"></activity>
-        <activity android:name=".Quiz"></activity>
-        <activity android:name=".Quiz_Correct"></activity>
-        <activity android:name=".Quiz_Incorrect"></activity>
-        <activity android:name=".Quiz_Result"></activity>
     </application>
 
 </manifest>
