@@ -56,7 +56,7 @@ public class Chap1 extends AppCompatActivity {
         pausebtn=(ImageButton)findViewById(R.id.pausebtn);
         sv_code =(ScrollView)findViewById(R.id.sv_code);
         layout_code=(LinearLayout)findViewById(R.id.layout_code);
-        pic_class =(ImageView)findViewById(R.id.pic_class);
+        pic_class =(ImageView)findViewById(R.id.pic_class_chap2);
         textnum1 =(TextView) findViewById(R.id.text_num1);
         textnum2 =(TextView) findViewById(R.id.text_num2);
         textResult=(TextView)findViewById(R.id.text_result);

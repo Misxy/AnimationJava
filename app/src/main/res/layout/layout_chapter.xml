@@ -36,7 +36,7 @@
             android:id="@+id/Chapter2"
             android:layout_marginTop="10dp"
             android:background="#00ffffff"
-            android:src="@drawable/chapter2"
+            android:src="@drawable/chapter5"
             android:scaleType="fitXY" />
 
         <ImageButton
@@ -64,7 +64,7 @@
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
             android:background="#00ffffff"
-            android:src="@drawable/chapter5" />
+            android:src="@drawable/chapter2" />
 
         <ImageButton
             android:layout_width="match_parent"

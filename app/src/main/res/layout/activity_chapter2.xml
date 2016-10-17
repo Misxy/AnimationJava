@@ -12,6 +12,17 @@
     tools:context="com.example.john.project1.Chapter2">
 
 
+    <TextView
+        android:text="ผลคูณ คือ 50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_multi"
+        android:textColor="#CF000F"
+        android:layout_alignBaseline="@+id/text_plus"
+        android:layout_alignBottom="@+id/text_plus"
+        android:layout_toEndOf="@+id/text_plus"
+        android:layout_marginStart="18dp" />
+
     <ScrollView
         android:layout_width="290dp"
         android:layout_alignParentTop="true"
@@ -44,7 +55,8 @@
         android:layout_width="200dp"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/scrollView2"
-        android:layout_marginLeft="50dp">
+        android:layout_marginLeft="50dp"
+        android:id="@+id/linearLayout2">
 
         <ImageButton
             android:id="@+id/playbtnChap2"
@@ -68,16 +80,6 @@
             android:background="@drawable/stopbtn" />
     </LinearLayout>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="none|textPersonName|number"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:background="?android:attr/colorAccent" />
-
     <ImageView
         android:layout_width="15dp"
         android:layout_height="15dp"
@@ -86,5 +88,152 @@
         android:layout_alignEnd="@+id/linearLayout"
         android:layout_marginEnd="235dp"
         android:id="@+id/pointer" />
+
+    <TextView
+        android:text="ผลลบ คือ 5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_minus"
+        android:textColor="#CF000F"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/text_plus" />
+
+    <TextView
+        android:text="ผลบวก คือ 15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_plus"
+        android:layout_marginTop="12dp"
+        android:textColor="#CF000F"
+        android:layout_marginStart="41dp"
+        android:layout_alignTop="@+id/linearLayout2"
+        android:layout_toEndOf="@+id/sv_code" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/pic_class_chap2"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/layout_code"
+        android:layout_alignParentTop="true"
+        android:background="#87D37C"
+        android:visibility="visible"
+        android:layout_alignStart="@+id/text_plus"
+        android:layout_alignBottom="@+id/sv_code" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/num1_chap2"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:background="@android:color/background_dark"
+        android:textSize="22sp"
+        android:layout_alignBottom="@+id/pic_class_chap2"
+        android:layout_alignStart="@+id/pic_class_chap2"
+        android:paddingTop="10dp" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/num2_chap2"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:background="@android:color/background_dark"
+        android:textSize="22sp"
+        android:layout_alignBottom="@+id/pic_class_chap2"
+        android:layout_alignParentEnd="true"
+        android:paddingTop="10dp" />
+
+    <TextView
+        android:text="result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/pic_class_chap2"
+        android:id="@+id/result_chap2_text"
+        android:textSize="14sp" />
+
+    <TextView
+        android:text="10"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/result_chap2"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:background="?attr/colorBackgroundFloating"
+        android:textSize="22sp"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/result_chap2_text"
+        android:layout_alignStart="@+id/pic_class_chap2" />
+
+    <TextView
+        android:text="object"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/object"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/num2_chap2"
+        android:layout_marginEnd="49dp"
+        android:layout_marginTop="7dp" />
+
+    <TextView
+        android:text="num2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text_num2"
+        android:layout_marginEnd="9dp"
+        android:layout_alignBaseline="@+id/text_num1"
+        android:layout_alignBottom="@+id/text_num1"
+        android:layout_toStartOf="@+id/num2_chap2" />
+
+    <TextView
+        android:text="+"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sign_chap2"
+        android:layout_below="@+id/text_num1"
+        android:layout_toEndOf="@+id/text_num1"
+        android:textSize="28sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:text="15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:id="@+id/text_return_chap2"
+        android:textColor="@android:color/background_dark"
+        android:textSize="22sp"
+        android:layout_below="@+id/sign_chap2"
+        android:layout_alignStart="@+id/text_multi" />
+
+    <TextView
+        android:text="num1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:id="@+id/text_num1"
+        android:layout_alignBottom="@+id/result_chap2"
+        android:layout_toEndOf="@+id/result_chap2" />
+
+    <TextView
+        android:text="ผลหาร คือ 2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/text_multi"
+        android:id="@+id/text_divide"
+        android:textColor="#CF000F" />
+
+    <TextView
+        android:text="Class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/class_chap2"
+        android:textColor="@android:color/background_light" />
 
 </RelativeLayout>
