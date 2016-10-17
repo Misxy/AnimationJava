@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,7 +22,7 @@ public class Chapter2 extends AppCompatActivity {
     ImageView pointer,pic_class_chap2;
     ScrollView sv_code;
     LinearLayout layoutcode;
-    Thread t1;
+    Thread t1,t2;
     Boolean checkScrolling=false;
     String checkStateChap2="";
     TextView num1,num2,sign,result,text_returnChap2,
@@ -234,7 +235,7 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 text_num2.setVisibility(View.VISIBLE);
-                scrollingDown(800);
+                scrollingDown(400);
                 testPointerLine17();
             }
 
@@ -253,8 +254,8 @@ public class Chapter2 extends AppCompatActivity {
     private void testPointerLine17()
     {
         checkStateChap2="line17";
-        objline17 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y,160);
-        objline17.setDuration(2000);
+        objline17 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y,570);
+        objline17.setDuration(4000);
         objline17.start();
         objline17.addListener(new Animator.AnimatorListener() {
             @Override
@@ -264,9 +265,9 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                   num1.setText("0");
-                   num2.setText("0");
-                    scrollingDown(1500);
+                num1.setText("0");
+                num2.setText("0");
+                testScrolling();
             }
 
             @Override
@@ -392,10 +393,51 @@ public class Chapter2 extends AppCompatActivity {
             }
         });
     }
+    public void testScrolling()
+    {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if(checkScrolling)
+                {
+                    checkScrolling =false;
+                    while(!checkScrolling) {
+                        try
+                        {
+                            runOnUiThread(new Runnable()
+                            {
+                                @Override
+                                public void run()
+                                {
+                                    sv_code.scrollBy(0,1);
+
+                                    if(sv_code.getScrollY()==800)
+                                    {
+                                        checkScrolling=true;
+                                        /*Toast.makeText(Chap1.this, "Stop", Toast.LENGTH_SHORT).show();*/
+                                    }
+                                }
+                            });
+
+                            Thread.sleep(5);
+                        }
+                        catch (InterruptedException e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                else
+                {
+                    checkScrolling=true;
+                }
+            }
+        }).start();
+    }
     private void scrollingDown(int d)
     {
        final int d1=d;
-        t1 = new Thread(new Runnable() {
+       t1 = new Thread(new Runnable() {
             @Override
             public void run() {
                 if(!checkScrolling)
@@ -407,9 +449,9 @@ public class Chapter2 extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     sv_code.scrollBy(0, 1);
-                                    if (sv_code.getScrollY() == d1) {
+                                    if (sv_code.getScrollY() == 400) {
                                         checkScrolling = true;
-                                        Log.d("Thread","Down 800 finished");
+                                        Log.d("Thread","Down finished");
                                     }
                                 }
                             });
@@ -417,6 +459,7 @@ public class Chapter2 extends AppCompatActivity {
                         }
                         catch (InterruptedException e)
                         {
+                            e.printStackTrace();
                             Log.d("Thread","Thread down 1500 have problems");
                         }
                     }
@@ -426,13 +469,12 @@ public class Chapter2 extends AppCompatActivity {
                     checkScrolling=false;
                 }
             }
-        });
-        t1.start();
+        });t1.start();
     }
-    private void scrollingUp(int d)
+    private void scrollingDown2(int d)
     {
         final int d1=d;
-        t1 = new Thread(new Runnable() {
+        t2 = new Thread(new Runnable() {
             @Override
             public void run() {
                 if(!checkScrolling)
@@ -444,7 +486,7 @@ public class Chapter2 extends AppCompatActivity {
                                 @Override
                                 public void run() {
                                     sv_code.scrollBy(0, -1);
-                                    if (sv_code.getScrollY() == d1) {
+                                    if (sv_code.getScrollY() ==800) {
                                         checkScrolling = true;
                                         Log.d("Thread","Down 800 finished");
                                     }
@@ -454,7 +496,7 @@ public class Chapter2 extends AppCompatActivity {
                         }
                         catch (InterruptedException e)
                         {
-                            Log.d("Thread","Thread down 1500 have problems");
+                            Log.d("Thread","Thread down have problems");
                         }
                     }
                 }
@@ -463,8 +505,7 @@ public class Chapter2 extends AppCompatActivity {
                     checkScrolling=false;
                 }
             }
-        });
-        t1.start();
+        });t2.start();
     }
     /**
      * Take care of popping the fragment back stack or finishing the activity
