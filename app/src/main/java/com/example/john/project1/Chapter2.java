@@ -4,10 +4,8 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
@@ -18,12 +16,47 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Chapter2 extends AppCompatActivity {
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Thread.currentThread().interrupt();
+
+    }
+
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        sv_code.scrollTo(0,0);
+
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+    }
+    /**
+     * Dispatch onPause() to fragments.
+     */
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Thread.currentThread().interrupt();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+    }
+
     ImageButton playbtn,stopbtn,pausebtn;
     ImageView pointer,pic_class_chap2;
     ScrollView sv_code;
     LinearLayout layoutcode;
-    Thread t1,t2;
-    Boolean checkScrolling=false;
+    Thread scD400,scD800,scD1500;
+    Boolean checkScrolling=true;
     String checkStateChap2="";
     TextView num1,num2,sign,result,text_returnChap2,
             output_text,text_num1,text_num2,object,
@@ -33,6 +66,7 @@ public class Chapter2 extends AppCompatActivity {
             ,objline29,objline30,objline31,
             objline32,objline18,objline3_1,objline5,objline35,objline5_1,objLine6,objLine7,
             objLine39,objLine7_1,objLine8,objLine9,objLine20,objLine9_1,objLine10,objLine11,objLine23,objLine11_1,objLine12;
+    int Delaytime=2000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,18 +99,27 @@ public class Chapter2 extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(Chapter2.this, "Start!", Toast.LENGTH_SHORT).show();
                 testPointerLine1();
+
+
             }
         });
         stopbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                testScrollingUp(2400);
+            }
+        });
+        pausebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                testScrollingDown(1500);
             }
         });
     }
     //Method Prepare to hide all of objects
     private void prepare()
     {
+        sv_code.scrollTo(0,0);
         pic_class_chap2.setVisibility(View.INVISIBLE);
         text_returnChap2.setVisibility(View.INVISIBLE);
         result.setVisibility(View.INVISIBLE);
@@ -235,7 +278,8 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 text_num2.setVisibility(View.VISIBLE);
-                scrollingDown(400);
+                // scrolling down
+                testScrollingDown(2200);
                 testPointerLine17();
             }
 
@@ -254,8 +298,8 @@ public class Chapter2 extends AppCompatActivity {
     private void testPointerLine17()
     {
         checkStateChap2="line17";
-        objline17 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y,570);
-        objline17.setDuration(4000);
+        objline17 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y,680);
+        objline17.setDuration(2000);
         objline17.start();
         objline17.addListener(new Animator.AnimatorListener() {
             @Override
@@ -267,7 +311,8 @@ public class Chapter2 extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 num1.setText("0");
                 num2.setText("0");
-                testScrolling();
+                testScrollingDown(1400);
+                testPointerLine29();
             }
 
             @Override
@@ -285,9 +330,10 @@ public class Chapter2 extends AppCompatActivity {
     private void testPointerLine29()
     {
         checkStateChap2="line29";
-        objline29 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,195);
-        objline29.setDuration(2000);
+        objline29 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,610);
+        objline29.setDuration(4000);
         objline29.start();
+        objline29.setStartDelay(Delaytime);
         objline29.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
@@ -296,6 +342,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+
                 testPointerLine30();
             }
 
@@ -312,8 +359,9 @@ public class Chapter2 extends AppCompatActivity {
     }
     private  void testPointerLine30()
     {
-        objline30 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,260);
-        objline30.setDuration(2000);
+        checkStateChap2="line30";
+        objline30 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,670);
+        objline30.setDuration(3800);
         objline30.start();
         objline30.addListener(new Animator.AnimatorListener() {
             @Override
@@ -340,8 +388,9 @@ public class Chapter2 extends AppCompatActivity {
     //line31
     private void testPointerLine31()
     {
-        objline31 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,310);
-        objline31.setDuration(2000);
+        checkStateChap2="line31";
+        objline31 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,730);
+        objline31.setDuration(3800);
         objline31.start();
         objline31.addListener(new Animator.AnimatorListener() {
             @Override
@@ -368,8 +417,9 @@ public class Chapter2 extends AppCompatActivity {
     }
     private void testPointerLine32()
     {
-        objline32 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,500);
-        objline32.setDuration(2000);
+        checkStateChap2="line32";
+        objline32 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,790);
+        objline32.setDuration(3800);
         objline32.start();
         objline32.addListener(new Animator.AnimatorListener() {
             @Override
@@ -380,6 +430,8 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 num2.setText("5");
+                testScrollingUp(2000);
+                testPointeLine18();
             }
 
             @Override
@@ -393,120 +445,196 @@ public class Chapter2 extends AppCompatActivity {
             }
         });
     }
-    public void testScrolling()
+    //line18
+    private void testPointeLine18()
+    {
+        objline18 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,550);
+        objline18.setDuration(2000);
+        objline18.start();
+        objline18.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                Toast.makeText(Chapter2.this, "at line 18", Toast.LENGTH_SHORT).show();
+                //*testPointerLine3_1();*/
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
+    //Line3_1
+    private void testPointerLine3_1()
+    {
+        objline3_1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,100);
+        objline1.setDuration(2000);
+        objline1.start();
+        objline3_1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                testPointerLine5();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
+    //line5
+    private void testPointerLine5()
+    {
+        objline5 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,240);
+        objline5.setDuration(2000);
+        objline5.start();
+        objline5.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
+    //Scrolling up
+    private void testScrollingUp(final int a)
     {
         new Thread(new Runnable() {
             @Override
-            public void run() {
+            public void run()
+            {
+
+                //Checking what 'CheckingControl' is ?
                 if(checkScrolling)
                 {
-                    checkScrolling =false;
-                    while(!checkScrolling) {
+                    //CheckControl is 'false' then Creates runOnUIThread's method.
+                    checkScrolling = false;
+                    //Looping when 'CheckControl' is false.
+                    while(!checkScrolling)
+                    {
                         try
                         {
-                            runOnUiThread(new Runnable()
-                            {
+                            //Creating runOnUiThread for scrolling down the code.
+                            runOnUiThread(new Runnable() {
                                 @Override
-                                public void run()
-                                {
-                                    sv_code.scrollBy(0,1);
-
-                                    if(sv_code.getScrollY()==800)
+                                public void run() {
+                                    //Scrolling down the code every 1 px.
+                                    sv_code.scrollBy(0,-1);
+                                    //If reachs the bottom line of code then stops it.
+                                    if(sv_code.getScrollY()==layoutcode.getHeight()-a)
                                     {
-                                        checkScrolling=true;
-                                        /*Toast.makeText(Chap1.this, "Stop", Toast.LENGTH_SHORT).show();*/
-                                    }
-                                }
-                            });
 
+                                        //Changing 'checkControl' to 'true' for exit while loop.
+                                        checkScrolling=true;
+                                    }
+                                }
+                            });
+                            //Slowing speed of scroll down.
                             Thread.sleep(5);
                         }
+                        //To handle ThreadException by handler 'InteruptException'.
                         catch (InterruptedException e)
                         {
                             e.printStackTrace();
                         }
                     }
                 }
+                //If 'checkControl' is not 'true' then makes it 'true'.
                 else
                 {
-                    checkScrolling=true;
+                    checkScrolling =true;
                 }
             }
-        }).start();
+        }//This statement for starting the new thread execution.
+        ).start();
     }
-    private void scrollingDown(int d)
+    //SCrolling down
+    private void testScrollingDown(final int a)
     {
-       final int d1=d;
-       t1 = new Thread(new Runnable() {
+        new Thread(new Runnable() {
             @Override
-            public void run() {
-                if(!checkScrolling)
+            public void run()
+            {
+
+                //Checking what 'CheckingControl' is ?
+                if(checkScrolling)
                 {
-                    while (!checkScrolling)
+                    //CheckControl is 'false' then Creates runOnUIThread's method.
+                    checkScrolling = false;
+                    //Looping when 'CheckControl' is false.
+                    while(!checkScrolling)
                     {
-                        try {
+                        try
+                        {
+                            //Creating runOnUiThread for scrolling down the code.
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    sv_code.scrollBy(0, 1);
-                                    if (sv_code.getScrollY() == 400) {
-                                        checkScrolling = true;
-                                        Log.d("Thread","Down finished");
+                                    //Scrolling down the code every 1 px.
+                                    sv_code.scrollBy(0,1);
+                                    //If reachs the bottom line of code then stops it.
+                                    if(sv_code.getScrollY()==layoutcode.getBottom()-a)
+                                    {
+
+                                        //Changing 'checkControl' to 'true' for exit while loop.
+                                        checkScrolling=true;
                                     }
                                 }
                             });
+                            //Slowing speed of scroll down.
                             Thread.sleep(5);
                         }
+                        //To handle ThreadException by handler 'InteruptException'.
                         catch (InterruptedException e)
                         {
                             e.printStackTrace();
-                            Log.d("Thread","Thread down 1500 have problems");
                         }
                     }
                 }
+                //If 'checkControl' is not 'true' then makes it 'true'.
                 else
                 {
-                    checkScrolling=false;
+                    checkScrolling =true;
                 }
             }
-        });t1.start();
+        }//This statement for starting the new thread execution.
+        ).start();
     }
-    private void scrollingDown2(int d)
-    {
-        final int d1=d;
-        t2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                if(!checkScrolling)
-                {
-                    while (!checkScrolling)
-                    {
-                        try {
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    sv_code.scrollBy(0, -1);
-                                    if (sv_code.getScrollY() ==800) {
-                                        checkScrolling = true;
-                                        Log.d("Thread","Down 800 finished");
-                                    }
-                                }
-                            });
-                            Thread.sleep(5);
-                        }
-                        catch (InterruptedException e)
-                        {
-                            Log.d("Thread","Thread down have problems");
-                        }
-                    }
-                }
-                else
-                {
-                    checkScrolling=false;
-                }
-            }
-        });t2.start();
-    }
+
     /**
      * Take care of popping the fragment back stack or finishing the activity
      * as appropriate.
@@ -515,6 +643,7 @@ public class Chapter2 extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         Intent intent = new Intent(this,List_chapter.class);
+        sv_code.scrollTo(0,0);
         startActivity(intent);
         finish();
     }
