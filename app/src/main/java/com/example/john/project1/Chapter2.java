@@ -59,7 +59,7 @@ public class Chapter2 extends AppCompatActivity {
     Boolean checkScrolling=true;
     String checkStateChap2="";
     TextView num1,num2,sign,result,text_returnChap2,
-            output_text,text_num1,text_num2,object,
+            resultChap2text,text_num1,text_num2,object,
             text_plus,text_minus,text_multi,text_divide,class_chap2;
     AnimatorSet amMovingNum,amMovingNum2;
     ObjectAnimator objline1,objline2,objline3,objline17
@@ -82,7 +82,7 @@ public class Chapter2 extends AppCompatActivity {
         sign = (TextView)findViewById(R.id.sign_chap2);
         result = (TextView)findViewById(R.id.result_chap2);
         text_returnChap2 = (TextView)findViewById(R.id.text_return_chap2);
-        output_text =(TextView)findViewById(R.id.result_chap2_text);
+        resultChap2text =(TextView)findViewById(R.id.result_chap2_text);
         object = (TextView)findViewById(R.id.object);
         text_num1 = (TextView)findViewById(R.id.text_num1);
         text_num2 = (TextView)findViewById(R.id.text_num2);
@@ -112,7 +112,7 @@ public class Chapter2 extends AppCompatActivity {
         pausebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testScrollingDown(1500);
+                testScrollingDown(1000);
             }
         });
     }
@@ -127,7 +127,7 @@ public class Chapter2 extends AppCompatActivity {
         num2.setVisibility(View.INVISIBLE);
         sign.setVisibility(View.INVISIBLE);
         object.setVisibility(View.INVISIBLE);
-        output_text.setVisibility(View.INVISIBLE);
+        resultChap2text.setVisibility(View.INVISIBLE);
         text_num1.setVisibility(View.INVISIBLE);
         text_num2.setVisibility(View.INVISIBLE);
         text_plus.setVisibility(View.INVISIBLE);
@@ -139,6 +139,7 @@ public class Chapter2 extends AppCompatActivity {
 
     private void testPointerLine1()
     {
+        checkStateChap2="line1";
         checkStateChap2="line1";
         objline1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,0);
         objline1.setDuration(500);
@@ -170,6 +171,7 @@ public class Chapter2 extends AppCompatActivity {
     //line2
     private void testPointerLine2()
     {
+        checkStateChap2="line2";
         objline2 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,60);
         objline2.setDuration(3000);
         objline2.start();
@@ -231,6 +233,7 @@ public class Chapter2 extends AppCompatActivity {
     //Checking number moving
     private void checkingnumbersmoving()
     {
+        checkStateChap2="checkingnumbersmoving";
         checkStateChap2="movingNums";
         ObjectAnimator objnum1_x = ObjectAnimator.ofFloat(num1,View.TRANSLATION_X,250);
         ObjectAnimator objnum1_y = ObjectAnimator.ofFloat(num1,View.TRANSLATION_Y,-350);
@@ -448,8 +451,9 @@ public class Chapter2 extends AppCompatActivity {
     //line18
     private void testPointeLine18()
     {
+        checkStateChap2="line18";
         objline18 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,550);
-        objline18.setDuration(2000);
+        objline18.setDuration(7000);
         objline18.start();
         objline18.addListener(new Animator.AnimatorListener() {
             @Override
@@ -459,8 +463,8 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Chapter2.this, "at line 18", Toast.LENGTH_SHORT).show();
-                //*testPointerLine3_1();*/
+                testScrollingUp(2480);
+                testPointerLine3_1();
             }
 
             @Override
@@ -477,9 +481,10 @@ public class Chapter2 extends AppCompatActivity {
     //Line3_1
     private void testPointerLine3_1()
     {
-        objline3_1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,100);
-        objline1.setDuration(2000);
-        objline1.start();
+        checkStateChap2="line3_1";
+        objline3_1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,125);
+        objline3_1.setDuration(4000);
+        objline3_1.start();
         objline3_1.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
@@ -488,6 +493,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(Chapter2.this, "Line 3 again", Toast.LENGTH_SHORT).show();
                 testPointerLine5();
             }
 
@@ -505,8 +511,9 @@ public class Chapter2 extends AppCompatActivity {
     //line5
     private void testPointerLine5()
     {
+        checkStateChap2="line5";
         objline5 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,240);
-        objline5.setDuration(2000);
+        objline5.setDuration(4000);
         objline5.start();
         objline5.addListener(new Animator.AnimatorListener() {
             @Override
@@ -516,7 +523,42 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                result.setText("");
+                result.setVisibility(View.VISIBLE);
+                resultChap2text.setVisibility(View.VISIBLE);
+                testScrollingDown(1000);
+                testPointerLine35();
+            }
 
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
+    //line35
+    private void testPointerLine35()
+    {
+        checkStateChap2="line35";
+        objline35 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,570);
+        objline35.setDuration(9000);
+        objline35.start();
+        objline35.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                sign.setText("+");
+                sign.setVisibility(View.VISIBLE);
+                text_returnChap2.setVisibility(View.VISIBLE);
             }
 
             @Override
