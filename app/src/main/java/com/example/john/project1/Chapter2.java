@@ -948,7 +948,8 @@ public class Chapter2 extends AppCompatActivity {
                 sign.setText("+");
                 sign.setVisibility(View.VISIBLE);
                 text_returnChap2.setVisibility(View.VISIBLE);
-                movingtextToResultBoxPlus();
+                testScrollingUp(2480);
+                testPointerLine5_1();
             }
 
             @Override
@@ -991,8 +992,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                testScrollingUp(2480);
-                testPointerLine5_1();
+                testPointerLine6();
             }
 
             @Override
@@ -1021,7 +1021,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                testPointerLine6();
+                movingtextToResultBoxPlus();
             }
 
             @Override
@@ -1113,7 +1113,8 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                movingtextToResultBoxMinus();
+                testScrollingUp(2480);
+                testPointerLine7_1();
 
             }
 
@@ -1156,8 +1157,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                testScrollingUp(2480);
-                testPointerLine7_1();
+                testPointerLine8();
             }
 
             @Override
@@ -1186,7 +1186,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                testPointerLine8();
+                movingtextToResultBoxMinus();
             }
 
             @Override
@@ -1267,7 +1267,7 @@ public class Chapter2 extends AppCompatActivity {
         checkStateChap2="line20";
         sign.setText("*");
         objline20 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,360);
-        objline20.setDuration(4000);
+        objline20.setDuration(7000);
         objline20.start();
         objline20.addListener(new Animator.AnimatorListener() {
             @Override
@@ -1278,7 +1278,8 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 text_returnChap2.setText("50");
-                movingtextToResultBoxMutiply();
+                testScrollingUp(2480);
+                testPointerLine9_1();
             }
 
             @Override
@@ -1320,8 +1321,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                testScrollingUp(2480);
-                testPointerLine9_1();
+                testPointerLine10();
 
             }
 
@@ -1351,7 +1351,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                testPointerLine10();
+                movingtextToResultBoxMutiply();
             }
 
             @Override
@@ -1432,8 +1432,8 @@ public class Chapter2 extends AppCompatActivity {
         checkStateChap2="line23";
         sign.setText("/");
         text_returnChap2.setText("2");
-        objline23 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,550);
-        objline23.setDuration(4000);
+        objline23 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,540);
+        objline23.setDuration(7000);
         objline23.start();
         objline23.addListener(new Animator.AnimatorListener() {
             @Override
@@ -1443,7 +1443,8 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                movingtextToResultBoxDivide();
+                testScrollingUp(2480);
+                testPointerLine11_1();
             }
 
             @Override
@@ -1485,8 +1486,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-               testScrollingUp(2480);
-                testPointerLine11_1();
+                testPointerLine12();
             }
 
             @Override
@@ -1515,7 +1515,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                testPointerLine12();
+                movingtextToResultBoxDivide();
             }
 
             @Override
