@@ -27,9 +27,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/code_construct"
-                android:src="@drawable/construct_code"
                 android:scaleType="fitXY"
-                android:layout_marginLeft="20dp" />
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/construct_code3" />
         </LinearLayout>
     </ScrollView>
     <LinearLayout
@@ -142,4 +142,35 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/num_header"
         android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="Error!!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/num_header"
+        android:layout_alignStart="@+id/object_text_Construct"
+        android:layout_marginBottom="49dp"
+        android:id="@+id/error_text"
+        android:textSize="18sp"
+        android:textColor="#B71C1C" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="100dp"
+        android:id="@+id/layout_output_construct"
+        android:layout_width="250dp"
+        android:layout_alignStart="@+id/pic_construct"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/linearLayout2">
+
+        <TextView
+            android:text="num มีค่าเป็น 1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/output_construct"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark" />
+    </LinearLayout>
+
 </RelativeLayout>

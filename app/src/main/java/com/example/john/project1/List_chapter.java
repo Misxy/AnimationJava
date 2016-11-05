@@ -12,13 +12,15 @@ import android.widget.ImageButton;
  */
 
 public class List_chapter extends AppCompatActivity {
-    ImageButton buttonChapter1,buttonChapter2;
+    ImageButton buttonChapter1,buttonChapter2,buttonChapter5;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_chapter);
         buttonChapter1=(ImageButton)findViewById(R.id.Chapter1);
         buttonChapter2= (ImageButton)findViewById(R.id.Chapter2);
+        buttonChapter5 =(ImageButton)findViewById(R.id.Chapter5);
+
         buttonChapter1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -32,6 +34,15 @@ public class List_chapter extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(List_chapter.this,Chapter2.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        //button5
+        buttonChapter5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(List_chapter.this,Constructor_chapter.class);
                 startActivity(intent);
                 finish();
             }
