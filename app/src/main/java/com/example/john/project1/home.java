@@ -23,7 +23,6 @@ public class home extends AppCompatActivity {
         btn_Test= (ImageButton)findViewById(R.id.imageButton15);
         btn_Score= (ImageButton)findViewById(R.id.imageButton16);
         btn_Exit =(ImageButton)findViewById(R.id.imageButton17);
-        playsound();
         //Going to Chapter_List page
         btn_Go.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,17 +60,5 @@ public class home extends AppCompatActivity {
                 finish();
             }
         });
-    }
-    //playing sound on app
-    private void playsound()
-    {
-        mp = MediaPlayer.create(this,R.raw.enigma);
-        mp.start();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mp.release();
     }
 }

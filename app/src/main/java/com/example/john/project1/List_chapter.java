@@ -12,14 +12,17 @@ import android.widget.ImageButton;
  */
 
 public class List_chapter extends AppCompatActivity {
-    ImageButton buttonChapter1,buttonChapter2,buttonChapter5;
+    ImageButton buttonChapter1,buttonChapter2,buttonChapter5,buttonChapter3,buttonChapter4,buttonChapter6;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_chapter);
         buttonChapter1=(ImageButton)findViewById(R.id.Chapter1);
         buttonChapter2= (ImageButton)findViewById(R.id.Chapter2);
+        buttonChapter3 =(ImageButton)findViewById(R.id.Chapter3);
+        buttonChapter4 =(ImageButton)findViewById(R.id.Chapter4);
         buttonChapter5 =(ImageButton)findViewById(R.id.Chapter5);
+        buttonChapter6 =(ImageButton)findViewById(R.id.Chapter6);
 
         buttonChapter1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +36,7 @@ public class List_chapter extends AppCompatActivity {
         buttonChapter2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(List_chapter.this,Chapter2.class);
+                Intent intent = new Intent(List_chapter.this,inheritance_teach.class);
                 startActivity(intent);
                 finish();
             }
@@ -42,7 +45,34 @@ public class List_chapter extends AppCompatActivity {
         buttonChapter5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(List_chapter.this,Constructor_chapter.class);
+                Intent intent = new Intent(List_chapter.this,constructor_teach.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        //button3
+        buttonChapter3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(List_chapter.this,encap_teach.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        //button4
+        buttonChapter4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(List_chapter.this,datahide_teach.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        //button6
+        buttonChapter6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(List_chapter.this,polymor_teach.class);
                 startActivity(intent);
                 finish();
             }

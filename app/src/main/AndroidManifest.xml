@@ -29,10 +29,13 @@
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".constructor_teach"></activity>
+        <activity android:name=".inheritance_teach"></activity>
+        <activity android:name=".datahide_teach"></activity>
+        <activity android:name=".encap_teach"></activity>
+        <activity android:name=".polymor_teach"></activity>
     </application>
-
 </manifest>
