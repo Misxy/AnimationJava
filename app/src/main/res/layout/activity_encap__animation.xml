@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_encap__animation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.john.project1.Encap_Animation">
+
+    <ImageView
+        android:layout_width="15dp"
+        app:srcCompat="@drawable/arrow"
+        android:layout_alignParentTop="true"
+        android:id="@+id/pointer_datahide"
+        android:layout_alignParentStart="true"
+        android:layout_height="15dp" />
+
+    <ScrollView
+        android:layout_width="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/pointer_datahide"
+        android:id="@+id/sv_code"
+        android:layout_height="230dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/encap_code"
+                android:id="@+id/code_encap"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="60dp"
+        android:layout_width="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/scrollView2"
+        android:layout_marginLeft="50dp"
+        android:id="@+id/linearLayout2">
+
+        <ImageButton
+            android:id="@+id/playbtnEncap"
+            android:layout_weight="1"
+            android:background="@drawable/playbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pausebtnEncap"
+            android:layout_weight="1"
+            android:background="@drawable/pausebtn" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stopbtn_encap"
+            android:layout_weight="1"
+            android:background="@drawable/stopbtn" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="270dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/class_encap"
+        android:background="@android:color/background_dark"
+        android:src="@drawable/shape_circle_class" />
+
+    <TextView
+        android:text="Object"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pointer_datahide"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="103dp"
+        android:id="@+id/object_encap_text"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <TextView
+        android:text="Class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/classEncap_text"
+        android:textColor="@android:color/background_light" />
+
+    <TextView
+        android:text="GetName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/setter_text"
+        android:layout_toStartOf="@+id/classEncap_text"
+        android:id="@+id/getter_text"
+        android:maxLines="10" />
+
+    <TextView
+        android:text="SetName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:id="@+id/setter_text"
+        android:layout_below="@+id/object_encap_text"
+        android:layout_alignEnd="@+id/object_encap_text"
+        android:layout_marginEnd="30dp" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/SetterName_box"
+        android:background="@android:color/holo_purple"
+        android:layout_height="25dp"
+        android:layout_below="@+id/setter_text"
+        android:layout_toStartOf="@+id/object_encap_text"
+        android:layout_width="50dp" />
+
+    <TextView
+        android:layout_width="50dp"
+        android:id="@+id/GetterName_box"
+        android:background="@android:color/holo_purple"
+        android:layout_height="25dp"
+        android:layout_alignBaseline="@+id/SetterName_box"
+        android:layout_alignBottom="@+id/SetterName_box"
+        android:layout_alignStart="@+id/getter_text" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/linearLayout2"
+        android:layout_alignStart="@+id/class_encap"
+        android:id="@+id/output_layout"
+        android:background="@android:color/holo_orange_light">
+
+        <TextView
+            android:text="Employee Name : Torn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/output_reseult"
+            android:textSize="18sp"
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+
+    <TextView
+        android:text="Output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/output_header"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:layout_above="@+id/output_layout"
+        android:layout_alignEnd="@+id/object_encap_text" />
+
+    <TextView
+        android:text="Torn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/class_encap"
+        android:layout_alignStart="@+id/class_encap"
+        android:id="@+id/text_parameter"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
+
+</RelativeLayout>

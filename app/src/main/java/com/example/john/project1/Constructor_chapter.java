@@ -625,7 +625,7 @@ public class Constructor_chapter extends AppCompatActivity {
                 error_text.setVisibility(View.VISIBLE);
                 class_text_construct.setVisibility(View.VISIBLE);
                 classCode_construct.setVisibility(View.VISIBLE);
-                output_construct.setText("ต้องส่งค่า parameter ชนิด String เข้าไปด้วย");
+                output_construct.setText("Constructor ที่ไม่มี parameter ไม่ได้ถูกนิยามไว้ในคลาส จึงเกิดข้อผิดพลาด");
                 output_construct.setVisibility(View.VISIBLE);
                 Toast.makeText(Constructor_chapter.this, "Finished", Toast.LENGTH_SHORT).show();
 

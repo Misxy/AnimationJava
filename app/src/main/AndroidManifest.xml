@@ -10,10 +10,10 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
             android:name=".Chap1"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity android:name=".FirstPage" />
         <activity android:name=".Content" />
-        <activity android:name=".home"></activity>
+        <activity android:name=".home" />
         <activity android:name=".Java_Detail" />
         <activity android:name=".java_stat" />
         <activity android:name=".List_chapter" />
@@ -23,19 +23,25 @@
         <activity android:name=".Quiz_Result" />
         <activity
             android:name=".Chapter2"
-            android:screenOrientation="landscape">
-        </activity>
-        <activity android:name=".Constructor_chapter"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".Constructor_chapter"
+            android:screenOrientation="landscape" />
+        <activity android:name=".constructor_teach" />
+        <activity android:name=".inheritance_teach" />
+        <activity android:name=".datahide_teach" />
+        <activity android:name=".encap_teach" />
+        <activity android:name=".polymor_teach" />
+        <activity
+            android:name=".Encap_Animation"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".constructor_teach"></activity>
-        <activity android:name=".inheritance_teach"></activity>
-        <activity android:name=".datahide_teach"></activity>
-        <activity android:name=".encap_teach"></activity>
-        <activity android:name=".polymor_teach"></activity>
+        <activity android:name=".dh_animation"></activity>
     </application>
+
 </manifest>

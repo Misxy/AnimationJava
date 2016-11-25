@@ -21,7 +21,9 @@ public class encap_teach extends AppCompatActivity {
         Encap_animation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(encap_teach.this,Encap_Animation.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
