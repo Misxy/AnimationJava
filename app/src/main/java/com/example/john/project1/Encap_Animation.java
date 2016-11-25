@@ -31,11 +31,11 @@ public class Encap_Animation extends AppCompatActivity {
         //ImageView
         pointer = (ImageView)findViewById(R.id.pointer_datahide);
         code_encap = (ImageView)findViewById(R.id.code_encap);
-        class_encap = (ImageView)findViewById(R.id.class_encap);
+        class_encap = (ImageView)findViewById(R.id.class_DH);
 
         //TextView
-        objEncap_text = (TextView)findViewById(R.id.object_encap_text);
-        classEncap_text = (TextView)findViewById(R.id.classEncap_text);
+        objEncap_text = (TextView)findViewById(R.id.object_DH_text);
+        classEncap_text = (TextView)findViewById(R.id.classDH_text);
         getter_text =(TextView)findViewById(R.id.getter_text);
         setter_text =(TextView)findViewById(R.id.setter_text);
         Getter_box = (TextView)findViewById(R.id.GetterName_box);
@@ -44,7 +44,7 @@ public class Encap_Animation extends AppCompatActivity {
         output_result = (TextView)findViewById(R.id.output_reseult);
         text_parameter = (TextView)findViewById(R.id.text_parameter);
         //Linearlayout
-        output_layout = (LinearLayout)findViewById(R.id.output_layout);
+        output_layout = (LinearLayout)findViewById(R.id.output_layoutDH);
 
         //ImageButtons
         PlaybtnEncap = (ImageButton)findViewById(R.id.playbtnEncap);

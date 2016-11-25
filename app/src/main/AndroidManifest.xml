@@ -35,13 +35,16 @@
         <activity
             android:name=".Encap_Animation"
             android:screenOrientation="landscape">
+
+        </activity>
+        <activity android:name=".dh_animation"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".dh_animation"></activity>
     </application>
 
 </manifest>

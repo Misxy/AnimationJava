@@ -9,17 +9,64 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.john.project1.dh_animation">
+
+    <ScrollView
+        android:layout_width="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/pointer_datahide"
+        android:id="@+id/sv_code"
+        android:layout_height="230dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/datahide_code"
+                android:id="@+id/code_Datahide"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/linearLayout2"
+        android:id="@+id/output_layoutDH"
+        android:background="#E4F1FE"
+        android:layout_toEndOf="@+id/sv_code">
+
+        <TextView
+            android:text="Employee Name : Torn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/output_reseultDH"
+            android:textSize="18sp"
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+    <ImageView
+        android:layout_width="15dp"
+        android:src="@drawable/arrow"
+        android:layout_alignParentTop="true"
+        android:id="@+id/pointer_datahide"
+        android:layout_alignParentStart="true"
+        android:layout_height="15dp" />
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_height="60dp"
         android:layout_width="200dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/scrollView2"
         android:layout_marginLeft="50dp"
-        android:id="@+id/linearLayout2">
+        android:id="@+id/linearLayout2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="21dp">
 
         <ImageButton
-            android:id="@+id/playbtnEncap"
+            android:id="@+id/playbtnDatahide"
             android:layout_weight="1"
             android:background="@drawable/playbtn"
             android:layout_width="wrap_content"
@@ -28,15 +75,40 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/pausebtnEncap"
+            android:id="@+id/pausebtnDatahide"
             android:layout_weight="1"
             android:background="@drawable/pausebtn" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/stopbtn_encap"
+            android:id="@+id/stopbtn_Datahide"
             android:layout_weight="1"
             android:background="@drawable/stopbtn" />
     </LinearLayout>
+    <ImageView
+        android:layout_width="270dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/class_DH"
+        android:background="@android:color/darker_gray"
+        android:src="@drawable/shape_circle_class" />
+    <TextView
+        android:text="Object"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pointer_datahide"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="103dp"
+        android:id="@+id/object_DH_text"
+        android:textColor="@android:color/holo_red_dark" />
+    <TextView
+        android:text="Class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/classDH_text"
+        android:textColor="@android:color/background_light" />
 </RelativeLayout>
