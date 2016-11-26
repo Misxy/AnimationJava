@@ -17,7 +17,7 @@ public class encap_teach extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layoutencap);
-        Encap_animation = (ImageButton)findViewById(R.id.goChap1);
+        Encap_animation = (ImageButton)findViewById(R.id.goDatahide);
         Encap_animation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

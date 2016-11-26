@@ -21,8 +21,6 @@ public class home extends AppCompatActivity {
         setContentView(R.layout.layouthome);
         btn_Go = (ImageButton)findViewById(R.id.imageButton14);
         btn_Test= (ImageButton)findViewById(R.id.imageButton15);
-        btn_Score= (ImageButton)findViewById(R.id.imageButton16);
-        btn_Exit =(ImageButton)findViewById(R.id.imageButton17);
         //Going to Chapter_List page
         btn_Go.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,22 +41,6 @@ public class home extends AppCompatActivity {
                 finish();
             }
         });
-        //Going to Score's layout
-        btn_Score.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(home.this,java_stat.class);
-                startActivity(intent);
-                //Closing this layout
-                finish();
-            }
-        });
-        //Exiting the application
-        btn_Exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+         
     }
 }

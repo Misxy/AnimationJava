@@ -34,10 +34,12 @@
         <activity android:name=".polymor_teach" />
         <activity
             android:name=".Encap_Animation"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".dh_animation"
             android:screenOrientation="landscape">
-
         </activity>
-        <activity android:name=".dh_animation"
+        <activity android:name=".polymor_animation"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

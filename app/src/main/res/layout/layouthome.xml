@@ -31,43 +31,21 @@
 
     <ImageButton
         android:layout_width="100dp"
-        android:layout_height="110dp"
-        android:id="@+id/imageButton15"
-        android:layout_alignTop="@+id/imageButton14"
-        android:layout_toEndOf="@+id/frameLayout2"
-        android:background="@drawable/testr"
-        android:layout_marginRight="60dp" />
-
-    <ImageButton
-        android:layout_width="100dp"
         android:layout_height="130dp"
         android:id="@+id/imageButton14"
         android:background="@drawable/studyr"
         android:layout_marginLeft="60dp"
-        android:layout_marginBottom="32dp"
-        android:layout_alignBottom="@+id/frameLayout2"
-        android:layout_toStartOf="@+id/frameLayout2" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:id="@+id/imageButton16"
-        android:background="@drawable/trophyr"
-        android:layout_marginRight="60dp"
-        android:layout_marginLeft="30dp"
-        android:layout_height="200dp"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/imageButton17"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="28dp" />
+        android:layout_toStartOf="@+id/frameLayout2"
+        android:layout_marginBottom="129dp" />
 
     <ImageButton
-        android:layout_width="70dp"
-        android:layout_height="100dp"
-        android:id="@+id/imageButton17"
-        android:background="@drawable/pw"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="24dp"
-        android:layout_below="@+id/imageButton14"
+        android:layout_width="100dp"
+        android:layout_height="110dp"
+        android:id="@+id/imageButton15"
+        android:background="@drawable/testr"
+        android:layout_marginRight="60dp"
+        android:layout_alignTop="@+id/imageButton14"
         android:layout_toEndOf="@+id/frameLayout2" />
 
 </RelativeLayout>

@@ -17,7 +17,7 @@ public class Java_Detail extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layoutdetail);
-        btn_goChap1 = (ImageButton)findViewById(R.id.goChap1);
+        btn_goChap1 = (ImageButton)findViewById(R.id.goDatahide);
         btn_goChap1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

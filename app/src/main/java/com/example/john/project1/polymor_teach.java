@@ -17,7 +17,7 @@ public class polymor_teach extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layoutpolymor);
-        goPoly_animation = (ImageButton)findViewById(R.id.goChap1);
+        goPoly_animation = (ImageButton)findViewById(R.id.goDatahide);
         goPoly_animation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

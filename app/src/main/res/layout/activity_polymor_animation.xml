@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_polymor_animation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.john.project1.polymor_animation">
+    <ImageView
+        android:layout_width="15dp"
+        android:src="@drawable/arrow"
+        android:layout_alignParentTop="true"
+        android:id="@+id/pointer_PM"
+        android:layout_alignParentStart="true"
+        android:layout_height="15dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_height="60dp"
+        android:layout_width="200dp"
+        android:layout_marginLeft="50dp"
+        android:id="@+id/linearLayout2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="21dp">
+
+        <ImageButton
+            android:id="@+id/playbtnPM"
+            android:layout_weight="1"
+            android:background="@drawable/playbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pausebtnPM"
+            android:layout_weight="1"
+            android:background="@drawable/pausebtn" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/stopbtn_PM"
+            android:layout_weight="1"
+            android:background="@drawable/stopbtn" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/pointer_PM"
+        android:id="@+id/sv_codePM"
+        android:layout_height="230dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/outputPM_code">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/polymor_code"
+                android:id="@+id/code_PM"
+                android:scaleType="fitXY" />
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/linearLayout2"
+        android:id="@+id/output_layoutPM"
+        android:background="#E4F1FE"
+        android:layout_toEndOf="@+id/sv_codePM">
+
+        <TextView
+            android:text="Meawoo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/output_reseultPM"
+            android:textSize="18sp"
+            android:textColor="@android:color/holo_red_dark" />
+    </LinearLayout>
+    <TextView
+        android:text="Output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/output_headerPM"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:layout_above="@+id/output_layoutPM"
+        android:layout_marginLeft="400dp" />
+    <ImageView
+        android:layout_width="270dp"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/class_PM"
+        android:background="@android:color/darker_gray"
+        android:src="@drawable/shape_circle_class" />
+    <TextView
+        android:text="Class"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/classPM_text"
+        android:textColor="@android:color/background_light" />
+    <TextView
+        android:text="Cat Object"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pointer_PM"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="103dp"
+        android:id="@+id/object_PM_text"
+        android:textColor="@android:color/holo_red_dark" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/cat"
+        android:layout_marginBottom="32dp"
+        android:layout_alignBottom="@+id/class_PM"
+        android:layout_toStartOf="@+id/cat_meow"
+        android:id="@+id/cat" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/cat_meow"
+        android:id="@+id/cat_meow"
+        android:layout_below="@+id/object_PM_text"
+        android:layout_toStartOf="@+id/classPM_text" />
+</RelativeLayout>

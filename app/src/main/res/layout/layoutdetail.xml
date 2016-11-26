@@ -16,7 +16,7 @@
         android:scaleType="fitStart" />
 
     <ImageButton
-        android:id="@+id/goChap1"
+        android:id="@+id/goDatahide"
         android:background="@drawable/nextbtn"
         android:layout_marginEnd="12dp"
         android:layout_height="50dp"
@@ -31,7 +31,7 @@
         android:src="@drawable/detail1"
         android:layout_height="340dp"
         android:layout_marginBottom="9dp"
-        android:layout_above="@+id/goChap1"
+        android:layout_above="@+id/goDatahide"
         android:layout_alignParentStart="true" />
 
 </RelativeLayout>

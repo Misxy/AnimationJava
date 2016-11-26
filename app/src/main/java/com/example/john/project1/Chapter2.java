@@ -76,7 +76,7 @@ public class Chapter2 extends AppCompatActivity {
         pausebtn =(ImageButton)findViewById(R.id.pausebtnChap2);
         stopbtn =(ImageButton)findViewById(R.id.stopbtnChap2);
         pointer =(ImageView)findViewById(R.id.pointer);
-        sv_code = (ScrollView)findViewById(R.id.sv_code);
+        sv_code = (ScrollView)findViewById(R.id.sv_codePM);
         layoutcode = (LinearLayout)findViewById(R.id.layout_code2);
         num1 = (TextView)findViewById(R.id.num1_chap2);
         num2 = (TextView)findViewById(R.id.num2_chap2);

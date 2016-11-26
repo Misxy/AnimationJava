@@ -15,15 +15,15 @@
         android:layout_width="15dp"
         app:srcCompat="@drawable/arrow"
         android:layout_alignParentTop="true"
-        android:id="@+id/pointer_datahide"
+        android:id="@+id/pointer_PM"
         android:layout_alignParentStart="true"
         android:layout_height="15dp" />
 
     <ScrollView
         android:layout_width="250dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/pointer_datahide"
-        android:id="@+id/sv_code"
+        android:layout_toEndOf="@+id/pointer_PM"
+        android:id="@+id/sv_codePM"
         android:layout_height="230dp">
 
         <LinearLayout
@@ -75,7 +75,7 @@
         android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/class_DH"
+        android:id="@+id/class_PM"
         android:background="@android:color/background_dark"
         android:src="@drawable/shape_circle_class" />
 
@@ -83,10 +83,10 @@
         android:text="Object"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pointer_datahide"
+        android:layout_below="@+id/pointer_PM"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="103dp"
-        android:id="@+id/object_DH_text"
+        android:id="@+id/object_PM_text"
         android:textColor="@android:color/holo_red_dark" />
 
     <TextView
@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/classDH_text"
+        android:id="@+id/classPM_text"
         android:textColor="@android:color/background_light" />
 
     <TextView
@@ -103,7 +103,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/setter_text"
-        android:layout_toStartOf="@+id/classDH_text"
+        android:layout_toStartOf="@+id/classPM_text"
         android:id="@+id/getter_text"
         android:maxLines="10" />
 
@@ -113,8 +113,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="34dp"
         android:id="@+id/setter_text"
-        android:layout_below="@+id/object_DH_text"
-        android:layout_alignEnd="@+id/object_DH_text"
+        android:layout_below="@+id/object_PM_text"
+        android:layout_alignEnd="@+id/object_PM_text"
         android:layout_marginEnd="30dp" />
 
     <TextView
@@ -123,7 +123,7 @@
         android:background="@android:color/holo_purple"
         android:layout_height="25dp"
         android:layout_below="@+id/setter_text"
-        android:layout_toStartOf="@+id/object_DH_text"
+        android:layout_toStartOf="@+id/object_PM_text"
         android:layout_width="50dp" />
 
     <TextView
@@ -140,8 +140,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignTop="@+id/linearLayout2"
-        android:layout_alignStart="@+id/class_DH"
-        android:id="@+id/output_layoutDH"
+        android:layout_alignStart="@+id/class_PM"
+        android:id="@+id/output_layoutPM"
         android:background="@android:color/holo_orange_light">
 
         <TextView
@@ -161,15 +161,15 @@
         android:textStyle="normal|bold"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
-        android:layout_above="@+id/output_layoutDH"
-        android:layout_alignEnd="@+id/object_DH_text" />
+        android:layout_above="@+id/output_layoutPM"
+        android:layout_alignEnd="@+id/object_PM_text" />
 
     <TextView
         android:text="Torn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/class_DH"
-        android:layout_alignStart="@+id/class_DH"
+        android:layout_alignBottom="@+id/class_PM"
+        android:layout_alignStart="@+id/class_PM"
         android:id="@+id/text_parameter"
         android:textColor="@android:color/background_light"
         android:textSize="18sp" />

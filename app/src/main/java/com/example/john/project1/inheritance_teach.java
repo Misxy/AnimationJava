@@ -17,7 +17,7 @@ public class inheritance_teach extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layoutinheritance);
-        goChap1 = (ImageButton)findViewById(R.id.goChap1);
+        goChap1 = (ImageButton)findViewById(R.id.goDatahide);
         goChap1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

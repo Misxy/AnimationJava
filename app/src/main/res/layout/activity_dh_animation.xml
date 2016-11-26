@@ -13,14 +13,15 @@
     <ScrollView
         android:layout_width="250dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/pointer_datahide"
-        android:id="@+id/sv_code"
+        android:layout_toEndOf="@+id/pointer_PM"
+        android:id="@+id/sv_codePM"
         android:layout_height="230dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:id="@+id/outputDH_code">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -35,12 +36,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignTop="@+id/linearLayout2"
-        android:id="@+id/output_layoutDH"
+        android:id="@+id/output_layoutPM"
         android:background="#E4F1FE"
-        android:layout_toEndOf="@+id/sv_code">
+        android:layout_toEndOf="@+id/sv_codePM">
 
         <TextView
-            android:text="Employee Name : Torn"
+            android:text="Apinya"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/output_reseultDH"
@@ -51,7 +52,7 @@
         android:layout_width="15dp"
         android:src="@drawable/arrow"
         android:layout_alignParentTop="true"
-        android:id="@+id/pointer_datahide"
+        android:id="@+id/pointer_PM"
         android:layout_alignParentStart="true"
         android:layout_height="15dp" />
 
@@ -91,17 +92,16 @@
         android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/class_DH"
-        android:background="@android:color/darker_gray"
-        android:src="@drawable/shape_circle_class" />
+        android:id="@+id/class_PM"
+        android:background="@android:color/darker_gray" />
     <TextView
         android:text="Object"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/pointer_datahide"
+        android:layout_below="@+id/pointer_PM"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="103dp"
-        android:id="@+id/object_DH_text"
+        android:id="@+id/object_PM_text"
         android:textColor="@android:color/holo_red_dark" />
     <TextView
         android:text="Class"
@@ -109,6 +109,48 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:id="@+id/classDH_text"
+        android:id="@+id/classPM_text"
         android:textColor="@android:color/background_light" />
+    <TextView
+        android:text="Output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/output_headerDH"
+        android:textStyle="normal|bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:layout_above="@+id/output_layoutPM"
+        android:layout_alignEnd="@+id/object_PM_text" />
+
+    <TextView
+        android:text="Apinya"
+        android:layout_below="@+id/object_PM_text"
+        android:layout_marginTop="50dp"
+        android:id="@+id/name"
+        android:background="?android:attr/colorForeground"
+        android:textColor="@android:color/background_light"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignEnd="@+id/object_PM_text" />
+
+    <TextView
+        android:text="Error!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/error_text"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18sp"
+        android:layout_below="@+id/name"
+        android:layout_alignEnd="@+id/name"
+        android:layout_marginTop="17dp" />
+
+    <TextView
+        android:text="name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/object_PM_text"
+        android:layout_alignStart="@+id/name"
+        android:id="@+id/name_header"
+        android:layout_marginTop="25dp"
+        android:layout_alignEnd="@+id/name" />
 </RelativeLayout>
