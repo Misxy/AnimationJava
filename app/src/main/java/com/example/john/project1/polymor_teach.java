@@ -21,7 +21,9 @@ public class polymor_teach extends AppCompatActivity {
         goPoly_animation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(polymor_teach.this,polymor_animation.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
