@@ -161,7 +161,7 @@
         android:layout_width="250dp"
         android:layout_alignStart="@+id/pic_construct"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/linearLayout2">
+        android:layout_below="@+id/pic_construct">
 
         <TextView
             android:text="num มีค่าเป็น 1"

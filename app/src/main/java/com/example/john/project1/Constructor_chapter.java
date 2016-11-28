@@ -364,7 +364,7 @@ public class Constructor_chapter extends AppCompatActivity {
                 classCode_construct.setImageResource(R.drawable.shape_circle_class);
                 object_text_construct.setVisibility(View.VISIBLE);
                 //Moving animation
-                movingAnimation();
+                testPointerLine4();
             }
 
             @Override
@@ -404,7 +404,7 @@ public class Constructor_chapter extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
             //Goto Line4
                 Log.d("State","line11 finished");
-                testPointerLine4();
+                testPointerLine7();
             }
 
             @Override
@@ -465,7 +465,7 @@ public class Constructor_chapter extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 Log.d("State","line6 finished");
                 //Goto Line7
-                testPointerLine7();
+                movingAnimation();
             }
 
             @Override
