@@ -42,7 +42,7 @@ public class Chap1 extends AppCompatActivity {
     AnimatorSet amMovingtextToResultBox2,amMovingtextToResultBox,amMovingNum,amMovingNum2;
     int timeThread=5; //Time for delaying pointer's moving.
     int timesPushPauseBtn =1; //Increasing it by one for pushing pause button each time.
-    MediaPlayer mp;
+    private static final int LONG_DELAY = 3500; // 3.5 seconds
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -332,7 +332,7 @@ public class Chap1 extends AppCompatActivity {
             objLine14.resume();
             Log.d("Success!","Resume line14 success");
             //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Resumed", Toast.LENGTH_LONG).show();
         }
         else if(checkState.equals("movingNums"))
         {
@@ -493,9 +493,9 @@ public class Chap1 extends AppCompatActivity {
                 }
                 @Override
                 public void onAnimationEnd(Animator animator) {
-
                     pic_class.setVisibility(View.VISIBLE);
                     text_class.setVisibility(View.VISIBLE);
+                    Toast.makeText(Chap1.this,"เกิด คลาส Chap1 ขึ้นมา",Toast.LENGTH_SHORT).show();
                     testPointerLine2();
 
                 }
@@ -529,8 +529,7 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                pic_class.setImageResource(R.drawable.shape_circle_class);
-                text_object.setVisibility(View.VISIBLE);
+                Toast.makeText(Chap1.this,"โปรแกรมเริ่มทำงานที่ method main",Toast.LENGTH_SHORT).show();
                 testPointerLine3();
             }
 
@@ -562,6 +561,9 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
+                pic_class.setImageResource(R.drawable.shape_circle_class);
+                text_object.setVisibility(View.VISIBLE);
+                Toast.makeText(Chap1.this,"ประกาศ object จากตลาส Calculator โดยส่ง 10 และ 5 เข้าไปใน Constructor",Toast.LENGTH_SHORT).show();
             //Scrolling down
                 testPointerLine14();
             }
@@ -656,6 +658,7 @@ public class Chap1 extends AppCompatActivity {
             public void onAnimationEnd(Animator animator) {
                 textnum1.setVisibility(View.VISIBLE);
                 textnum2.setVisibility(View.VISIBLE);
+                Toast.makeText(Chap1.this,"Constructor ถูกสั่งให้เริ่มการทำงานอัตโนมัติ",Toast.LENGTH_SHORT).show();
                 movingNums();
             }
 
@@ -748,7 +751,6 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-
                 testpointerLine16();
             }
 
@@ -779,6 +781,7 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textnum1.setText("10");
+                Toast.makeText(Chap1.this,"num1 มีค่าเท่ากับ 10",Toast.LENGTH_SHORT).show();
                 testpointerLine17();
             }
 
@@ -809,6 +812,7 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textnum2.setText("5");
+                Toast.makeText(Chap1.this,"num2 มีค่าเท่ากับ 5",Toast.LENGTH_SHORT).show();
                 testpointerLine4();
             }
 
@@ -843,6 +847,7 @@ public class Chap1 extends AppCompatActivity {
             public void onAnimationEnd(Animator animator) {
                 textResult.setVisibility(View.VISIBLE);
                 text_result_des.setVisibility(View.VISIBLE);
+                Toast.makeText(Chap1.this,"เกิดตัวแปร result ขึ้นมาเพื่อรอรับค่าผลลัพธ์",Toast.LENGTH_SHORT).show();
                 testpointerLine5();
             }
 
@@ -872,6 +877,7 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
+                Toast.makeText(Chap1.this,"เรีกใช้เมธอด plus จากคลาส Calculator",Toast.LENGTH_SHORT).show();
                 scrollingDown();
                 testpointerLine19();
             }
@@ -935,6 +941,7 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
             textReturn.setVisibility(View.VISIBLE);
+                Toast.makeText(Chap1.this,"ส่งค่าผลลัพธ์ที่ได้จากการคำนวณกลับไปที่ตัวแปร result",Toast.LENGTH_SHORT).show();
                 //Moving text into result's box
                 movingTextToResultBox();
             }
@@ -1033,6 +1040,7 @@ public class Chap1 extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 textResult.setTextColor(Color.parseColor("#ECF0F1"));
                 textResult.setText("15");
+                Toast.makeText(Chap1.this,"ตัวแปร result มีค่าเท่ากับ 15",Toast.LENGTH_SHORT).show();
                 testpointerLine6();
             }
 
@@ -1064,6 +1072,7 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textRes1.setVisibility(View.VISIBLE);
+                Toast.makeText(Chap1.this,"แสดงผลลัพธ์ออกทางหน้าจอ",Toast.LENGTH_SHORT).show();
                 testpointerLine7();
             }
 
@@ -1093,6 +1102,7 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
+                Toast.makeText(Chap1.this,"เรีกใช้เมธอด minus จากคลาส Calculator",Toast.LENGTH_SHORT).show();
                 scrollingDown();
                 testpointerLine23();
             }
@@ -1157,6 +1167,7 @@ public class Chap1 extends AppCompatActivity {
             public void onAnimationEnd(Animator animator) {
                 textReturn.setText("=5");
                 textReturn.setVisibility(View.VISIBLE);
+                Toast.makeText(Chap1.this,"ส่งค่าผลลัพธ์ที่ได้จากการคำนวณกลับไปที่ตัวแปร result",Toast.LENGTH_SHORT).show();
                 movingTextToResultBox2();
             }
 
@@ -1205,10 +1216,10 @@ public class Chap1 extends AppCompatActivity {
         objReturnX.setDuration(50);
         ObjectAnimator objReturnY = ObjectAnimator.ofFloat(textReturn,View.TRANSLATION_Y,0);
         objReturnY.setDuration(50);
-        //Showing
-        ObjectAnimator objShow = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);
+        /*//Showing
+        ObjectAnimator objShow = ObjectAnimator.ofFloat(textReturn,View.ALPHA,1f);*/
         amMovingtextToResultBox2 = new AnimatorSet();
-        amMovingtextToResultBox2.playSequentially(objGoX,objGoY,objHide,objReturnX,objReturnY,objShow);
+        amMovingtextToResultBox2.playSequentially(objGoX,objGoY,objHide,objReturnX,objReturnY);
         checkState="amMovingtextToResultBox2";
         amMovingtextToResultBox2.start();
         amMovingtextToResultBox2.addListener(new Animator.AnimatorListener() {
@@ -1252,6 +1263,7 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 textResult.setText("5");
+                Toast.makeText(Chap1.this,"ตัวแปร result มีค่าเท่ากับ 5",Toast.LENGTH_SHORT).show();
                 testpointerLine8();
             }
 
@@ -1282,6 +1294,7 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textRes2.setVisibility(View.VISIBLE);
+                Toast.makeText(Chap1.this,"แสดงผลลัพธ์ออกทางหน้าจอ",Toast.LENGTH_SHORT).show();
                 Toast.makeText(Chap1.this, "Finished", Toast.LENGTH_SHORT).show();
             }
 
@@ -1352,7 +1365,7 @@ public class Chap1 extends AppCompatActivity {
         super.onBackPressed();
         //Going back to FirstPage's Activity.
         //Creating intent.
-        intent = new Intent(this,List_chapter.class);
+        intent = new Intent(this,Java_Detail.class);
         //Going to that activity's name in the intent that created.
         startActivity(intent);
         //Closing this activity.

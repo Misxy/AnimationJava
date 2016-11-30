@@ -35,7 +35,7 @@ public class home extends AppCompatActivity {
         btn_Test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(home.this,Quiz.class);
+                Intent intent = new Intent(home.this,MainActivity.class);
                 startActivity(intent);
                 //Closing this layout
                 finish();

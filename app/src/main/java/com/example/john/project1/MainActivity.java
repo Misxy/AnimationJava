@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         }else if (num==10) {
             question10();
         }else if (num==11){
-
+            question11();
         }else {
             Intent intent = new Intent(MainActivity.this, Result.class);
             intent.putExtra("myScore", score);
@@ -252,7 +252,21 @@ public class MainActivity extends AppCompatActivity {
         t4.setText("จำกัดการเข้าถึงได้");
         t5.setText("ถูกทุกข้อ");
     }
+    public void question11() {
+        qesYes = 2;//
+        t1.setText("10.ประโยชน์ของ Inheritance คืออะไร");
 
+        t2.setText("สามารถทำคำสั่งวนซ้ำ");
+        t3.setText("เรียกใช้คำสั่งจาก\nคลาสแม่ได้ทันที");
+        t4.setText("จำกัดการเข้าถึงได้");
+        t5.setText("ถูกทุกข้อ");
+
+        //test
+        t2.setEnabled(false);
+        t3.setEnabled(false);
+        t4.setEnabled(false);
+        t5.setEnabled(false);
+    }
     @Override
     public void onBackPressed() {
         super.onBackPressed();

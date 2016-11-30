@@ -657,7 +657,7 @@ public class Constructor_chapter extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(this,List_chapter.class);
+        Intent intent = new Intent(this,constructor_teach.class);
         startActivity(intent);
         finish();
     }

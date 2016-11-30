@@ -34,7 +34,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/encap_code"
+                app:srcCompat="@drawable/encap_code3"
                 android:id="@+id/code_encap"
                 android:scaleType="fitXY" />
         </LinearLayout>
@@ -99,7 +99,7 @@
         android:textColor="@android:color/background_light" />
 
     <TextView
-        android:text="GetName"
+        android:text="@string/getName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/setter_text"
@@ -108,14 +108,14 @@
         android:maxLines="10" />
 
     <TextView
-        android:text="SetName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="34dp"
         android:id="@+id/setter_text"
         android:layout_below="@+id/object_PM_text"
         android:layout_alignEnd="@+id/object_PM_text"
-        android:layout_marginEnd="30dp" />
+        android:layout_marginEnd="30dp"
+        android:text="@string/setName" />
 
     <TextView
         android:layout_marginTop="10dp"

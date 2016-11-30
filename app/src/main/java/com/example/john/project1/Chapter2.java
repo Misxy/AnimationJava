@@ -1672,7 +1672,7 @@ public class Chapter2 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(this,List_chapter.class);
+        Intent intent = new Intent(this,inheritance_teach.class);
         sv_code.scrollTo(0,0);
         startActivity(intent);
         finish();

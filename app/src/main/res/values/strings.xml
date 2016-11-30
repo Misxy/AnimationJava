@@ -46,4 +46,6 @@
     <string name="message_Wrong10">ตอบผิดค่ะ คำตอบที่ถูกต้องคือ
         เรียกใช้คำสั่งจากคลาสแม่ได้ทันที เพราะการใช้ Inhertitance \nทำให้Classลูกสามารถเรียกใช้งาน\nคำสั่งต่าง ๆ จาก Class พ่อแม่ ได้เลยทันทีโดยไม่จำเป็นต้องเขียน\nโปรแกรมใหม่
     </string>
+    <string name="setName">setName</string>
+    <string name="getName">getName</string>
 </resources>

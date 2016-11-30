@@ -611,7 +611,7 @@ public class polymor_animation extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(this,List_chapter.class);
+        Intent intent = new Intent(this,polymor_teach.class);
         startActivity(intent);
         finish();
     }

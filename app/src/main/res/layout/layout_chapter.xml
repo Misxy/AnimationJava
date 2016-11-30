@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -33,20 +34,11 @@
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/Chapter2"
-            android:layout_marginTop="10dp"
-            android:background="#00ffffff"
-            android:src="@drawable/chapter5"
-            android:scaleType="fitXY" />
-
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/Chapter3"
+            android:id="@+id/Chapter5"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
             android:background="#00ffffff"
-            android:src="@drawable/chapter3" />
+            android:src="@drawable/chap21" />
 
         <ImageButton
             android:layout_width="match_parent"
@@ -60,11 +52,20 @@
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:id="@+id/Chapter5"
+            android:id="@+id/Chapter3"
             android:layout_marginTop="10dp"
             android:scaleType="fitXY"
             android:background="#00ffffff"
-            android:src="@drawable/chapter2" />
+            android:src="@drawable/chapter3" />
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/Chapter2"
+            android:layout_marginTop="10dp"
+            android:background="#00ffffff"
+            android:src="@drawable/chapter5"
+            android:scaleType="fitXY" />
 
         <ImageButton
             android:layout_width="match_parent"

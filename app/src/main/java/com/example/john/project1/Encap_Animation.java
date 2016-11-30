@@ -296,7 +296,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine11()
     {
         CheckStateEncap="line11";
-        line11 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,600);
+        line11 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,610);
         line11.setDuration(2000);
         line11.start();
         line11.addListener(new Animator.AnimatorListener() {
@@ -328,7 +328,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine13()
     {
         CheckStateEncap="line13";
-        line13 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,710);
+        line13 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,720);
         line13.setDuration(2000);
         line13.start();
         line13.addListener(new Animator.AnimatorListener() {
@@ -390,7 +390,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine13_1()
     {
         CheckStateEncap="line13_1";
-        line13_1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,710);
+        line13_1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,720);
         line13_1.setDuration(3000);
         line13_1.start();
         line13_1.addListener(new Animator.AnimatorListener() {
@@ -421,7 +421,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine14()
     {
         CheckStateEncap="line14";
-        line14 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,770);
+        line14 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,780);
         line14.setDuration(3000);
         line14.start();
         line14.addListener(new Animator.AnimatorListener() {
@@ -489,7 +489,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine6()
     {
         CheckStateEncap="line6";
-        line6 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,290);
+        line6 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,300);
         line6.setDuration(2000);
         line6.start();
         line6.addListener(new Animator.AnimatorListener() {
@@ -522,7 +522,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine7()
     {
         CheckStateEncap="line7";
-        line7 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,350);
+        line7 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,360);
         line7.setDuration(2000);
         line7.start();
         line7.addListener(new Animator.AnimatorListener() {
@@ -613,7 +613,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine8()
     {
         CheckStateEncap="line8";
-        line8 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,410);
+        line8 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,420);
         line8.setDuration(2000);
         line8.start();
         line8.addListener(new Animator.AnimatorListener() {
@@ -644,7 +644,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine14_1()
     {
         CheckStateEncap="line14_1";
-        line14_1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,780);
+        line14_1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,790);
         line14_1.setDuration(2000);
         line14_1.start();
         line14_1.addListener(new Animator.AnimatorListener() {
@@ -675,7 +675,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine15()
     {
         CheckStateEncap="line15";
-        line15 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,830);
+        line15 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,840);
         line15.setDuration(2000);
         line15.start();
         line15.addListener(new Animator.AnimatorListener() {
@@ -706,7 +706,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine3()
     {
         CheckStateEncap="line3";
-        line3 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,110);
+        line3 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,120);
         line3.setDuration(2000);
         line3.start();
         line3.addListener(new Animator.AnimatorListener() {
@@ -739,7 +739,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine4()
     {
         CheckStateEncap="line4";
-        line4 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,180);
+        line4 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,190);
         line4.setDuration(3000);
         line4.start();
         line4.addListener(new Animator.AnimatorListener() {
@@ -768,7 +768,7 @@ public class Encap_Animation extends AppCompatActivity {
     private  void GoLine5()
     {
         CheckStateEncap="line5";
-        line5 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,240);
+        line5 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,250);
         line5.setDuration(3000);
         line5.start();
         line5.addListener(new Animator.AnimatorListener() {
@@ -856,7 +856,7 @@ public class Encap_Animation extends AppCompatActivity {
     private void GoLine15_1()
     {
         CheckStateEncap="line15_1";
-        line15_1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,830);
+        line15_1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,840);
         line15_1.setDuration(3000);
         line15_1.start();
         line15_1.addListener(new Animator.AnimatorListener() {
