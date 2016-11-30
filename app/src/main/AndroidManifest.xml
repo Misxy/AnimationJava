@@ -13,13 +13,7 @@
             android:screenOrientation="landscape" />
         <activity android:name=".FirstPage" />
         <activity android:name=".Content" />
-        <activity android:name=".home">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".home"></activity>
         <activity android:name=".Java_Detail" />
         <activity android:name=".java_stat" />
         <activity android:name=".List_chapter" />
@@ -48,6 +42,15 @@
         <activity android:name=".polymor_animation"
             android:screenOrientation="landscape">
         </activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Result" />
+        <activity android:name=".AnswerActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView12"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/testh"
+        android:layout_marginBottom="366dp"
+        android:scaleType="fitStart" />
+
+    <TextView
+        android:text="Score=0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="520dp"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:text="ข้อ"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_marginTop="260dp"
+        android:textSize="24sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        android:text="ถัดไป"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:onClick="nextQes"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="550dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="60dp">
+
+        <Button
+            android:text="ตัวเลือกที่ 1"
+            android:id="@+id/button3"
+            android:layout_weight="1"
+            android:layout_marginTop="300dp"
+            android:onClick="selQes1"
+            android:layout_width="210dp"
+            android:padding="5dp"
+            android:layout_height="70dp" />
+
+        <Button
+            android:text="ตัวเลือกที่ 2"
+            android:id="@+id/button4"
+            android:layout_weight="1"
+            android:layout_marginTop="300dp"
+            android:onClick="selQes2"
+            android:layout_width="212dp"
+            android:padding="5dp"
+            android:layout_height="70dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="430dp"
+        android:layout_marginLeft="10dp">
+
+        <Button
+            android:text="ตัวเลือกที่ 3"
+            android:layout_height="70dp"
+            android:id="@+id/button5"
+            android:layout_weight="1"
+            android:onClick="selQes3"
+            android:layout_width="212dp" />
+
+        <Button
+            android:text="ตัวเลือกที่ 4"
+            android:layout_height="70dp"
+            android:id="@+id/button6"
+            android:layout_weight="1"
+            android:onClick="selQes4"
+            android:layout_width="212dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>
