@@ -363,6 +363,7 @@ public class Constructor_chapter extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 classCode_construct.setImageResource(R.drawable.shape_circle_class);
                 object_text_construct.setVisibility(View.VISIBLE);
+                Toast.makeText(Constructor_chapter.this, "ประกาศ Object จากคลาส Example โดยมีพารามิเตอร์1ตัวคือตัวแปรstr", Toast.LENGTH_SHORT).show();
                 Log.d("State","Line11 finished");
                 //Moving animation
                 testPointerLine4();

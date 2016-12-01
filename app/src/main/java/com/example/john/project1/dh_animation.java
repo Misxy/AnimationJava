@@ -401,7 +401,7 @@ public class dh_animation extends AppCompatActivity {
     {
         CheckStateDataHiding="line17_1";
         line17_1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,700);
-        line17_1.setDuration(4000);
+        line17_1.setDuration(3000);
         line17_1.start();
         line17_1.addListener(new Animator.AnimatorListener() {
             @Override
@@ -464,7 +464,7 @@ public class dh_animation extends AppCompatActivity {
     {
         CheckStateDataHiding="line10_1";
         line10_1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,540);
-        line10_1.setDuration(7000);
+        line10_1.setDuration(4000);
         line10_1.start();
         line10_1.addListener(new Animator.AnimatorListener() {
             @Override
@@ -538,7 +538,7 @@ public class dh_animation extends AppCompatActivity {
     private void GoLine12()
     {
         CheckStateDataHiding="line12";
-        line12 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,670);
+        line12 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,660);
         line12.setDuration(3000);
         line12.start();
         line12.addListener(new Animator.AnimatorListener() {

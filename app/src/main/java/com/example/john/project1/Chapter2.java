@@ -613,7 +613,7 @@ public class Chapter2 extends AppCompatActivity {
                 object.setVisibility(View.VISIBLE);
                 num1.setVisibility(View.VISIBLE);
                 num2.setVisibility(View.VISIBLE);
-                Toast.makeText(Chapter2.this, "ประกาศobjectจากคลาส MyCalculator โดยส่งค่า 10 และ 5 เข้าไปที่ constructor ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chapter2.this, "ประกาศobjectจากคลาส MyCalculator โดยส่งค่า 10 และ 5 เข้าไปที่ constructor ", Toast.LENGTH_LONG).show();
                 checkingnumbersmoving();
             }
 
@@ -926,7 +926,7 @@ public class Chapter2 extends AppCompatActivity {
                 result.setText("");
                 result.setVisibility(View.VISIBLE);
                 resultChap2text.setVisibility(View.VISIBLE);
-                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด plus()ของคลาสMyCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด plus()ของคลาสแม่คือCalculatorผ่านobject", Toast.LENGTH_LONG).show();
                 testScrollingDown(1000);
                 testPointerLine35();
             }
@@ -1116,7 +1116,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด minus()ของคลาสMyCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด minus()ของคลาสแม่คือCalculatorผ่านobject", Toast.LENGTH_LONG).show();
                 testScrollingDown(1000);
                 testPointerLine39();
             }
@@ -1308,7 +1308,7 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 testScrollingDown(1700);
-                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด multiply()ของคลาสMyCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด multiply()ของคลาสลูกคือMyCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
                 testPointerLine20();
             }
 
@@ -1498,7 +1498,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด divide()ของคลาสMyCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด divide()ของคลาสลูกคือMyCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
                 testScrollingDown(1700);
                 testPointerLine23();
             }

@@ -62,7 +62,7 @@ public class polymor_animation extends AppCompatActivity {
     //start method
     private void start()
     {
-        class_PM.setImageResource(R.drawable.poly_new2);
+        class_PM.setImageResource(R.drawable.polymor1);
         class_PM.setScaleType(ImageView.ScaleType.FIT_XY);
         class_PM.setVisibility(View.VISIBLE);
         playbtnPM.setOnClickListener(new View.OnClickListener() {
@@ -262,7 +262,7 @@ public class polymor_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                class_PM.setImageResource(R.drawable.poly_new3);
+                class_PM.setImageResource(R.drawable.polymor2);
                 class_PM.setScaleType(ImageView.ScaleType.FIT_XY);
                 class_PM.setVisibility(View.VISIBLE);
                 Log.d("State","line21 finished");
@@ -296,7 +296,7 @@ public class polymor_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Toast.makeText(polymor_animation.this, "คลาส cat เป็นคลาสลูกของคลาส Animal", Toast.LENGTH_SHORT).show();
+                Toast.makeText(polymor_animation.this, "คลาส Cat เป็นคลาสลูกของคลาส Animal", Toast.LENGTH_SHORT).show();
                 Log.d("State","line14 finished");
                 //GoLine1
                 testScrollingUp(1420);
@@ -330,7 +330,7 @@ public class polymor_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Toast.makeText(polymor_animation.this, "คลาส Animal เป็นคลาสแม่ โดยมีคลาสลูก2คลาสคือ Dog และ Cat", Toast.LENGTH_SHORT).show();
+                Toast.makeText(polymor_animation.this, "คลาส Animal เป็นคลาสแม่ โดยมีคลาสลูก2คลาสคือ Dog และ Cat", Toast.LENGTH_LONG).show();
                 Log.d("State","line1 finished");
                 //Go Line 14 again
                 GoLine14_1();
@@ -426,7 +426,7 @@ public class polymor_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Toast.makeText(polymor_animation.this, "object a1 เรียกใช้เมธอด makeNoise() ของคลาส Cat", Toast.LENGTH_LONG).show();
+                Toast.makeText(polymor_animation.this, "object a1 เรียกใช้เมธอด makeNoise() ของคลาสลูก Cat", Toast.LENGTH_LONG).show();
                 Log.d("State","line22 finished");
                 //goLine16
                 GoLine16();
