@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -95,13 +96,13 @@ public class Chapter2 extends AppCompatActivity {
         class_chap2 = (TextView)findViewById(R.id.class_chap2);
         sv_code.scrollTo(0,0);
         prepare();
+       /* #87D37C*/
+        pic_class_chap2.setImageResource(R.drawable.inherit_new2);
+        pic_class_chap2.setVisibility(View.VISIBLE);
         playbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Chapter2.this, "Start!", Toast.LENGTH_SHORT).show();
                 testPointerLine1();
-
-
             }
         });
         stopbtn.setOnClickListener(new View.OnClickListener() {
@@ -511,7 +512,6 @@ public class Chapter2 extends AppCompatActivity {
     private void prepare()
     {
         sv_code.scrollTo(0,0);
-        pic_class_chap2.setVisibility(View.INVISIBLE);
         text_returnChap2.setVisibility(View.INVISIBLE);
         result.setVisibility(View.INVISIBLE);
         num1.setVisibility(View.INVISIBLE);
@@ -525,12 +525,12 @@ public class Chapter2 extends AppCompatActivity {
         text_minus.setVisibility(View.INVISIBLE);
         text_multi.setVisibility(View.INVISIBLE);
         text_divide.setVisibility(View.INVISIBLE);
+        pic_class_chap2.setVisibility(View.INVISIBLE);
     }
 
 
     private void testPointerLine1()
     {
-        checkStateChap2="line1";
         checkStateChap2="line1";
         objline1 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,0);
         objline1.setDuration(500);
@@ -543,8 +543,10 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                pic_class_chap2.setBackgroundColor(Color.parseColor("#FFFFFF"));
                 pic_class_chap2.setVisibility(View.VISIBLE);
                 class_chap2.setVisibility(View.VISIBLE);
+                Toast.makeText(Chapter2.this, "เกิด class Chap2 ขึ้นมา", Toast.LENGTH_SHORT).show();
                 testPointerLine2();
             }
 
@@ -574,6 +576,8 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                pic_class_chap2.setBackgroundColor(Color.parseColor("#87D37C"));
+                Toast.makeText(Chapter2.this, "โปรแกรมเริ่มทำงานที่เมธอด main", Toast.LENGTH_SHORT).show();
                 testPointerLine3();
             }
 
@@ -607,6 +611,7 @@ public class Chapter2 extends AppCompatActivity {
                 object.setVisibility(View.VISIBLE);
                 num1.setVisibility(View.VISIBLE);
                 num2.setVisibility(View.VISIBLE);
+                Toast.makeText(Chapter2.this, "ประกาศobjectจากคลาส MyCalculator โดยส่งค่า 10 และ 5 เข้าไปที่ constructor ", Toast.LENGTH_SHORT).show();
                 checkingnumbersmoving();
             }
 
@@ -704,6 +709,7 @@ public class Chapter2 extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 num1.setText("0");
                 num2.setText("0");
+                Toast.makeText(Chapter2.this, "เนื่องจาก class MyCalculator สืบทอดมาจากคลาส Calculator จึงต้องเข้าไปทำงานที่ Constructor ของ class Calculator ด้วย", Toast.LENGTH_LONG).show();
                 testScrollingDown(1400);
                 testPointerLine29();
             }
@@ -723,6 +729,7 @@ public class Chapter2 extends AppCompatActivity {
     private void testPointerLine29()
     {
         checkStateChap2="line29";
+        Toast.makeText(this, "เข้าสู่ Constructor ของclass Calculator", Toast.LENGTH_SHORT).show();
         objline29 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,610);
         objline29.setDuration(4000);
         objline29.start();
@@ -793,6 +800,7 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 num1.setText("10");
+                Toast.makeText(Chapter2.this, "ตัวแปรnum1 มีค่าเท่ากับ 10", Toast.LENGTH_SHORT).show();
                 testPointerLine32();
             }
 
@@ -822,6 +830,7 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 num2.setText("5");
+                Toast.makeText(Chapter2.this, "ตัวแปรnum2 มีค่าเท่ากับ5", Toast.LENGTH_SHORT).show();
                 testScrollingUp(2000);
                 testPointeLine18();
             }
@@ -882,7 +891,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Chapter2.this, "Line 3 again", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chapter2.this, "object พร้อมใช้งาน", Toast.LENGTH_SHORT).show();
                 testPointerLine5();
             }
 
@@ -915,6 +924,7 @@ public class Chapter2 extends AppCompatActivity {
                 result.setText("");
                 result.setVisibility(View.VISIBLE);
                 resultChap2text.setVisibility(View.VISIBLE);
+                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด plus()ของคลาสMyCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
                 testScrollingDown(1000);
                 testPointerLine35();
             }
@@ -948,6 +958,7 @@ public class Chapter2 extends AppCompatActivity {
                 sign.setText("+");
                 sign.setVisibility(View.VISIBLE);
                 text_returnChap2.setVisibility(View.VISIBLE);
+                Toast.makeText(Chapter2.this, "แสดงผลลัพธที่ได้จาการคำนวณ", Toast.LENGTH_SHORT).show();
                 testScrollingUp(2480);
                 testPointerLine5_1();
             }
@@ -967,13 +978,34 @@ public class Chapter2 extends AppCompatActivity {
     private void movingtextToResultBoxPlus()
     {
         checkStateChap2="movingtextToResultBoxPlus";
+        Toast.makeText(Chapter2.this, "ส่งค่าผลลัพธ์ที่ได้จากการคำนวณกลับไปที่ตัวแปร result", Toast.LENGTH_SHORT).show();
         ObjectAnimator objGoX = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_X,-500);
         objGoX.setDuration(1000);
         ObjectAnimator objGoY = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_Y,-450);
         objGoY.setDuration(1000);
         //Hidding
         ObjectAnimator objHide = ObjectAnimator.ofFloat(text_returnChap2,View.ALPHA,0f);
+        objHide.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
 
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                text_returnChap2.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
         ObjectAnimator objReturnX = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_X,0);
         objReturnX.setDuration(50);
         ObjectAnimator objReturnY = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_Y,0);
@@ -1052,6 +1084,7 @@ public class Chapter2 extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 result.setText("15");
                 text_plus.setVisibility(View.VISIBLE);
+                Toast.makeText(Chapter2.this, "ตัวแปร result มีค่าเท่ากับ 15 และแสดงผลลัพธ์ออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
                 testPointerLine7();
             }
 
@@ -1081,6 +1114,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด minus()ของคลาสMyCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
                 testScrollingDown(1000);
                 testPointerLine39();
             }
@@ -1102,7 +1136,6 @@ public class Chapter2 extends AppCompatActivity {
         checkStateChap2="line39";
         objline39 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,810);
         objline39.setDuration(9000);
-        text_returnChap2.setText("5");
         sign.setText("-");
         objline39.start();
         objline39.addListener(new Animator.AnimatorListener() {
@@ -1113,6 +1146,9 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                text_returnChap2.setText("5");
+                text_returnChap2.setVisibility(View.VISIBLE);
+                Toast.makeText(Chapter2.this, "แสดงค่าผลลัพธ์ที่ได้จากการคำนวณ", Toast.LENGTH_SHORT).show();
                 testScrollingUp(2480);
                 testPointerLine7_1();
 
@@ -1133,21 +1169,42 @@ public class Chapter2 extends AppCompatActivity {
     private void movingtextToResultBoxMinus()
     {
         checkStateChap2="movingtextToResultBoxMinus";
+        Toast.makeText(Chapter2.this, "ส่งค่าผลลัพธ์ที่ได้จากการคำนวณกลับไปที่ตัวแปร result", Toast.LENGTH_SHORT).show();
         ObjectAnimator objGoX = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_X,-500);
         objGoX.setDuration(1000);
         ObjectAnimator objGoY = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_Y,-450);
         objGoY.setDuration(1000);
         //Hidding
         ObjectAnimator objHide = ObjectAnimator.ofFloat(text_returnChap2,View.ALPHA,0f);
+        objHide.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                text_returnChap2.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
 
         ObjectAnimator objReturnX = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_X,0);
         objReturnX.setDuration(50);
         ObjectAnimator objReturnY = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_Y,0);
         objReturnY.setDuration(50);
-        //Showing
-        ObjectAnimator objShow = ObjectAnimator.ofFloat(text_returnChap2,View.ALPHA,1f);
+        ObjectAnimator objshow = ObjectAnimator.ofFloat(text_returnChap2,View.ALPHA,1f);
         amMovingtextToResultBoxMinus = new AnimatorSet();
-        amMovingtextToResultBoxMinus.playSequentially(objGoX,objGoY,objHide,objReturnX,objReturnY,objShow);
+        amMovingtextToResultBoxMinus.playSequentially(objGoX,objGoY,objHide,objReturnX,objReturnY,objshow);
         amMovingtextToResultBoxMinus.start();
         amMovingtextToResultBoxMinus.addListener(new Animator.AnimatorListener() {
             @Override
@@ -1157,6 +1214,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
+                text_returnChap2.setVisibility(View.INVISIBLE);
                 testPointerLine8();
             }
 
@@ -1217,6 +1275,7 @@ public class Chapter2 extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 result.setText("5");
                 text_minus.setVisibility(View.VISIBLE);
+                Toast.makeText(Chapter2.this, "ตัวแปร result มีค่าเท่ากับ 5 และแสดงผลลัพธ์ออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
                 testPointerLine9();
             }
 
@@ -1247,6 +1306,7 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 testScrollingDown(1700);
+                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด multiply()ของคลาสMyCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
                 testPointerLine20();
             }
 
@@ -1278,6 +1338,8 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 text_returnChap2.setText("50");
+                text_returnChap2.setVisibility(View.VISIBLE);
+                Toast.makeText(Chapter2.this, "แสดงค่าผลลัพธ์ที่ได้จากการคำนวณ", Toast.LENGTH_SHORT).show();
                 testScrollingUp(2480);
                 testPointerLine9_1();
             }
@@ -1297,12 +1359,35 @@ public class Chapter2 extends AppCompatActivity {
     private void movingtextToResultBoxMutiply()
     {
         checkStateChap2="movingtextToResultBoxMultiply";
+
+        Toast.makeText(Chapter2.this, "ส่งค่าผลลัพธ์ที่ได้จากการคำนวณกลับไปที่ตัวแปร result", Toast.LENGTH_SHORT).show();
         ObjectAnimator objGoX = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_X,-500);
         objGoX.setDuration(1000);
         ObjectAnimator objGoY = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_Y,-450);
         objGoY.setDuration(1000);
         //Hidding
         ObjectAnimator objHide = ObjectAnimator.ofFloat(text_returnChap2,View.ALPHA,0f);
+        objHide.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                text_returnChap2.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
 
         ObjectAnimator objReturnX = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_X,0);
         objReturnX.setDuration(50);
@@ -1321,8 +1406,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                testPointerLine10();
-
+               testPointerLine10();
             }
 
             @Override
@@ -1382,6 +1466,7 @@ public class Chapter2 extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 result.setText("50");
                 text_multi.setVisibility(View.VISIBLE);
+                Toast.makeText(Chapter2.this, "ตัวแปร result มีค่าเท่ากับ 50 และแสดงผลลัพธ์ออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
                 testPointerLine11();
             }
 
@@ -1411,6 +1496,7 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(Chapter2.this, "เรียกใช้เมธอด divide()ของคลาสMyCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
                 testScrollingDown(1700);
                 testPointerLine23();
             }
@@ -1443,6 +1529,9 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                text_returnChap2.setText("2");
+                text_returnChap2.setVisibility(View.VISIBLE);
+                Toast.makeText(Chapter2.this, "แสดงค่าผลลัพธ์ที่ได้จากการคำนวณ", Toast.LENGTH_SHORT).show();
                 testScrollingUp(2480);
                 testPointerLine11_1();
             }
@@ -1462,18 +1551,40 @@ public class Chapter2 extends AppCompatActivity {
     private void movingtextToResultBoxDivide()
     {
         checkStateChap2="movingtextToResultBoxDivide";
+        text_returnChap2.setText("2");
+        text_returnChap2.setVisibility(View.VISIBLE);
+        Toast.makeText(Chapter2.this, "ส่งค่าผลลัพธ์ที่ได้จากการคำนวณกลับไปที่ตัวแปร result", Toast.LENGTH_SHORT).show();
         ObjectAnimator objGoX = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_X,-500);
         objGoX.setDuration(1000);
         ObjectAnimator objGoY = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_Y,-450);
         objGoY.setDuration(1000);
         //Hidding
         ObjectAnimator objHide = ObjectAnimator.ofFloat(text_returnChap2,View.ALPHA,0f);
+        objHide.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
 
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                text_returnChap2.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
         ObjectAnimator objReturnX = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_X,0);
         objReturnX.setDuration(50);
         ObjectAnimator objReturnY = ObjectAnimator.ofFloat(text_returnChap2,View.TRANSLATION_Y,0);
         objReturnY.setDuration(50);
-        //Showing
         ObjectAnimator objShow = ObjectAnimator.ofFloat(text_returnChap2,View.ALPHA,1f);
         amMovingtextToResultBoxDivide = new AnimatorSet();
         amMovingtextToResultBoxDivide.playSequentially(objGoX,objGoY,objHide,objReturnX,objReturnY,objShow);
@@ -1546,7 +1657,7 @@ public class Chapter2 extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 result.setText("2");
                 text_divide.setVisibility(View.VISIBLE);
-                Toast.makeText(Chapter2.this, "Finish", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chapter2.this, "ตัวแปร result มีค่าเท่ากับ 2 และแสดงผลลัพธ์ออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
             }
 
             @Override

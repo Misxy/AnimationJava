@@ -479,7 +479,6 @@ public class Chap1 extends AppCompatActivity {
     //play function
     private void testPointerLine1()
     {
-            Toast.makeText(Chap1.this, "Start!", Toast.LENGTH_SHORT).show();
             //Scroll to line1
             objLine1 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 0);
             objLine1.setDuration(2000);
@@ -781,7 +780,7 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textnum1.setText("10");
-                Toast.makeText(Chap1.this,"num1 มีค่าเท่ากับ 10",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chap1.this,"ตัวแปรnum1 มีค่าเท่ากับ 10",Toast.LENGTH_SHORT).show();
                 testpointerLine17();
             }
 
@@ -812,7 +811,7 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textnum2.setText("5");
-                Toast.makeText(Chap1.this,"num2 มีค่าเท่ากับ 5",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chap1.this,"ตัวแปรnum2 มีค่าเท่ากับ 5",Toast.LENGTH_SHORT).show();
                 testpointerLine4();
             }
 
@@ -877,7 +876,7 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                Toast.makeText(Chap1.this,"เรีกใช้เมธอด plus จากคลาส Calculator",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chap1.this, "เรียกใช้เมธอด plus()ของคลาสCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
                 scrollingDown();
                 testpointerLine19();
             }
@@ -1102,7 +1101,7 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                Toast.makeText(Chap1.this,"เรีกใช้เมธอด minus จากคลาส Calculator",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Chap1.this, "เรียกใช้เมธอด minus()ของคลาสCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
                 scrollingDown();
                 testpointerLine23();
             }
@@ -1295,7 +1294,6 @@ public class Chap1 extends AppCompatActivity {
             public void onAnimationEnd(Animator animator) {
                 textRes2.setVisibility(View.VISIBLE);
                 Toast.makeText(Chap1.this,"แสดงผลลัพธ์ออกทางหน้าจอ",Toast.LENGTH_SHORT).show();
-                Toast.makeText(Chap1.this, "Finished", Toast.LENGTH_SHORT).show();
             }
 
             @Override

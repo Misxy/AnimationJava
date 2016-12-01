@@ -116,7 +116,6 @@
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/layout_code"
         android:layout_alignParentTop="true"
-        android:background="#87D37C"
         android:visibility="visible"
         android:layout_alignStart="@+id/text_plus"
         android:layout_alignBottom="@+id/sv_codePM" />
