@@ -23,7 +23,7 @@ public class polymor_animation extends AppCompatActivity {
     int countPush=0;
     String CheckStatePoly="";
     Boolean CheckScrolling=true;
-    ObjectAnimator line21,line14,line1,line14_1,line21_1,line22,line16,line17,line23;
+    ObjectAnimator line20,line21,line14,line1,line14_1,line21_1,line22,line16,line17,line23;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +62,12 @@ public class polymor_animation extends AppCompatActivity {
     //start method
     private void start()
     {
+        class_PM.setImageResource(R.drawable.poly_new2);
+        class_PM.setScaleType(ImageView.ScaleType.FIT_XY);
+        class_PM.setVisibility(View.VISIBLE);
         playbtnPM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(polymor_animation.this, "Start!", Toast.LENGTH_SHORT).show();
                 //Go Line20
                 GoLine21();
             }
@@ -213,7 +215,38 @@ public class polymor_animation extends AppCompatActivity {
             Log.d("State","line23 resume");
         }
     }
-    //Go Line20
+    private void GoLine20()
+    {
+        CheckStatePoly="line20";
+        testScrollingDown(1000);
+        line20 = ObjectAnimator.ofFloat(pointer,View.TRANSLATION_Y,710);
+        line20.setDuration(3000);
+        line20.start();
+        line20.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                Toast.makeText(polymor_animation.this, "โปรแกรมเริ่มทำงานที่เมธอด main", Toast.LENGTH_SHORT).show();
+                Log.d("State","line20 finished");
+                //Go line21
+                GoLine21();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+            }
+        });
+    }
+    //Go Line21
     private void GoLine21()
     {
         CheckStatePoly="line21";
@@ -229,12 +262,11 @@ public class polymor_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                classPM_text.setVisibility(View.VISIBLE);
-                objectPM_text.setVisibility(View.VISIBLE);
-                class_PM.setImageResource(R.drawable.shape_circle_class);
+                class_PM.setImageResource(R.drawable.poly_new3);
+                class_PM.setScaleType(ImageView.ScaleType.FIT_XY);
                 class_PM.setVisibility(View.VISIBLE);
-                cat.setVisibility(View.VISIBLE);
                 Log.d("State","line21 finished");
+                Toast.makeText(polymor_animation.this, "ประกาศตัวแปรชนิดAnimal เพื่อใช้อ้างอิงobjectชนิดCat", Toast.LENGTH_SHORT).show();
                 //Go line14
                 GoLine14();
             }
@@ -264,6 +296,7 @@ public class polymor_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(polymor_animation.this, "คลาส cat เป็นคลาสลูกของคลาส Animal", Toast.LENGTH_SHORT).show();
                 Log.d("State","line14 finished");
                 //GoLine1
                 testScrollingUp(1420);
@@ -297,6 +330,7 @@ public class polymor_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(polymor_animation.this, "คลาส Animal เป็นคลาสแม่ โดยมีคลาสลูก2คลาสคือ Dog และ Cat", Toast.LENGTH_SHORT).show();
                 Log.d("State","line1 finished");
                 //Go Line 14 again
                 GoLine14_1();
@@ -360,6 +394,7 @@ public class polymor_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(polymor_animation.this, "Object พร้อมใช้งาน", Toast.LENGTH_SHORT).show();
                 Log.d("State","line21_1 finished");
                 //Go line22
                 GoLine22();
@@ -391,6 +426,7 @@ public class polymor_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(polymor_animation.this, "object a1 เรียกใช้เมธอด makeNoise() ของคลาส Cat", Toast.LENGTH_LONG).show();
                 Log.d("State","line22 finished");
                 //goLine16
                 GoLine16();
@@ -453,7 +489,6 @@ public class polymor_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                cat_meow.setVisibility(View.VISIBLE);
                 Log.d("State","line17 finished");
                 //GoLine23
                 GoLine23();
@@ -489,7 +524,7 @@ public class polymor_animation extends AppCompatActivity {
                 output_headerPM.setVisibility(View.VISIBLE);
                 output_layoutPM.setVisibility(View.VISIBLE);
                 output_resultPM.setVisibility(View.VISIBLE);
-                Toast.makeText(polymor_animation.this, "Finished!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(polymor_animation.this, "แสดงผลลัพธ์ออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
                 Log.d("State","Application finished");
             }
 

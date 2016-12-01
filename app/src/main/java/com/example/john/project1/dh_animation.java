@@ -51,7 +51,6 @@ public class dh_animation extends AppCompatActivity {
         playbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(dh_animation.this, "Start!", Toast.LENGTH_SHORT).show();
                 GoLine7();
             }
         });
@@ -246,6 +245,7 @@ public class dh_animation extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 class_DH.setVisibility(View.VISIBLE);
                 class_DH_text.setVisibility(View.VISIBLE);
+                Toast.makeText(dh_animation.this, "โปรแกรมเริ่มทำงานที่เมธอด main", Toast.LENGTH_SHORT).show();
                 Log.d("State","line7 finished");
                 //goto line9
                 GoLine9();
@@ -279,6 +279,7 @@ public class dh_animation extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 class_DH.setImageResource(R.drawable.shape_circle_class);
                 object_DH_text.setVisibility(View.VISIBLE);
+                Toast.makeText(dh_animation.this, "ประกาศ object จากคลาส Example_test", Toast.LENGTH_SHORT).show();
                 Log.d("State","line9 finished");
                 //Go line17
                 testScrollingDown(1000);
@@ -312,6 +313,7 @@ public class dh_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(dh_animation.this, "คลาส Example_test อยู่ที่ package2" , Toast.LENGTH_SHORT).show();
                 Log.d("State","line17 finished");
                 //Goto Line9 Again
                 testScrollingUp(1250);
@@ -344,6 +346,7 @@ public class dh_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(dh_animation.this, "object พร้อมใช้งาน", Toast.LENGTH_SHORT).show();
                 Log.d("State","line9_1 finished");
                 //Go to Line10
                 GoLine10();
@@ -375,6 +378,7 @@ public class dh_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(dh_animation.this, "เข้าถึง public attribute ชื่อ name ของ class Example_test ผ่าน object ได้โดยตรง", Toast.LENGTH_LONG).show();
                 Log.d("State","line10 finished");
                 testScrollingDown(1000);
                 //GoLine17 again
@@ -475,6 +479,7 @@ public class dh_animation extends AppCompatActivity {
                 output_headerDH.setVisibility(View.VISIBLE);
                 outputLayoutDH.setVisibility(View.VISIBLE);
                 output_resultDH.setVisibility(View.VISIBLE);
+                Toast.makeText(dh_animation.this, "แสดงผลลัพธ์ออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
                 Log.d("State","line10_1 finished");
                 //GoLine11
                 GoLine11();
@@ -511,6 +516,7 @@ public class dh_animation extends AppCompatActivity {
                 obj_name_header.setText("Error!");
                 obj_name_header.setTextColor(Color.parseColor("#D50000"));
                 obj_name_header.setVisibility(View.VISIBLE);
+                Toast.makeText(dh_animation.this, "โปรแกรมเกิดข้อผิดพลาด กรุณาดูคำอธิบายข้อผิดพลาดที่มุมล่างขวา", Toast.LENGTH_SHORT).show();
                 output_resultDH.setText("Attribute id ต้องเข้าถึงผ่านGetter/Setter Method เท่านั้น");
                 Log.d("State","line11 finished");
                 //GoLine12
@@ -543,8 +549,8 @@ public class dh_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(dh_animation.this, "โปรแกรมเกิดข้อผิดพลาด กรุณาดูคำอธิบายข้อผิดพลาดที่มุมล่างขวา", Toast.LENGTH_SHORT).show();
                 output_resultDH.setText("Attribute salary ต้องเข้าถึงผ่านGetter/Setter Method เท่านั้น");
-                Toast.makeText(dh_animation.this, "Finished!", Toast.LENGTH_SHORT).show();
                 Log.d("State","Application Finished");
             }
 

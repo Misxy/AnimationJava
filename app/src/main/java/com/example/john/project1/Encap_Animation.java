@@ -55,7 +55,6 @@ public class Encap_Animation extends AppCompatActivity {
         PlaybtnEncap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Encap_Animation.this, "Start!", Toast.LENGTH_SHORT).show();
                 GoLine11();
             }
         });
@@ -309,6 +308,7 @@ public class Encap_Animation extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 class_encap.setVisibility(View.VISIBLE);
                 classEncap_text.setVisibility(View.VISIBLE);
+                Toast.makeText(Encap_Animation.this, "โปรแกรมเริ่มทำงานที่เมธอด main", Toast.LENGTH_SHORT).show();
                 Log.d("State","line11 finished");
                 GoLine13();
             }
@@ -341,6 +341,7 @@ public class Encap_Animation extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 class_encap.setImageResource(R.drawable.shape_circle_class);
                 objEncap_text.setVisibility(View.VISIBLE);
+                Toast.makeText(Encap_Animation.this, "มีการประกาศ object ของคลาส Employee ขึ้นมา", Toast.LENGTH_SHORT).show();
                 Log.d("State","line13 finished");
                 //Go to line1
                 GoLine1();
@@ -371,6 +372,7 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(Encap_Animation.this, "คลาส Employee", Toast.LENGTH_SHORT).show();
                 Log.d("State","line1 finished");
                 //Goline13 again
                 GoLine13_1();
@@ -401,6 +403,7 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(Encap_Animation.this, "object พร้อมใช้งาน", Toast.LENGTH_SHORT).show();
                 Log.d("State","line13_1 finished");
                 //Goline14
                 GoLine14();
@@ -433,6 +436,7 @@ public class Encap_Animation extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 text_parameter.setVisibility(View.VISIBLE);
+                Toast.makeText(Encap_Animation.this, "เข้าถึงเมธอด setName()ของคลาส Employee ผ่าน object", Toast.LENGTH_SHORT).show();
                 Log.d("State","line14 finished");
                 //playAnimation
                 playAnimation_text();
@@ -468,6 +472,7 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(Encap_Animation.this, "ส่งสตริงที่เขียนว่า Torn ไปให้กับเมธอด setName(String empName)", Toast.LENGTH_SHORT).show();
                 Log.d("State","Animation_text finished");
                 //Goto Line6
                 GoLine6();
@@ -502,6 +507,7 @@ public class Encap_Animation extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 setter_text.setVisibility(View.VISIBLE);
                 Setter_Box.setVisibility(View.VISIBLE);
+                Toast.makeText(Encap_Animation.this, "เมธอด setName(String empName)รอบรับค่าสตริงที่จะถูกส่งเข้ามา", Toast.LENGTH_SHORT).show();
                 Log.d("State","line6 finished");
                 //Goto Line7
                 GoLine7();
@@ -534,8 +540,9 @@ public class Encap_Animation extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 Log.d("State","line17 finished");
-                //play setAnimation
-                playsetAnimation();
+                //goLine8
+                Toast.makeText(Encap_Animation.this, "เมธอด setName(String empName) รับสตริงที่เขียนว่า Torn เข้าสู่เมธอด()", Toast.LENGTH_SHORT).show();
+                GoLine8();
 
             }
 
@@ -594,8 +601,8 @@ public class Encap_Animation extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 Log.d("State","playsetAnimation finished");
-                //Go to Line8
-                GoLine8();
+                //Go to Line14_1
+                GoLine14_1();
             }
 
             @Override
@@ -624,9 +631,10 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(Encap_Animation.this, "ตัวแปร empName มีค่าเท่ากับ Torn ", Toast.LENGTH_SHORT).show();
                 Log.d("State","line8 finished");
-                //Go to Line 14 again
-                GoLine14_1();
+                //play setanimation
+                playsetAnimation();
             }
 
             @Override
@@ -686,6 +694,7 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Toast.makeText(Encap_Animation.this, "เข้าถึงเมธอด getName()ของคลาส Employee ผ่าน object", Toast.LENGTH_SHORT).show();
                 Log.d("State","line15 finished");
                 //GoLine3
                 GoLine3();
@@ -719,6 +728,7 @@ public class Encap_Animation extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 getter_text.setVisibility(View.VISIBLE);
                 Getter_box.setVisibility(View.VISIBLE);
+                Toast.makeText(Encap_Animation.this, "เข้าสู่เมธอด getNmae()ของคลาส Employee ผ่าน object", Toast.LENGTH_SHORT).show();
                 Log.d("State","line3 finished");
                 //Go to line4
                 GoLine4();
@@ -752,7 +762,6 @@ public class Encap_Animation extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 Log.d("State","line4 finished");
                 Getter_box.setTextColor(Color.parseColor("#FFFFFF"));
-                Getter_box.setText("Torn");
                 //Goto Line5
                 GoLine5();
             }
@@ -779,10 +788,12 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
+                Getter_box.setText("Torn");
+                Toast.makeText(Encap_Animation.this, "ส่งค่าของ empName กลับไปที่ object", Toast.LENGTH_SHORT).show();
                 Log.d("State","line5 finished");
                 output_header.setVisibility(View.VISIBLE);
                 output_layout.setVisibility(View.VISIBLE);
-                playgetAnimation();
+                GoLine15_1();
             }
 
             @Override
@@ -868,8 +879,7 @@ public class Encap_Animation extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 output_result.setVisibility(View.VISIBLE);
-                Log.d("State","line15_1 finished");
-                Toast.makeText(Encap_Animation.this, "Finished", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Encap_Animation.this, "แสดงค่าของตัวแปร empName ออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
                 Log.d("State","Application finished");
             }
 

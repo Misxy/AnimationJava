@@ -102,6 +102,7 @@ public class Chapter2 extends AppCompatActivity {
         playbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                pic_class_chap2.setVisibility(View.INVISIBLE);
                 testPointerLine1();
             }
         });
@@ -543,7 +544,8 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                pic_class_chap2.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                pic_class_chap2.setImageResource(R.drawable.color_green);
+                pic_class_chap2.setScaleType(ImageView.ScaleType.FIT_XY);
                 pic_class_chap2.setVisibility(View.VISIBLE);
                 class_chap2.setVisibility(View.VISIBLE);
                 Toast.makeText(Chapter2.this, "เกิด class Chap2 ขึ้นมา", Toast.LENGTH_SHORT).show();
@@ -576,7 +578,6 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                pic_class_chap2.setBackgroundColor(Color.parseColor("#87D37C"));
                 Toast.makeText(Chapter2.this, "โปรแกรมเริ่มทำงานที่เมธอด main", Toast.LENGTH_SHORT).show();
                 testPointerLine3();
             }
@@ -608,6 +609,7 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 pic_class_chap2.setImageResource(R.drawable.shape_circle_class);
+                pic_class_chap2.setBackgroundColor(Color.parseColor("#87D37C"));
                 object.setVisibility(View.VISIBLE);
                 num1.setVisibility(View.VISIBLE);
                 num2.setVisibility(View.VISIBLE);
