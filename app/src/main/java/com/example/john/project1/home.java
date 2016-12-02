@@ -13,19 +13,20 @@ import android.widget.ImageButton;
  */
 
 public class home extends AppCompatActivity {
-    ImageButton btn_Go,btn_Test,btn_Score,btn_Exit;
+    ImageButton btn_Go, btn_Test, btn_Score, btn_Exit;
     MediaPlayer mp;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layouthome);
-        btn_Go = (ImageButton)findViewById(R.id.imageButton14);
-        btn_Test= (ImageButton)findViewById(R.id.imageButton15);
+        btn_Go = (ImageButton) findViewById(R.id.imageButton14);
+        btn_Test = (ImageButton) findViewById(R.id.imageButton15);
         //Going to Chapter_List page
         btn_Go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(home.this,List_chapter.class);
+                Intent intent = new Intent(home.this, List_chapter.class);
                 startActivity(intent);
                 //Closing this layout
                 finish();
@@ -35,12 +36,12 @@ public class home extends AppCompatActivity {
         btn_Test.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(home.this,MainActivity.class);
+                Intent intent = new Intent(home.this, MainActivity.class);
                 startActivity(intent);
                 //Closing this layout
                 finish();
             }
         });
-         
+
     }
 }

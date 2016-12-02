@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 
 public class FirstPage extends AppCompatActivity {
     //Declaring ImageButton's object
-    ImageButton btn_learn,btn_practice,btn_analysis;
+    ImageButton btn_learn, btn_practice, btn_analysis;
     //Declaring Mediaplayer's object
     MediaPlayer mp;
 
@@ -28,10 +28,11 @@ public class FirstPage extends AppCompatActivity {
             }
         });
     }
+
     //Go to content list page
-    private void gotoJava(){
+    private void gotoJava() {
         //Creating intent class
-        Intent intent = new Intent(FirstPage.this,Content.class);
+        Intent intent = new Intent(FirstPage.this, Content.class);
         startActivity(intent);
         finish();
     }

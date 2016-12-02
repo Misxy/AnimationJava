@@ -13,15 +13,16 @@ import android.widget.ImageButton;
 
 public class Java_Detail extends AppCompatActivity {
     ImageButton btn_goChap1;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layoutdetail);
-        btn_goChap1 = (ImageButton)findViewById(R.id.goDatahide);
+        btn_goChap1 = (ImageButton) findViewById(R.id.goDatahide);
         btn_goChap1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Java_Detail.this,Chap1.class);
+                Intent intent = new Intent(Java_Detail.this, Chap1.class);
                 startActivity(intent);
                 finish();
             }
@@ -35,7 +36,7 @@ public class Java_Detail extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-    Intent intent = new Intent(Java_Detail.this,List_chapter.class);
+        Intent intent = new Intent(Java_Detail.this, List_chapter.class);
         startActivity(intent);
         finish();
     }

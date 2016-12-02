@@ -13,15 +13,16 @@ import android.widget.ImageButton;
 
 public class inheritance_teach extends AppCompatActivity {
     ImageButton goChap1;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layoutinheritance);
-        goChap1 = (ImageButton)findViewById(R.id.goDatahide);
+        goChap1 = (ImageButton) findViewById(R.id.goDatahide);
         goChap1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(inheritance_teach.this,Chapter2.class);
+                Intent intent = new Intent(inheritance_teach.this, Chapter2.class);
                 startActivity(intent);
                 finish();
             }
@@ -31,7 +32,7 @@ public class inheritance_teach extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(this,List_chapter.class);
+        Intent intent = new Intent(this, List_chapter.class);
         startActivity(intent);
         finish();
     }

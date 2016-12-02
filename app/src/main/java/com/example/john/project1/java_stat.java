@@ -23,7 +23,7 @@ public class java_stat extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(this,home.class);
+        Intent intent = new Intent(this, home.class);
         startActivity(intent);
         finish();
     }

@@ -13,15 +13,16 @@ import android.widget.ImageButton;
 
 public class polymor_teach extends AppCompatActivity {
     ImageButton goPoly_animation;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layoutpolymor);
-        goPoly_animation = (ImageButton)findViewById(R.id.goDatahide);
+        goPoly_animation = (ImageButton) findViewById(R.id.goDatahide);
         goPoly_animation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(polymor_teach.this,polymor_animation.class);
+                Intent intent = new Intent(polymor_teach.this, polymor_animation.class);
                 startActivity(intent);
                 finish();
             }
@@ -31,7 +32,7 @@ public class polymor_teach extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(this,List_chapter.class);
+        Intent intent = new Intent(this, List_chapter.class);
         startActivity(intent);
         finish();
     }

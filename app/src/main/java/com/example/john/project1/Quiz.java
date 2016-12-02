@@ -13,20 +13,21 @@ import android.widget.ImageButton;
  */
 
 public class Quiz extends AppCompatActivity {
-    Button btn_choiceA,btn_choiceB,btn_choiceC;
+    Button btn_choiceA, btn_choiceB, btn_choiceC;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layoutquiz);
-        btn_choiceA = (Button)findViewById(R.id.button);
-        btn_choiceB= (Button)findViewById(R.id.button2);
-        btn_choiceC = (Button)findViewById(R.id.button3);
+        btn_choiceA = (Button) findViewById(R.id.button);
+        btn_choiceB = (Button) findViewById(R.id.button2);
+        btn_choiceC = (Button) findViewById(R.id.button3);
 
         //Chosing choiceA
         btn_choiceA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz.this,Quiz_Incorrect.class);
+                Intent intent = new Intent(Quiz.this, Quiz_Incorrect.class);
                 startActivity(intent);
                 finish();
             }
@@ -36,7 +37,7 @@ public class Quiz extends AppCompatActivity {
         btn_choiceB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz.this,Quiz_Incorrect.class);
+                Intent intent = new Intent(Quiz.this, Quiz_Incorrect.class);
                 startActivity(intent);
                 finish();
             }
@@ -46,13 +47,14 @@ public class Quiz extends AppCompatActivity {
         btn_choiceC.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz.this,Quiz_Correct.class);
+                Intent intent = new Intent(Quiz.this, Quiz_Correct.class);
                 startActivity(intent);
                 finish();
             }
         });
 
     }
+
     /**
      * Take care of popping the fragment back stack or finishing the activity
      * as appropriate.
@@ -60,7 +62,7 @@ public class Quiz extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(Quiz.this,home.class);
+        Intent intent = new Intent(Quiz.this, home.class);
         startActivity(intent);
         finish();
     }

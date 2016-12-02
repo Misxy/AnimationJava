@@ -13,15 +13,16 @@ import android.widget.ImageButton;
 
 public class Quiz_Incorrect extends AppCompatActivity {
     ImageButton goIncorrect_next;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    setContentView(R.layout.layoutwrong);
-        goIncorrect_next = (ImageButton)findViewById(R.id.imageButton12);
+        setContentView(R.layout.layoutwrong);
+        goIncorrect_next = (ImageButton) findViewById(R.id.imageButton12);
         goIncorrect_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz_Incorrect.this,Quiz_Result.class);
+                Intent intent = new Intent(Quiz_Incorrect.this, Quiz_Result.class);
                 startActivity(intent);
                 finish();
             }
@@ -35,7 +36,7 @@ public class Quiz_Incorrect extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(this,home.class);
+        Intent intent = new Intent(this, home.class);
         startActivity(intent);
         finish();
     }

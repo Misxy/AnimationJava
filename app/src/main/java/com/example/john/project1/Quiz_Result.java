@@ -12,18 +12,19 @@ import android.widget.Button;
  */
 
 public class Quiz_Result extends AppCompatActivity {
-    Button btn4,btn5;
+    Button btn4, btn5;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layoutresult);
-        btn4=(Button)findViewById(R.id.button4);
-        btn5 =(Button)findViewById(R.id.button5);
+        btn4 = (Button) findViewById(R.id.button4);
+        btn5 = (Button) findViewById(R.id.button5);
 
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz_Result.this,Quiz.class);
+                Intent intent = new Intent(Quiz_Result.this, Quiz.class);
                 startActivity(intent);
                 finish();
             }
@@ -32,7 +33,7 @@ public class Quiz_Result extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Quiz_Result.this,java_stat.class);
+                Intent intent = new Intent(Quiz_Result.this, java_stat.class);
                 startActivity(intent);
                 finish();
             }
@@ -46,7 +47,7 @@ public class Quiz_Result extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(this,home.class);
+        Intent intent = new Intent(this, home.class);
         startActivity(intent);
         finish();
     }
