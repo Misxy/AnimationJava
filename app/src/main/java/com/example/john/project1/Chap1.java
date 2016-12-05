@@ -6,6 +6,7 @@ import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.MediaPlayer;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -81,6 +82,7 @@ public class Chap1 extends AppCompatActivity {
                 movingtoOutput();*/
                 //Show message notified user
                 testPointerLine1();
+
             }
         });
         //Using method onClickListener for event handler on stop button.
@@ -121,131 +123,101 @@ public class Chap1 extends AppCompatActivity {
             //Pausing animations
             objLine1.pause();
             Log.d("Success!", "Pausing line1 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("2")) {
             //Pausing animations
             objLine2.pause();
             Log.d("Success!", "Pausing line2 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("3")) {
             //Pausing animations
             objLine3.pause();
             Log.d("Success!", "Pausing line3 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("14")) {
-            scrollingup();
             //Pausing animations
             objLine14.pause();
-
             Log.d("Success!", "Pausing line14 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
         } else if (checkState.equals("movingNums")) {
             //Pausing animations
             amMovingNum.pause();
             amMovingNum2.pause();
             Log.d("Success!", "Pausing NumberAnimation success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
         } else if (checkState.equals("15")) {
             //Pausing animations
             objLine15.pause();
             Log.d("Success!", "Pausing line15 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
         } else if (checkState.equals("16")) {
             //Pausing animations
             objLine16.pause();
             Log.d("Success!", "Pausing line16 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
         } else if (checkState.equals("17")) {
             //Pausing animations
             objLine17.pause();
             Log.d("Success!", "Pausing line17 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
         } else if (checkState.equals("4")) {
             //Pausing animations
             objLine4.pause();
             Log.d("Success!", "Pausing line4 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
         } else if (checkState.equals("5")) {
             //Pausing animations
             objLine5.pause();
             Log.d("Success!", "Pausing line5 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
         } else if (checkState.equals("19")) {
             //Pausing animations
             objLine19.pause();
             Log.d("Success!", "Pausing line19 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("20")) {
             //Pausing animations
             objLine20.pause();
             Log.d("Success!", "Pausing line20 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("amMovingtextToResultBox")) {
             //Pausing animations
             amMovingtextToResultBox.pause();
             Log.d("Success!", "Pausing  result's showing success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("5_1")) {
             //Pausing animations
             objLine5_1.pause();
             Log.d("Success!", "Pausing line 5_1 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("6")) {
             //Pausing animations
             objLine6.pause();
             Log.d("Success!", "Pausing line 6 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("7")) {
             //Pausing animations
             objLine7.pause();
             Log.d("Success!", "Pausing line 7 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("23")) {
             //Pausing animations
             objLine23.pause();
             Log.d("Success!", "Pausing line 23 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("24")) {
             //Pausing animations
             objLine24.pause();
             Log.d("Success!", "Pausing line 24 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("amMovingtextToResultBox2")) {
             //Pausing animations
             amMovingtextToResultBox2.pause();
             Log.d("Success!", "Pausing  result2 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("7_1")) {
             //Pausing animations
             objLine7_1.pause();
             Log.d("Success!", "Pausing  line7_1 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("8")) {
             //Pausing animations
             objLine8.pause();
             Log.d("Success!", "Pausing  line8 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
         } else {
             Log.d("Error!", "Can't pause");
         }
@@ -257,129 +229,108 @@ public class Chap1 extends AppCompatActivity {
             //Resuming animations
             objLine1.resume();
             Log.d("Success!", "Resume line1 success");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("2")) {
             //Resuming animations
             objLine2.resume();
             Log.d("Success!", "Resume line2 success");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("3")) {
             //Resuming animations
             objLine3.resume();
             Log.d("Success!", "Resume line3 success");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("14")) {
             //Resuming animations
             objLine14.resume();
             Log.d("Success!", "Resume line14 success");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_LONG).show();
+
         } else if (checkState.equals("movingNums")) {
             //Resuming animations
             amMovingNum.resume();
             amMovingNum2.resume();
             Log.d("Success!", "Resuming NumberAnimation success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("15")) {
             //Resuming animations
             objLine15.resume();
             Log.d("Success!", "Resuming line15 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("16")) {
             //Resuming animations
             objLine16.resume();
             Log.d("Success!", "Resuming line16 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("17")) {
             //Resuming animations
             objLine17.resume();
             Log.d("Success!", "Resuming line17 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("4")) {
             //Resuming animations
             objLine4.resume();
             Log.d("Success!", "Resuming line4 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("5")) {
             //Resuming animations
             objLine5.resume();
             Log.d("Success!", "Resuming line5 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("19")) {
             //Resuming animations
             objLine19.resume();
             Log.d("Success!", "Resuming line19 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("20")) {
             //Pausing animations
             objLine20.resume();
             Log.d("Success!", "Resuming line20 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("amMovingtextToResultBox")) {
             //Pausing animations
             amMovingtextToResultBox.resume();
             Log.d("Success!", "Resuming  result's showing success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("5_1")) {
             //Pausing animations
             objLine5_1.resume();
             Log.d("Success!", "Resuming line5_1 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("6")) {
             //Pausing animations
             objLine6.resume();
             Log.d("Success!", "Resuming line6 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("7")) {
             //Pausing animations
             objLine7.resume();
             Log.d("Success!", "Resuming line7 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("23")) {
             //Pausing animations
             objLine23.resume();
             Log.d("Success!", "Resuming line23 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("24")) {
             //Pausing animations
             objLine24.resume();
             Log.d("Success!", "Resuming line24 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("amMovingtextToResultBox2")) {
             //Pausing animations
             amMovingtextToResultBox2.resume();
             Log.d("Success!", "Resuming result's showing success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("7_1")) {
             //Pausing animations
             objLine7_1.resume();
             Log.d("Success!", "Resuming line7_1 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else if (checkState.equals("8")) {
             //Pausing animations
             objLine8.resume();
             Log.d("Success!", "Resuming line8 success.");
-            //Showing pause text on the screen
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
         } else {
             Log.d("Error!", "Can't resume");
         }
@@ -403,7 +354,6 @@ public class Chap1 extends AppCompatActivity {
             public void onAnimationEnd(Animator animator) {
                 pic_class.setVisibility(View.VISIBLE);
                 text_class.setVisibility(View.VISIBLE);
-                Toast.makeText(Chap1.this, "เกิด คลาส Chap1 ขึ้นมา", Toast.LENGTH_SHORT).show();
                 testPointerLine2();
 
             }
@@ -436,8 +386,19 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                Toast.makeText(Chap1.this, "โปรแกรมเริ่มทำงานที่ method main", Toast.LENGTH_SHORT).show();
-                testPointerLine3();
+                final Toast toadline1 = Toast.makeText(Chap1.this, "โปรแกรมเริ่มทำงานที่เมธอด main", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toadline1.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        testPointerLine3();
+                    }
+                }.start();
             }
 
             @Override
@@ -469,9 +430,20 @@ public class Chap1 extends AppCompatActivity {
             public void onAnimationEnd(Animator animator) {
                 pic_class.setImageResource(R.drawable.shape_circle_class);
                 text_object.setVisibility(View.VISIBLE);
-                Toast.makeText(Chap1.this, "ประกาศ object จากตลาส Calculator โดยส่ง 10 และ 5 เข้าไปใน Constructor", Toast.LENGTH_SHORT).show();
-                //Scrolling down
-                testPointerLine14();
+               final Toast toadline3 =  Toast.makeText(Chap1.this, "ประกาศ object จากคลาส Calculator โดยส่ง 10 และ 5 เข้าไปใน Constructor", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toadline3.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        //Scrolling down
+                        testPointerLine14();
+                    }
+                }.start();
             }
 
             @Override
@@ -555,10 +527,20 @@ public class Chap1 extends AppCompatActivity {
             public void onAnimationEnd(Animator animator) {
                 textnum1.setVisibility(View.VISIBLE);
                 textnum2.setVisibility(View.VISIBLE);
-                Toast.makeText(Chap1.this, "Constructor ถูกสั่งให้เริ่มการทำงานอัตโนมัติ", Toast.LENGTH_SHORT).show();
-                movingNums();
-            }
+                final Toast toastline14 = Toast.makeText(Chap1.this, "Constructor ของคลาสจะทำงานอัตโนมัติเมื่อมีการสร้าง object", Toast.LENGTH_SHORT);
+                new CountDownTimer(9000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline14.show();
+                    }
 
+                    @Override
+                    public void onFinish() {
+                        movingNums();
+                    }
+                }.start();
+            }
             @Override
             public void onAnimationCancel(Animator animator) {
 
@@ -679,8 +661,19 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textnum1.setText("10");
-                Toast.makeText(Chap1.this, "ตัวแปรnum1 มีค่าเท่ากับ 10", Toast.LENGTH_SHORT).show();
-                testpointerLine17();
+                final Toast toadline16 = Toast.makeText(Chap1.this, "กำหนดค่า num1 ให้กับ attribute ของคลาส", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toadline16.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        testpointerLine17();
+                    }
+                }.start();
             }
 
             @Override
@@ -710,8 +703,19 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textnum2.setText("5");
-                Toast.makeText(Chap1.this, "ตัวแปรnum2 มีค่าเท่ากับ 5", Toast.LENGTH_SHORT).show();
-                testpointerLine4();
+              final Toast toadline17 = Toast.makeText(Chap1.this, "กำหนดค่า num2 ให้กับ attribute ของคลาส", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toadline17.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        testpointerLine4();
+                    }
+                }.start();
             }
 
             @Override
@@ -745,8 +749,19 @@ public class Chap1 extends AppCompatActivity {
             public void onAnimationEnd(Animator animator) {
                 textResult.setVisibility(View.VISIBLE);
                 text_result_des.setVisibility(View.VISIBLE);
-                Toast.makeText(Chap1.this, "เกิดตัวแปร result ขึ้นมาเพื่อรอรับค่าผลลัพธ์", Toast.LENGTH_SHORT).show();
-                testpointerLine5();
+                final Toast taostline4 = Toast.makeText(Chap1.this, "ประกาศตัวแปร result สำหรับเก็บผลลัพธ์จากการเรียกเมธอด", Toast.LENGTH_SHORT);
+                new CountDownTimer(9000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        taostline4.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        testpointerLine5();
+                    }
+                }.start();
             }
 
             @Override
@@ -775,9 +790,18 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                Toast.makeText(Chap1.this, "เรียกใช้เมธอด plus()ของคลาสCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
-                scrollingDown();
-                testpointerLine19();
+                final Toast toastline5=Toast.makeText(Chap1.this, "เรียกใช้เมธอด plus()จากobjectของคลาสCalculatorผ่านobject", Toast.LENGTH_SHORT);
+                new CountDownTimer(9000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline5.show();
+                    }
+                    @Override
+                    public void onFinish() {
+                        testpointerLine19();
+                    }
+                }.start();
             }
 
             @Override
@@ -794,6 +818,7 @@ public class Chap1 extends AppCompatActivity {
 
     //Line19
     private void testpointerLine19() {
+        scrollingDown();
         objLine19 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 490);
         objLine19.setDuration(3000);
         checkState = "19";
@@ -837,9 +862,20 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textReturn.setVisibility(View.VISIBLE);
-                Toast.makeText(Chap1.this, "ส่งค่าผลลัพธ์ที่ได้จากการคำนวณกลับไปที่ตัวแปร result", Toast.LENGTH_SHORT).show();
-                //Moving text into result's box
-                movingTextToResultBox();
+               final Toast toastline20 = Toast.makeText(Chap1.this, "นำค่าจาก attribute ของคลาสมาบวกกัน", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline20.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        //Moving text into result's box
+                        movingTextToResultBox();
+                    }
+                }.start();
             }
 
             @Override
@@ -934,8 +970,19 @@ public class Chap1 extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 textResult.setTextColor(Color.parseColor("#ECF0F1"));
                 textResult.setText("15");
-                Toast.makeText(Chap1.this, "ตัวแปร result มีค่าเท่ากับ 15", Toast.LENGTH_SHORT).show();
-                testpointerLine6();
+                final Toast toastline5_1 = Toast.makeText(Chap1.this, "ตัวแปร result ได้รับค่าที่ส่งกลับจากเมธอด plus()", Toast.LENGTH_SHORT);
+                new CountDownTimer(9000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline5_1.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        testpointerLine6();
+                    }
+                }.start();
             }
 
             @Override
@@ -965,8 +1012,20 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textRes1.setVisibility(View.VISIBLE);
-                Toast.makeText(Chap1.this, "แสดงผลลัพธ์ออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
-                testpointerLine7();
+                final Toast toastline6 = Toast.makeText(Chap1.this, "แสดงค่าที่อยู่ในตัวแปร result ออกทางหน้าจอ", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline6.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        testpointerLine7();
+                    }
+                }.start();
+
             }
 
             @Override
@@ -995,9 +1054,20 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                Toast.makeText(Chap1.this, "เรียกใช้เมธอด minus()ของคลาสCalculatorผ่านobject", Toast.LENGTH_SHORT).show();
-                scrollingDown();
-                testpointerLine23();
+                final Toast toastline7 = Toast.makeText(Chap1.this, "เรียกใช้เมธอด minus()จากobjectของคลาสCalculatorผ่านobject", Toast.LENGTH_SHORT);
+                new CountDownTimer(9000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline7.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+
+                        testpointerLine23();
+                    }
+                }.start();
             }
 
             @Override
@@ -1014,6 +1084,7 @@ public class Chap1 extends AppCompatActivity {
 
     //Line23
     private void testpointerLine23() {
+        scrollingDown();
         objLine23 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 730);
         objLine23.setDuration(3000);
         checkState = "23";
@@ -1058,8 +1129,20 @@ public class Chap1 extends AppCompatActivity {
             public void onAnimationEnd(Animator animator) {
                 textReturn.setText("=5");
                 textReturn.setVisibility(View.VISIBLE);
-                Toast.makeText(Chap1.this, "ส่งค่าผลลัพธ์ที่ได้จากการคำนวณกลับไปที่ตัวแปร result", Toast.LENGTH_SHORT).show();
-                movingTextToResultBox2();
+                final Toast toastline24 = Toast.makeText(Chap1.this, "ส่งค่าผลลัพธ์ที่ได้จากการคำนวณกลับไปที่ตัวแปร result", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline24.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        movingTextToResultBox2();
+                    }
+                }.start();
+
             }
 
             @Override
@@ -1154,8 +1237,19 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 textResult.setText("5");
-                Toast.makeText(Chap1.this, "ตัวแปร result มีค่าเท่ากับ 5", Toast.LENGTH_SHORT).show();
-                testpointerLine8();
+                final Toast toastline7_1 = Toast.makeText(Chap1.this, "ตัวแปร result ได้รับค่าที่ส่งกลับจากเมธอด minus()", Toast.LENGTH_SHORT);
+                new CountDownTimer(9000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline7_1.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        testpointerLine8();
+                    }
+                }.start();
             }
 
             @Override
@@ -1185,7 +1279,19 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textRes2.setVisibility(View.VISIBLE);
-                Toast.makeText(Chap1.this, "แสดงผลลัพธ์ออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
+                final Toast toastline8 = Toast.makeText(Chap1.this, "แสดงค่าที่อยู่ในตัวแปร result ออกทางหน้าจอ", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline8.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+
+                    }
+                }.start();
             }
 
             @Override

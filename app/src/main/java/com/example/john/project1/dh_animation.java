@@ -82,43 +82,43 @@ public class dh_animation extends AppCompatActivity {
     //pasue Metthod
     private void pause() {
         if (CheckStateDataHiding.equals("line7")) {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             line7.pause();
             Log.d("State", "line7 paused");
         } else if (CheckStateDataHiding.equals("line9")) {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             line9.pause();
             Log.d("State", "line9 paused");
         } else if (CheckStateDataHiding.equals("line17")) {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             line17.pause();
             Log.d("State", "line17 paused");
         } else if (CheckStateDataHiding.equals("line9_1")) {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             line9_1.pause();
             Log.d("State", "line9_1 paused");
         } else if (CheckStateDataHiding.equals("line10")) {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             line10.pause();
             Log.d("State", "line10 paused");
         } else if (CheckStateDataHiding.equals("line17_1")) {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             line17_1.pause();
             Log.d("State", "line17_1 paused");
         } else if (CheckStateDataHiding.equals("line18")) {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             line18.pause();
             Log.d("State", "line18 paused");
         } else if (CheckStateDataHiding.equals("line10")) {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             line10.pause();
             Log.d("State", "line10 paused");
         } else if (CheckStateDataHiding.equals("line11")) {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             line11.pause();
             Log.d("State", "line11 paused");
         } else if (CheckStateDataHiding.equals("line12")) {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             line12.pause();
             Log.d("State", "line12 paused");
         }
@@ -126,43 +126,43 @@ public class dh_animation extends AppCompatActivity {
 
     private void resume() {
         if (CheckStateDataHiding.equals("line7")) {
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             line7.resume();
             Log.d("State", "line7 resume");
         } else if (CheckStateDataHiding.equals("line9")) {
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line9.resume();
             Log.d("State", "line9 resume");
         } else if (CheckStateDataHiding.equals("line17")) {
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line17.resume();
             Log.d("State", "line17 resume");
         } else if (CheckStateDataHiding.equals("line9_1")) {
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line9_1.resume();
             Log.d("State", "line9_1 resume");
         } else if (CheckStateDataHiding.equals("line10")) {
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line10.resume();
             Log.d("State", "line10 resume");
         } else if (CheckStateDataHiding.equals("line17_1")) {
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line17_1.resume();
             Log.d("State", "line17_1 resume");
         } else if (CheckStateDataHiding.equals("line18")) {
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line18.resume();
             Log.d("State", "line18 resume");
         } else if (CheckStateDataHiding.equals("line10")) {
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line10.resume();
             Log.d("State", "line10 resume");
         } else if (CheckStateDataHiding.equals("line11")) {
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line11.resume();
             Log.d("State", "line11 resume");
         } else if (CheckStateDataHiding.equals("line12")) {
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line12.resume();
             Log.d("State", "line12 resume");
         }

@@ -5,10 +5,12 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -79,51 +81,39 @@ public class Constructor_chapter extends AppCompatActivity {
     private void PauseAniomation() {
         if (checkState_Construct.equals("line1")) {
             Log.d("State", "line1 paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             objLine1.pause();
         } else if (checkState_Construct.equals("line9")) {
             Log.d("State", "line9 paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             objLine9.pause();
         } else if (checkState_Construct.equals("line10")) {
             Log.d("State", "line10 paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             objLine10.pause();
         } else if (checkState_Construct.equals("line11")) {
             Log.d("State", "line11 paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             objLine11.pause();
         } else if (checkState_Construct.equals("movingAnimation1")) {
             Log.d("State", "movingAnimation paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             amMovingAnimations1.pause();
         } else if (checkState_Construct.equals("line4")) {
             Log.d("State", "line4 paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             objLine4.pause();
         } else if (checkState_Construct.equals("line6")) {
             Log.d("State", "line6 paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             objLine6.pause();
         } else if (checkState_Construct.equals("line7")) {
             Log.d("State", "line7 paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             objLine7.pause();
         } else if (checkState_Construct.equals("line8")) {
             Log.d("State", "line8 paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             objLine8.pause();
         } else if (checkState_Construct.equals("line11_1")) {
             Log.d("State", "line11_1 paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             objLine11_1.pause();
         } else if (checkState_Construct.equals("line12")) {
             Log.d("State", "line12 paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             objLine12.pause();
         } else if (checkState_Construct.equals("line13")) {
             Log.d("State", "line13 paused");
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             objLine13.pause();
         }
     }
@@ -132,51 +122,51 @@ public class Constructor_chapter extends AppCompatActivity {
     private void ResumeAnimation() {
         if (checkState_Construct.equals("line1")) {
             Log.d("State", "line1 resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             objLine1.resume();
         } else if (checkState_Construct.equals("line9")) {
             Log.d("State", "line9 resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             objLine9.resume();
         } else if (checkState_Construct.equals("line10")) {
             Log.d("State", "line10 resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             objLine10.resume();
         } else if (checkState_Construct.equals("line11")) {
             Log.d("State", "line11 resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             objLine11.resume();
         } else if (checkState_Construct.equals("movingAnimation1")) {
             Log.d("State", "movingAnimation resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             amMovingAnimations1.resume();
         } else if (checkState_Construct.equals("line4")) {
             Log.d("State", "line4 resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             objLine4.resume();
         } else if (checkState_Construct.equals("line6")) {
             Log.d("State", "line6 resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             objLine6.resume();
         } else if (checkState_Construct.equals("line7")) {
             Log.d("State", "line7 resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             objLine7.resume();
         } else if (checkState_Construct.equals("line8")) {
             Log.d("State", "line8 resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             objLine8.resume();
         } else if (checkState_Construct.equals("line11_1")) {
             Log.d("State", "line11_1 resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             objLine11_1.resume();
         } else if (checkState_Construct.equals("line12")) {
-            Log.d("State", "line12 resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+            Log.d("State", "line12 resumed");Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             objLine12.resume();
         } else if (checkState_Construct.equals("line13")) {
             Log.d("State", "line13 resumed");
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             objLine13.resume();
         }
     }
@@ -198,12 +188,11 @@ public class Constructor_chapter extends AppCompatActivity {
     private void testPointerLine1() {
         checkState_Construct = "line1";
         objLine1 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 0);
-        objLine1.setDuration(3000);
+        objLine1.setDuration(2000);
         objLine1.start();
         objLine1.addListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
-
             }
 
             @Override
@@ -212,7 +201,6 @@ public class Constructor_chapter extends AppCompatActivity {
                 class_text_construct.setVisibility(View.VISIBLE);
                 num_header.setVisibility(View.VISIBLE);
                 num_text_construct.setVisibility(View.VISIBLE);
-                Toast.makeText(Constructor_chapter.this, "เกิดคลาส Example ขึ้นมา", Toast.LENGTH_LONG).show();
                 //Go to line2
                 Log.d("State", "line1 finished");
                 testPointerLine9();
@@ -234,7 +222,8 @@ public class Constructor_chapter extends AppCompatActivity {
     private void testPointerLine9() {
         checkState_Construct = "line9";
         objLine9 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 480);
-        objLine9.setDuration(3000);
+        objLine9.setDuration(4000);
+        objLine9.setInterpolator(new LinearInterpolator());
         objLine9.start();
         objLine9.addListener(new Animator.AnimatorListener() {
             @Override
@@ -246,8 +235,17 @@ public class Constructor_chapter extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 //go to line10
                 Log.d("State", "Line9 finished");
-                Toast.makeText(Constructor_chapter.this, "โปรแกรมเริ่มทำงานที่เมธอด main", Toast.LENGTH_SHORT).show();
-                testPointerLine10();
+                final Toast tag = Toast.makeText(getApplicationContext(), "เริ่มต้นทำงานที่เมธอด main",Toast.LENGTH_SHORT);
+                tag.show();
+                new CountDownTimer(6000,1000)
+                {
+                    public void onTick(long millisUntilFinished) {tag.show();}
+                    public void onFinish()
+                    {
+                         testPointerLine10();
+                    }
+                }.start();
+
 
             }
 
@@ -267,7 +265,8 @@ public class Constructor_chapter extends AppCompatActivity {
     private void testPointerLine10() {
         checkState_Construct = "line10";
         objLine10 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 540);
-        objLine10.setDuration(3000);
+        objLine10.setDuration(1000);
+        objLine10.setInterpolator(new LinearInterpolator());
         objLine10.start();
         objLine10.addListener(new Animator.AnimatorListener() {
             @Override
@@ -279,10 +278,20 @@ public class Constructor_chapter extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 str_header.setVisibility(View.VISIBLE);
                 str_text_construct.setVisibility(View.VISIBLE);
-                Toast.makeText(Constructor_chapter.this, "ตัวแปร str มีค่าเท่ากับ Hello", Toast.LENGTH_SHORT).show();
+                final Toast toadline10 = Toast.makeText(Constructor_chapter.this, "กำหนดข้อความ \"hello\" ให้กับตัวแปร str", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {toadline10.show();}
+                    @Override
+                    public void onFinish()
+                    {
+                        //Got to line11
+                         testPointerLine11();
+                    }
+                }.start();
                 Log.d("State", "Line10 finished");
-                //Got to line11
-                testPointerLine11();
+
             }
 
             @Override
@@ -301,7 +310,8 @@ public class Constructor_chapter extends AppCompatActivity {
     private void testPointerLine11() {
         checkState_Construct = "line11";
         objLine11 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 610);
-        objLine11.setDuration(3000);
+        objLine11.setDuration(1000);
+        objLine11.setInterpolator(new LinearInterpolator());
         objLine11.start();
         objLine11.addListener(new Animator.AnimatorListener() {
             @Override
@@ -313,10 +323,63 @@ public class Constructor_chapter extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 classCode_construct.setImageResource(R.drawable.shape_circle_class);
                 object_text_construct.setVisibility(View.VISIBLE);
-                Toast.makeText(Constructor_chapter.this, "ประกาศ Object จากคลาส Example โดยมีพารามิเตอร์1ตัวคือตัวแปรstr", Toast.LENGTH_SHORT).show();
-                Log.d("State", "Line11 finished");
-                //Moving animation
-                testPointerLine4();
+                final Toast toadLine11 =Toast.makeText(Constructor_chapter.this, "ส่งค่าจากตัวแปร str ให้กับ constructor", Toast.LENGTH_LONG);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toadLine11.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "Line11 finished");
+                        //Moving animation
+                        //testPointerLine4();
+                    }
+                }.start();
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
+    //Line4
+    private void testPointerLine4() {
+        checkState_Construct = "line4";
+        objLine4 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 180);
+        objLine4.setDuration(4000);
+        objLine4.setInterpolator(new LinearInterpolator());
+        objLine4.start();
+        objLine4.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                Log.d("State", "line 4 finished");
+                new CountDownTimer(5000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        testPointerLine6();
+                    }
+                }.start();
             }
 
             @Override
@@ -331,6 +394,36 @@ public class Constructor_chapter extends AppCompatActivity {
         });
     }
 
+    //Line6
+    private void testPointerLine6() {
+        checkState_Construct = "line6";
+        objLine6 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 300);
+        objLine6.setDuration(4000);
+        objLine6.setInterpolator(new LinearInterpolator());
+        objLine6.start();
+        objLine6.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                Log.d("State", "line6 finished");
+                movingAnimation();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
     //MovingAnimation method
     private void movingAnimation() {
         checkState_Construct = "movingAnimation1";
@@ -371,72 +464,12 @@ public class Constructor_chapter extends AppCompatActivity {
         });
     }
 
-    //Line4
-    private void testPointerLine4() {
-        checkState_Construct = "line4";
-        objLine4 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 180);
-        objLine4.setDuration(3000);
-        objLine4.start();
-        objLine4.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Constructor_chapter.this, "เข้าสู่ Constructor ของ class Example", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line 4 finished");
-                testPointerLine6();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-
-            }
-        });
-    }
-
-    //Line6
-    private void testPointerLine6() {
-        checkState_Construct = "line6";
-        objLine6 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 300);
-        objLine6.setDuration(3000);
-        objLine6.start();
-        objLine6.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                Log.d("State", "line6 finished");
-                movingAnimation();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-
-            }
-        });
-    }
-
     //line7
     private void testPointerLine7() {
         checkState_Construct = "line7";
         objLine7 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 360);
-        objLine7.setDuration(3000);
+        objLine7.setDuration(4000);
+        objLine7.setInterpolator(new LinearInterpolator());
         objLine7.start();
         objLine7.addListener(new Animator.AnimatorListener() {
             @Override
@@ -446,12 +479,17 @@ public class Constructor_chapter extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Constructor_chapter.this, "object กำหนดค่าให้กับAttributeของclass Example นั่นคือตัวแปร text มีค่าเท่ากับ Hello", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line7 finished");
-                //Goto line8
-                testPointerLine8();
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {}
+                    @Override
+                    public void onFinish() {
+                        //Goto line8
+                        testPointerLine8();
+                    }
+                }.start();
             }
-
             @Override
             public void onAnimationCancel(Animator animation) {
 
@@ -468,7 +506,8 @@ public class Constructor_chapter extends AppCompatActivity {
     private void testPointerLine8() {
         checkState_Construct = "line8";
         objLine8 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 420);
-        objLine8.setDuration(3000);
+        objLine8.setDuration(4000);
+        objLine8.setInterpolator(new LinearInterpolator());
         objLine8.start();
         objLine8.addListener(new Animator.AnimatorListener() {
             @Override
@@ -479,12 +518,21 @@ public class Constructor_chapter extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 num_text_construct.setText("1");
-                Toast.makeText(Constructor_chapter.this, "num มีค่าเเท่ากับ 1", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line 8 finished");
-                //Goto line 11 again
-                testPointerLine11_1();
-            }
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
 
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "line 8 finished");
+                        //Goto line 11 again
+                        testPointerLine11_1();
+                    }
+                }.start();
+            }
             @Override
             public void onAnimationCancel(Animator animation) {
 
@@ -501,7 +549,8 @@ public class Constructor_chapter extends AppCompatActivity {
     private void testPointerLine11_1() {
         checkState_Construct = "line11_1";
         objLine11_1 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 610);
-        objLine11_1.setDuration(3000);
+        objLine11_1.setDuration(4000);
+        objLine11_1.setInterpolator(new LinearInterpolator());
         objLine11_1.start();
         objLine11_1.addListener(new Animator.AnimatorListener() {
             @Override
@@ -511,12 +560,21 @@ public class Constructor_chapter extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Constructor_chapter.this, "object พร้อมใช้งาน", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line11 finished");
-                //Goto Line12
-                testPointerLine12();
-            }
+                        Log.d("State", "line11 finished");
+                        new CountDownTimer(5000,1000)
+                        {
+                            @Override
+                            public void onTick(long millisUntilFinished) {
 
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                //Goto Line12
+                                testPointerLine12();
+                            }
+                        }.start();
+                    }
             @Override
             public void onAnimationCancel(Animator animation) {
 
@@ -533,7 +591,8 @@ public class Constructor_chapter extends AppCompatActivity {
     private void testPointerLine12() {
         checkState_Construct = "line12";
         objLine12 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 665);
-        objLine12.setDuration(3000);
+        objLine12.setDuration(4000);
+        objLine12.setInterpolator(new LinearInterpolator());
         objLine12.start();
         objLine12.addListener(new Animator.AnimatorListener() {
             @Override
@@ -544,10 +603,21 @@ public class Constructor_chapter extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 output_construct.setVisibility(View.VISIBLE);
-                Toast.makeText(Constructor_chapter.this, "แสดงค่าของตัวแปร num ออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
-                Log.d("State", "Line12 finished");
-                //Go to Line13
-                testPointerLine13();
+                final Toast toadLine12 = Toast.makeText(Constructor_chapter.this, "แสดงค่าของตัวแปร num ออกทางหน้าจอ", Toast.LENGTH_LONG);
+                new CountDownTimer(4000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toadLine12.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "Line12 finished");
+                        //Go to Line13
+                        testPointerLine13();
+                    }
+                }.start();
             }
 
             @Override
@@ -565,7 +635,8 @@ public class Constructor_chapter extends AppCompatActivity {
     //Line13
     private void testPointerLine13() {
         objLine13 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 720);
-        objLine13.setDuration(3000);
+        objLine13.setDuration(4000);
+        objLine13.setInterpolator(new LinearInterpolator());
         objLine13.start();
         objLine13.addListener(new Animator.AnimatorListener() {
             @Override
@@ -582,7 +653,7 @@ public class Constructor_chapter extends AppCompatActivity {
                 classCode_construct.setVisibility(View.VISIBLE);
                 output_construct.setText("Constructor ที่ไม่มี parameter ไม่ได้ถูกนิยามไว้ในคลาส จึงเกิดข้อผิดพลาด");
                 output_construct.setVisibility(View.VISIBLE);
-                Toast.makeText(Constructor_chapter.this, "เกิดข้อผิดพลาดขึ้นมา กรุณาดูคำอธิบายที่แสดงขึ้นมาทางมุมล่างขวา", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Constructor_chapter.this, "เกิดข้อผิดพลาด", Toast.LENGTH_LONG).show();
                 Log.d("State", "Line13 finished");
             }
 

@@ -34,7 +34,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/encap_code3"
+                app:srcCompat="@drawable/encap_lastest"
                 android:id="@+id/code_encap"
                 android:scaleType="fitXY" />
         </LinearLayout>

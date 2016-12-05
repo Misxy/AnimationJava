@@ -59,7 +59,6 @@ public class Chapter2 extends AppCompatActivity {
     ImageView pointer, pic_class_chap2;
     ScrollView sv_code;
     LinearLayout layoutcode;
-    Thread scD400, scD800, scD1500;
     Boolean checkScrolling = true;
     String checkStateChap2 = "";
     TextView num1, num2, sign, result, text_returnChap2,
@@ -133,127 +132,125 @@ public class Chapter2 extends AppCompatActivity {
     private void callingPause() {
         if (checkStateChap2.equals("line1")) {
             objline1.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             Log.d("Animation", "Line 1 Paused");
         } else if (checkStateChap2.equals("line2")) {
             objline2.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
             Log.d("Animation", "Line 2 Paused");
         } else if (checkStateChap2.equals("line3")) {
             objline3.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 3 Paused");
         } else if (checkStateChap2.equals("checkingnumbersmoving")) {
             amMovingNum.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "movingNums Paused");
         } else if (checkStateChap2.equals("line17")) {
             objline17.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 17 Paused");
         } else if (checkStateChap2.equals("line29")) {
             objline29.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 29 Paused");
         } else if (checkStateChap2.equals("line30")) {
             objline30.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 30 Paused");
         } else if (checkStateChap2.equals("line31")) {
             objline31.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 31 Paused");
         } else if (checkStateChap2.equals("line32")) {
             objline32.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 32 Paused");
         } else if (checkStateChap2.equals("line18")) {
             objline18.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 18 Paused");
         } else if (checkStateChap2.equals("line3_1")) {
             objline3_1.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 3_1 Paused");
         } else if (checkStateChap2.equals("line5")) {
             objline5.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 5 Paused");
         } else if (checkStateChap2.equals("line35")) {
             objline35.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 35 Paused");
         } else if (checkStateChap2.equals("movingtextToResultBoxPlus")) {
             amMovingtextToResultBoxPlus.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "AnimationPlus Paused");
         } else if (checkStateChap2.equals("line5_1")) {
             objline5_1.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 5_1 Paused");
         } else if (checkStateChap2.equals("line6")) {
             objline6.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 6 Paused");
         } else if (checkStateChap2.equals("line7")) {
             objline7.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 7 Paused");
         } else if (checkStateChap2.equals("line39")) {
             objline39.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 39 Paused");
         } else if (checkStateChap2.equals("movingtextToResultBoxMinus")) {
             amMovingtextToResultBoxMinus.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "AnimationMinus Paused");
         } else if (checkStateChap2.equals("line7_1")) {
             objline7_1.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 7_1 Paused");
         } else if (checkStateChap2.equals("line8")) {
             objline8.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 8 Paused");
         } else if (checkStateChap2.equals("line9")) {
             objline9.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 9 Paused");
         } else if (checkStateChap2.equals("line20")) {
             objline20.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 20 Paused");
         } else if (checkStateChap2.equals("movingtextToResultBoxMultiply")) {
             amMovingtextToResultBoxMulti.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "AnimationMultiply Paused");
         } else if (checkStateChap2.equals("line9_1")) {
             objline9_1.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 9_1 Paused");
         } else if (checkStateChap2.equals("line10")) {
             objline10.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 10 Paused");
         } else if (checkStateChap2.equals("line11")) {
             objline11.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 11 Paused");
         } else if (checkStateChap2.equals("line23")) {
             objline23.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 23 Paused");
         } else if (checkStateChap2.equals("movingtextToResultBoxDivide")) {
             amMovingtextToResultBoxDivide.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "AnimationDivide Paused");
         } else if (checkStateChap2.equals("line11_1")) {
             objline11_1.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 11_1 Paused");
         } else if (checkStateChap2.equals("line12")) {
             objline12.pause();
-            Toast.makeText(this, "Paused", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 12 Paused");
         }
     }
@@ -262,132 +259,132 @@ public class Chapter2 extends AppCompatActivity {
     private void callingResume() {
         if (checkStateChap2.equals("line1")) {
             objline1.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 1 resume");
         } else if (checkStateChap2.equals("line2")) {
             objline2.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 2 resume");
         } else if (checkStateChap2.equals("line3")) {
             objline3.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 3 resume");
         } else if (checkStateChap2.equals("checkingnumbersmoving")) {
             amMovingNum.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "movingNums resume");
         } else if (checkStateChap2.equals("line17")) {
             objline17.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 17 resume");
         } else if (checkStateChap2.equals("line29")) {
             objline29.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 29 resume");
         } else if (checkStateChap2.equals("line30")) {
             objline30.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 30 resume");
         } else if (checkStateChap2.equals("line31")) {
             objline31.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 31 resume");
         } else if (checkStateChap2.equals("line32")) {
             objline32.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 32 resume");
         } else if (checkStateChap2.equals("line18")) {
             objline18.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 18 resume");
         } else if (checkStateChap2.equals("line3_1")) {
             objline3_1.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 3_1 resume");
         } else if (checkStateChap2.equals("line5")) {
             objline5.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 5 resume");
         } else if (checkStateChap2.equals("line35")) {
             objline35.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 35 resume");
         } else if (checkStateChap2.equals("movingtextToResultBoxPlus")) {
             amMovingtextToResultBoxPlus.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "AnimationPlus resume");
         } else if (checkStateChap2.equals("line5_1")) {
             objline5_1.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 5_1 resume");
         } else if (checkStateChap2.equals("line6")) {
             objline6.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 6 resume");
         } else if (checkStateChap2.equals("line7")) {
             objline7.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 7 resume");
         } else if (checkStateChap2.equals("line39")) {
             objline39.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 39 resume");
         } else if (checkStateChap2.equals("movingtextToResultBoxMinus")) {
             amMovingtextToResultBoxMinus.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "AnimationMinus resume");
         } else if (checkStateChap2.equals("line7_1")) {
             objline7_1.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 7_1 resume");
         } else if (checkStateChap2.equals("line8")) {
             objline8.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 8 resume");
         } else if (checkStateChap2.equals("line9")) {
             objline9.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 9 resume");
         } else if (checkStateChap2.equals("line20")) {
             objline20.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 20 resume");
         } else if (checkStateChap2.equals("movingtextToResultBoxMultiply")) {
             amMovingtextToResultBoxMulti.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "AnimationMultiply resume");
         } else if (checkStateChap2.equals("line9_1")) {
             objline9_1.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 9_1 resume");
         } else if (checkStateChap2.equals("line10")) {
             objline10.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 10 resume");
         } else if (checkStateChap2.equals("line11")) {
             objline11.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 11 resume");
         } else if (checkStateChap2.equals("line23")) {
             objline23.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 23 resume");
         } else if (checkStateChap2.equals("movingtextToResultBoxDivide")) {
             amMovingtextToResultBoxDivide.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "AnimationDivide resume");
         } else if (checkStateChap2.equals("line11_1")) {
             objline11_1.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 11_1 resume");
         } else if (checkStateChap2.equals("line12")) {
             objline12.resume();
-            Toast.makeText(this, "Resumed", Toast.LENGTH_SHORT).show();
+
             Log.d("Animation", "Line 12 resume");
         }
     }
 
-    //Method Prepare to hide all of objects
+    //Method Prepare to hide    objects
     private void prepare() {
         sv_code.scrollTo(0, 0);
         text_returnChap2.setVisibility(View.INVISIBLE);

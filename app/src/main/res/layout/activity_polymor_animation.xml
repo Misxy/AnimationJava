@@ -65,7 +65,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/polymor_code"
+                android:src="@drawable/polymor_lastest"
                 android:id="@+id/code_PM"
                 android:scaleType="fitXY" />
         </LinearLayout>

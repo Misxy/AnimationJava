@@ -89,70 +89,70 @@ public class Encap_Animation extends AppCompatActivity {
     private void PauseAnimation() {
         if (CheckStateEncap.equals("line11")) {
             Log.d("State", "line11 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line11.pause();
         } else if (CheckStateEncap.equals("line13")) {
             Log.d("State", "line13 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line13.pause();
         } else if (CheckStateEncap.equals("line1")) {
             Log.d("State", "line1 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line1.pause();
         } else if (CheckStateEncap.equals("line13_1")) {
             Log.d("State", "line13_1 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line13_1.pause();
         } else if (CheckStateEncap.equals("line14")) {
             Log.d("State", "line14 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line14.pause();
         } else if (CheckStateEncap.equals("line6")) {
             Log.d("State", "line6 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line6.pause();
         } else if (CheckStateEncap.equals("line7")) {
             Log.d("State", "line7 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line7.pause();
         } else if (CheckStateEncap.equals("line8")) {
             Log.d("State", "line8 paused");
             line8.pause();
         } else if (CheckStateEncap.equals("line14")) {
             Log.d("State", "line14 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line14.pause();
         } else if (CheckStateEncap.equals("line15")) {
             Log.d("State", "line15 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line15.pause();
         } else if (CheckStateEncap.equals("line3")) {
             Log.d("State", "line3 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line3.pause();
         } else if (CheckStateEncap.equals("line4")) {
             Log.d("State", "line4 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line4.pause();
         } else if (CheckStateEncap.equals("line5")) {
             Log.d("State", "line5 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line5.pause();
         } else if (CheckStateEncap.equals("line15")) {
             Log.d("State", "line15_1 paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             line15_1.pause();
         } else if (CheckStateEncap.equals("playAnimation_text")) {
             Log.d("State", " movingAnimation paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             movingAnimation.pause();
         } else if (CheckStateEncap.equals("playsetAnimation")) {
             Log.d("State", "playsetAnimation paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             setAnimation.pause();
         } else if (CheckStateEncap.equals("playgetAnimation")) {
             Log.d("State", "playgetAnimation paused");
-            Toast.makeText(this, "paused", Toast.LENGTH_SHORT).show();
+
             getAnimation.pause();
         }
     }
@@ -161,71 +161,71 @@ public class Encap_Animation extends AppCompatActivity {
     private void ResumeAnimation() {
         if (CheckStateEncap.equals("line11")) {
             Log.d("State", "line11 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line11.resume();
         } else if (CheckStateEncap.equals("line13")) {
             Log.d("State", "line13 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line13.resume();
         } else if (CheckStateEncap.equals("line1")) {
             Log.d("State", "line1 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line1.resume();
         } else if (CheckStateEncap.equals("line13_1")) {
             Log.d("State", "line13_1 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line13_1.resume();
         } else if (CheckStateEncap.equals("line14")) {
             Log.d("State", "line14 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line14.resume();
         } else if (CheckStateEncap.equals("line6")) {
             Log.d("State", "line6 resumed");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line6.resume();
         } else if (CheckStateEncap.equals("line7")) {
             Log.d("State", "line7 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line7.resume();
         } else if (CheckStateEncap.equals("line8")) {
             Log.d("State", "line8 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line8.resume();
         } else if (CheckStateEncap.equals("line14")) {
             Log.d("State", "line14 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line14.resume();
         } else if (CheckStateEncap.equals("line15")) {
             Log.d("State", "line15 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line15.resume();
         } else if (CheckStateEncap.equals("line3")) {
             Log.d("State", "line3 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line3.resume();
         } else if (CheckStateEncap.equals("line4")) {
             Log.d("State", "line4 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line4.resume();
         } else if (CheckStateEncap.equals("line5")) {
             Log.d("State", "line5 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line5.resume();
         } else if (CheckStateEncap.equals("line15")) {
             Log.d("State", "line15_1 resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             line15_1.resume();
         } else if (CheckStateEncap.equals("playAnimation_text")) {
             Log.d("State", " movingAnimation resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             movingAnimation.resume();
         } else if (CheckStateEncap.equals("playsetAnimation")) {
             Log.d("State", "playsetAnimation resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             setAnimation.resume();
         } else if (CheckStateEncap.equals("playgetAnimation")) {
             Log.d("State", "playgetAnimation resume");
-            Toast.makeText(this, "resume", Toast.LENGTH_SHORT).show();
+
             getAnimation.resume();
         }
     }
