@@ -51,7 +51,6 @@
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".Result" />
-        <activity android:name=".AnswerActivity"></activity>
     </application>
 
 </manifest>
