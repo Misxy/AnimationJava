@@ -81,6 +81,7 @@ public class Chap1 extends AppCompatActivity {
                 /*output.setVisibility(View.VISIBLE);
                 movingtoOutput();*/
                 //Show message notified user
+                Toast.makeText(Chap1.this, "Start!", Toast.LENGTH_SHORT).show();
                 testPointerLine1();
 
             }
@@ -872,8 +873,9 @@ public class Chap1 extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        //Moving text into result's box
-                        movingTextToResultBox();
+                        //Goto line5 again
+                        testPointerLine5_1();
+
                     }
                 }.start();
             }
@@ -938,8 +940,8 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                //Goto line5 again
-                testPointerLine5_1();
+                //Goto line6
+                testpointerLine6();
             }
 
             @Override
@@ -980,7 +982,8 @@ public class Chap1 extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        testpointerLine6();
+                        //Moving text into result's box
+                        movingTextToResultBox();
                     }
                 }.start();
             }
@@ -1064,7 +1067,6 @@ public class Chap1 extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-
                         testpointerLine23();
                     }
                 }.start();
@@ -1139,7 +1141,7 @@ public class Chap1 extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        movingTextToResultBox2();
+                        testpointerLine7_1();
                     }
                 }.start();
 
@@ -1205,7 +1207,7 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 //Going to line8
-                testpointerLine7_1();
+                testpointerLine8();
 
             }
 
@@ -1247,7 +1249,7 @@ public class Chap1 extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        testpointerLine8();
+                        movingTextToResultBox2();
                     }
                 }.start();
             }
@@ -1289,7 +1291,7 @@ public class Chap1 extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-
+                        Toast.makeText(Chap1.this, "Finish", Toast.LENGTH_SHORT).show();
                     }
                 }.start();
             }
@@ -1310,8 +1312,8 @@ public class Chap1 extends AppCompatActivity {
     private void stopPlaying() {
         //Show stop message
         Toast.makeText(Chap1.this, "Stop!", Toast.LENGTH_SHORT).show();
-        sv_code.scrollTo(0, 0);
         recreate();
+        sv_code.scrollTo(0, 0);
     }
 
     //go up function

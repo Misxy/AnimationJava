@@ -9,6 +9,7 @@ import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
@@ -38,7 +39,7 @@ public class Chapter2 extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
+        sv_code.scrollTo(0, 0);
     }
 
     /**
@@ -104,6 +105,7 @@ public class Chapter2 extends AppCompatActivity {
         playbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(Chapter2.this, "Start!", Toast.LENGTH_SHORT).show();
                 final Toast toadstart = Toast.makeText(Chapter2.this,"คลาสแม่คือคลาส Calculator คลาสลูกคือคลาส MyCalculator",Toast.LENGTH_SHORT);
                 new CountDownTimer(9000,1000)
                 {
@@ -125,6 +127,7 @@ public class Chapter2 extends AppCompatActivity {
             public void onClick(View v) {
                 Thread.currentThread().interrupt();
                 recreate();
+                sv_code.scrollTo(0,0);
             }
         });
         pausebtn.setOnClickListener(new View.OnClickListener() {
@@ -631,8 +634,19 @@ public class Chapter2 extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        testScrollingDown(1400);
-                        testPointerLine29();
+                        new CountDownTimer(5000,1000)
+                        {
+                            @Override
+                            public void onTick(long millisUntilFinished) {
+
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                testScrollingDown(1400);
+                                testPointerLine29();
+                            }
+                        }.start();
                     }
                 }.start();
             }
@@ -652,7 +666,6 @@ public class Chapter2 extends AppCompatActivity {
     //line29
     private void testPointerLine29() {
         checkStateChap2 = "line29";
-        Toast.makeText(this, "เข้าสู่ Constructor ของclass Calculator", Toast.LENGTH_SHORT).show();
         objline29 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 610);
         objline29.setDuration(4000);
         objline29.start();
@@ -1854,7 +1867,7 @@ public class Chapter2 extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-
+                        Toast.makeText(Chapter2.this,"Finish", Toast.LENGTH_SHORT).show();
                     }
                 }.start();
             }

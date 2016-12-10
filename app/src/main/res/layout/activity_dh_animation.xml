@@ -26,7 +26,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/datahide_lastest"
+                android:src="@drawable/dh_code3"
                 android:id="@+id/code_Datahide"
                 android:scaleType="fitXY" />
         </LinearLayout>

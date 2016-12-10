@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class Constructor_chapter extends AppCompatActivity {
     ObjectAnimator objLine1, objLine4, objLine6, objLine7, objLine8, objLine9, objLine10, objLine11, objLine11_1, objLine12, objLine13;
     String checkState_Construct = "";
     AnimatorSet amMovingAnimations1;
+    ScrollView sv_code;
     int CountPush = 1;
 
     @Override
@@ -32,6 +34,7 @@ public class Constructor_chapter extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_constructor_chapter);
         //Views
+        sv_code =(ScrollView)findViewById(R.id.sv_code);
         pointer = (ImageView) findViewById(R.id.pointer_construct);
         classCode_construct = (ImageView) findViewById(R.id.pic_construct);
         class_text_construct = (TextView) findViewById(R.id.class_text_Construct);
@@ -52,7 +55,19 @@ public class Constructor_chapter extends AppCompatActivity {
         playConstruct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testPointerLine1();
+                final Toast toastline1 = Toast.makeText(Constructor_chapter.this,"Start!",Toast.LENGTH_SHORT);
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline1.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        testPointerLine1();
+                    }
+                }.start();
             }
         });
         //pausebutton
@@ -73,6 +88,8 @@ public class Constructor_chapter extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 recreate();
+                sv_code.scrollTo(0,0);
+
             }
         });
     }
@@ -278,7 +295,7 @@ public class Constructor_chapter extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 str_header.setVisibility(View.VISIBLE);
                 str_text_construct.setVisibility(View.VISIBLE);
-                final Toast toadline10 = Toast.makeText(Constructor_chapter.this, "กำหนดข้อความ \"hello\" ให้กับตัวแปร str", Toast.LENGTH_SHORT);
+                final Toast toadline10 = Toast.makeText(Constructor_chapter.this, "กำหนดข้อความ \"Hello\" ให้กับตัวแปร str", Toast.LENGTH_SHORT);
                 new CountDownTimer(6000,1000)
                 {
                     @Override
@@ -335,7 +352,7 @@ public class Constructor_chapter extends AppCompatActivity {
                     public void onFinish() {
                         Log.d("State", "Line11 finished");
                         //Moving animation
-                        //testPointerLine4();
+                        testPointerLine4();
                     }
                 }.start();
 
@@ -449,7 +466,18 @@ public class Constructor_chapter extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 //Goto Line4
                 Log.d("State", "line11 finished");
-                testPointerLine7();
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        testPointerLine7();
+                    }
+                }.start();
             }
 
             @Override
