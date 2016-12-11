@@ -5,6 +5,7 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,7 +57,19 @@ public class Encap_Animation extends AppCompatActivity {
         PlaybtnEncap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GoLine11();
+                final Toast toast1 = Toast.makeText(Encap_Animation.this,"Start!",Toast.LENGTH_SHORT);
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toast1.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        GoLine11();
+                    }
+                }.start();
             }
         });
         //pause button
@@ -260,9 +273,20 @@ public class Encap_Animation extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 class_encap.setVisibility(View.VISIBLE);
                 classEncap_text.setVisibility(View.VISIBLE);
-                Toast.makeText(Encap_Animation.this, "โปรแกรมเริ่มทำงานที่เมธอด main", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line11 finished");
-                GoLine13();
+               final Toast toastline11 = Toast.makeText(Encap_Animation.this, "โปรแกรมเริ่มทำงานที่เมธอด main", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline11.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "line11 finished");
+                        GoLine13();
+                    }
+                }.start();
             }
 
             @Override
@@ -293,73 +317,21 @@ public class Encap_Animation extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 class_encap.setImageResource(R.drawable.shape_circle_class);
                 objEncap_text.setVisibility(View.VISIBLE);
-                Toast.makeText(Encap_Animation.this, "มีการประกาศ object ของคลาส Employee ขึ้นมา", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line13 finished");
-                //Go to line1
-                GoLine1();
-            }
+                final Toast toastline13 = Toast.makeText(Encap_Animation.this, "สร้าง object จากคลาส Employee", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline13.show();
+                    }
 
-            @Override
-            public void onAnimationCancel(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-
-            }
-        });
-    }
-
-    private void GoLine1() {
-        CheckStateEncap = "line1";
-        line1 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 0);
-        line1.setDuration(3000);
-        line1.start();
-        line1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Encap_Animation.this, "คลาส Employee", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line1 finished");
-                //Goline13 again
-                GoLine13_1();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-
-            }
-        });
-    }
-
-    private void GoLine13_1() {
-        CheckStateEncap = "line13_1";
-        line13_1 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 720);
-        line13_1.setDuration(3000);
-        line13_1.start();
-        line13_1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Encap_Animation.this, "object พร้อมใช้งาน", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line13_1 finished");
-                //Goline14
-                GoLine14();
-
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "line13 finished");
+                        //Goline13 again
+                        GoLine14();
+                    }
+                }.start();
             }
 
             @Override
@@ -388,10 +360,21 @@ public class Encap_Animation extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 text_parameter.setVisibility(View.VISIBLE);
-                Toast.makeText(Encap_Animation.this, "เข้าถึงเมธอด setName()ของคลาส Employee ผ่าน object", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line14 finished");
-                //playAnimation
-                playAnimation_text();
+               final Toast toastline14 = Toast.makeText(Encap_Animation.this, "กำหนดค่าให้กับ attribute ของคลาส Employee ผ่านเมธอด setName()", Toast.LENGTH_SHORT);
+                new CountDownTimer(9000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline14.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "line14 finished");
+                        //playAnimation
+                        playAnimation_text();
+                    }
+                }.start();
             }
 
             @Override
@@ -424,10 +407,19 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Encap_Animation.this, "ส่งสตริงที่เขียนว่า Torn ไปให้กับเมธอด setName(String empName)", Toast.LENGTH_LONG).show();
-                Log.d("State", "Animation_text finished");
-                //Goto Line6
-                GoLine6();
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "Animation_text finished");
+                        //Goto Line6
+                        GoLine6();
+                    }
+                }.start();
             }
 
             @Override
@@ -457,12 +449,22 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                setter_text.setVisibility(View.VISIBLE);
-                Setter_Box.setVisibility(View.VISIBLE);
-                Toast.makeText(Encap_Animation.this, "เมธอด setName(String empName)รอบรับค่าสตริงที่จะถูกส่งเข้ามา", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line6 finished");
-                //Goto Line7
-                GoLine7();
+               new CountDownTimer(3000,1000)
+               {
+                   @Override
+                   public void onTick(long millisUntilFinished) {
+
+                   }
+
+                   @Override
+                   public void onFinish() {
+                       setter_text.setVisibility(View.VISIBLE);
+                       Setter_Box.setVisibility(View.VISIBLE);
+                       Log.d("State", "line6 finished");
+                       //Goto Line7
+                       GoLine7();
+                   }
+               }.start();
             }
 
             @Override
@@ -493,9 +495,19 @@ public class Encap_Animation extends AppCompatActivity {
             public void onAnimationEnd(Animator animation) {
                 Log.d("State", "line17 finished");
                 //goLine8
-                Toast.makeText(Encap_Animation.this, "เมธอด setName(String empName) รับสตริงที่เขียนว่า Torn เข้าสู่เมธอด()", Toast.LENGTH_LONG).show();
-                GoLine8();
+               final Toast toastline7 = Toast.makeText(Encap_Animation.this, "กำหนดค่าให้กับ attribute empName", Toast.LENGTH_LONG);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline7.show();
+                    }
 
+                    @Override
+                    public void onFinish() {
+                        GoLine8();
+                    }
+                }.start();
             }
 
             @Override
@@ -509,7 +521,47 @@ public class Encap_Animation extends AppCompatActivity {
             }
         });
     }
+    //GoLine8
+    private void GoLine8() {
+        CheckStateEncap = "line8";
+        line8 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 420);
+        line8.setDuration(6000);
+        line8.start();
+        line8.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
 
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "line8 finished");
+                        //play setanimation
+                        playsetAnimation();
+                    }
+                }.start();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
     //play setAnimation
     private void playsetAnimation() {
         CheckStateEncap = "playsetAnimation";
@@ -569,38 +621,6 @@ public class Encap_Animation extends AppCompatActivity {
         });
     }
 
-    //GoLine8
-    private void GoLine8() {
-        CheckStateEncap = "line8";
-        line8 = ObjectAnimator.ofFloat(pointer, View.TRANSLATION_Y, 420);
-        line8.setDuration(6000);
-        line8.start();
-        line8.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Encap_Animation.this, "ตัวแปร empName มีค่าเท่ากับ Torn ", Toast.LENGTH_LONG).show();
-                Log.d("State", "line8 finished");
-                //play setanimation
-                playsetAnimation();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-
-            }
-        });
-    }
-
     //Go Line14_1
     private void GoLine14_1() {
         CheckStateEncap = "line14_1";
@@ -615,9 +635,20 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Log.d("State", "line14_1 finished");
-                //Goline 15
-                GoLine15();
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "line14_1 finished");
+                        //Goline 15
+                        GoLine15();
+                    }
+                }.start();
             }
 
             @Override
@@ -646,10 +677,21 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Toast.makeText(Encap_Animation.this, "เข้าถึงเมธอด getName()ของคลาส Employee ผ่าน object", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line15 finished");
-                //GoLine3
-                GoLine3();
+                final Toast toastline15 = Toast.makeText(Encap_Animation.this, "ดึงค่าจาก attribute ของคลาส Employee ผ่านเมธอด  getName()", Toast.LENGTH_SHORT);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline15.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "line15 finished");
+                        //GoLine3
+                        GoLine3();
+                    }
+                }.start();
             }
 
             @Override
@@ -678,12 +720,22 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                getter_text.setVisibility(View.VISIBLE);
-                Getter_box.setVisibility(View.VISIBLE);
-                Toast.makeText(Encap_Animation.this, "เข้าสู่เมธอด getName()", Toast.LENGTH_SHORT).show();
-                Log.d("State", "line3 finished");
-                //Go to line4
-                GoLine4();
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        getter_text.setVisibility(View.VISIBLE);
+                        Getter_box.setVisibility(View.VISIBLE);
+                        Log.d("State", "line3 finished");
+                        //Go to line4
+                        GoLine4();
+                    }
+                }.start();
             }
 
             @Override
@@ -712,10 +764,21 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                Log.d("State", "line4 finished");
-                Getter_box.setTextColor(Color.parseColor("#FFFFFF"));
-                //Goto Line5
-                GoLine5();
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "line4 finished");
+                        Getter_box.setTextColor(Color.parseColor("#FFFFFF"));
+                        //Goto Line5
+                        GoLine5();
+                    }
+                }.start();
             }
 
             @Override
@@ -743,11 +806,22 @@ public class Encap_Animation extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 Getter_box.setText("Torn");
-                Toast.makeText(Encap_Animation.this, "ส่งค่าของ empName กลับไปที่ object", Toast.LENGTH_LONG).show();
-                Log.d("State", "line5 finished");
-                output_header.setVisibility(View.VISIBLE);
-                output_layout.setVisibility(View.VISIBLE);
-                GoLine15_1();
+               final Toast toastline5= Toast.makeText(Encap_Animation.this, "ส่งค่าที่อยู่ใน attribute กลับ", Toast.LENGTH_LONG);
+                new CountDownTimer(6000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline5.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        Log.d("State", "line5 finished");
+                        output_header.setVisibility(View.VISIBLE);
+                        output_layout.setVisibility(View.VISIBLE);
+                        GoLine15_1();
+                    }
+                }.start();
             }
 
             @Override
@@ -832,9 +906,20 @@ public class Encap_Animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                output_result.setVisibility(View.VISIBLE);
-                Toast.makeText(Encap_Animation.this, "แสดงค่าผลลัพธ์ออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
-                Log.d("State", "Application finished");
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        output_result.setVisibility(View.VISIBLE);
+                        Toast.makeText(Encap_Animation.this, "แสดงค่าที่ส่งกลับออกทางหน้าจอ", Toast.LENGTH_SHORT).show();
+                        Log.d("State", "Application finished");
+                    }
+                }.start();
             }
 
             @Override

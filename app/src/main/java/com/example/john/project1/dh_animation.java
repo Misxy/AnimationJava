@@ -53,7 +53,19 @@ public class dh_animation extends AppCompatActivity {
         playbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GoLine7();
+                final Toast toaststart = Toast.makeText(dh_animation.this,"Start!",Toast.LENGTH_SHORT);
+                new CountDownTimer(3000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toaststart.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        GoLine7();
+                    }
+                }.start();
             }
         });
         pausebtn.setOnClickListener(new View.OnClickListener() {

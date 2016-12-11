@@ -76,8 +76,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:id="@+id/class_PM"
-        android:background="@android:color/background_dark"
-        android:src="@drawable/shape_circle_class" />
+        android:background="@android:color/background_dark" />
 
     <TextView
         android:text="Object"
