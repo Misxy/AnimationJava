@@ -18,7 +18,7 @@ public class constructor_teach extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layoutconstructor);
-        goChap2 = (ImageButton) findViewById(R.id.go_chap2);
+        goChap2 = (ImageButton) findViewById(R.id.goDatahide);
         goChap2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

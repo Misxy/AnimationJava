@@ -1,18 +1,39 @@
 <resources>
     <string name="app_name">Project1</string>
     <string name="title_activity_main">MainActivity</string>
-    <string name="objectclass_detail">Class คือ คุณลักษณะ หรือคุณสมบัติของวัตถุใดวัตถุหนึ่ง หรื่อจะง่ายๆคือเป็นตัวกำหนดคุณสมบัติได้ถูกสร้างขึ้น จะขอยกตัวอย่าง class Calculator มีคุณสมบัติในการบวก ลบ หรือขึ้นอยู่กับที่เราสร้างคุณสมบัติใหม่ๆเพิ่มเติม </string>
-    <string name="objectcalss_detail2">Obeject คือ วัตถุที่สร้างขึ้นมาจาก Class โดยจะสามารถนำไปใช้ดำเนินงานต่าง ๆ ได้ตามความสามารถที่ระบุไว้ใน Class</string>
-    <string name="inheritance_detail">Inheritance เป็นคุณสมบัติในการเขียนโปรแกรมเชิงวัตถุที่เรียกว่าคุณสมบัติการสืบทอด โดยที่คลาสสามารถสืบทอดสมาชิกของมันจากคลาสหลัก (super class) ไปยังคลาสย่อย (delivered class) โดยการสืบทอดในภาษา Java นั้นสมาชิกทั้งหมดจะถูกสืบทอดไปยังคลาสย่อย ยกเว้นสมาชิกที่มีระดับการเข้าถึงเป็น private และ constructor ของมัน</string>
-    <string name="encap_detail">   Encapsulation หมายถึง การเขียนโปรแกรมที่มีการซ่อนข้อมูล (information hiding) เพื่อป้องกันการเข้าถึงข้อมูลจากภายนอก และบังคับให้ Object จาก class อื่นเข้าถึงข้อมูลที่ถูกซ่อนไว้ผ่านทาง interface ที่เตรียมไว้ นั่นคือ Setter และ Getter นั่นเอง โดย Setter ทำหน้าที่กำหนดค่าหรือเปลี่ยนแปลงข้อมูล Getter ทำหน้าที่ส่งข้อมูลภายในออกมา</string>
+    <string name="objectclass_detail">Class คือ พิมพ์เขียว (Blue Print) เพื่อนำไปสร้าง Object ต่าง ๆ โดยให้เข้าใจหลักการง่าย ๆ สมมุติเช่น เวลาสถาปนิกออกแบบบ้านก็จะออกแบบไว้ในกระดาษ (Class) และนำไปสร้างเป็นบ้านหลังจริง ๆ (Object) ต่อไปในอนาคต</string>
+    <string name="objectcalss_detail2">Object คือ วัตถุที่สร้างขึ้นมาจาก Class หรืออาจจะเรียก Object ได้อีกอย่างว่า instance โดย Object จะสามารถนำไปใช้ดำเนินงานต่าง ๆ ได้ตามความสามารถที่ระบุไว้ใน Class</string>
+    <string name="inheritance_detail">Inheritance คือ การขยายลักษณะพิเศษหรือความสามารถของชนิดวัตถุใหม่จากชนิดวัตถุพื้นฐานให้มีลักษณะของเดิมและเพิ่มเติมสิ่งใหม่ ๆ เข้าไปด้วย เช่น คลาสมนุษย์เป็นคลาสที่มีคุณสมบัติและพฤตกรรมพื้นฐานที่ทุกคนจะต้องมี และสืบทอดคุณสมบัตินี้ไปยังคลาสประชาชน ซึ่งจะต้องมีการระบุ เชื้อชาติ สัญชาติ และมีพฤติกรรมในการสื่อสารที่เหมือนกัน และคลาสประชาชนนี้ยังถูกสืบทอดไปยังคลาสนักเรียน ดังภาพ</string>
+    <string name = "inheritance_detail2">จากโค้ดดังกล่าว\nClass Child ทำการสืบทอดจาก Class Inheritance โดยใช้คำสั่ง extends
+ทำให้สามารถเรียกใช้ Method getName() และ getNickname() ได้
+โดยไม่ต้องสร้าง method ดังกล่าวขึ้นใน Class ของตนเอง</string>
+    <string name = "inheritance_detail3">ประโยชน์ของการทำ Inheritance\n
+1. Class ลูกสามารถเรียกใช้งานคำสั่งต่าง ๆ จาก Class พ่อแม่ ได้เลยทันทีโดยไม่จำเป็นต้องเขียนโปรแกรมใหม่\n
+2. ทำให้ Class ต่าง ๆ ที่มีลักษณะเหมือน ๆ กันทำการสืบทอดคุณสมบัติไปได้ และใช้งานได้โดยทันที\n
+3. เพื่อจัดกลุ่ม และทำให้การออกแบบ Class มีประสิทธิภาพมากยิ่งขึ้น</string>>
+    <string name="inheritance_detail4">ในเชิงโปรแกรม เมื่อ Class  เมื่อคลาสลูกสืบทอดจาก Class แม่แล้ว จะสามารถเรียกใช้ Method
+    จาก Class แม่ได้เลยโดยไม่ต้องประกาศ Object อีก โดยวิธีการสร้าง Class ลูกให้รู้ว่าสืบทอดจาก Class ใด
+    เพียงแค่ใช้คำสั่ง extends หลังชื่อ Class ลูกนั้นๆ ก็จะทำให้ประหยัดพื้นที่ในการประกาศ Object ต่างๆ ได้มากทีเดียว ยกตัวอย่างเช่น</string>
+    <string name="encap_detail">\tencapsulation หมายถึง การเขียนโปรแกรมที่มีการซ่อนข้อมูล (information hiding) เพื่อป้องกันการเข้าถึงข้อมูลจากภายนอก และบังคับให้ Object จาก class อื่นเข้าถึงข้อมูลที่ถูกซ่อนไว้ผ่านทาง interface ที่เตรียมไว้ โดยมี interface อยู่ 2 ประเภท ได้แก่\n
+\t1. Mutator เป็น interface ที่ใช้กำหนดค่าหรือเปลี่ยนแปลงข้อมูล\n
+\t2. Accessor เป็น interface ที่ใช้ส่งข้อมูลภายในออกมา\n
+\tซึ่ง mutator คือ setter method และ accessor ก็คือ getter method นั่นเอง\n
+\tหมายเหตุ: setter / getter method นิยมตั้งชื่อตาม attribute เช่นมี attribute ชื่อ name ก็จะตั้งชื่อ setter / getter method ว่า setName() กับ getName() เป็นต้น</string>
     <string name="datahide_header">Access Modifier โดยปกติของภาษาจาวามีทั้งหมด 4 ระดับด้วยกัน (เรียงตามระดับเข้มงวดน้อยที่สุด ไปยังเข้มงวดมากที่สุด)</string>
     <string name="datahide_public">1. public เป็นการประกาศระดับการเข้าถึงที่เข้มงวดน้อยที่สุด หรือกล่าวได้ว่าใคร ๆ ก็สามารถเข้าถึง และเรียกใช้งานได้ (นอก - ใน Class สามารถเข้าถึง และใช้งานได้หมด)</string>
-    <string name="datahide_protect">2. protected เป็นการประกาศระดับการเ้ข้าถึงที่เกี่ยวข้องกับเรื่องการสืบทอด (InInheritance)</string>
+    <string name="datahide_protect">2. protected เป็นการประกาศระดับการเข้าถึงที่เกี่ยวข้องกับเรื่องการสืบทอด (InInheritance) ซึ่งสามารถเข้าถึงได้จาก Class Subclass และ Package เดียวกันเท่านั้น</string>
     <string name="datahide_package">3. No modifier เป็นระดับการเข้าถึงที่ไม่ต้องประกาศใด ๆ เหมือนกับแบบอื่น ๆ โดยเข้าถึงได้กับภายใน Class และภายใน package เท่านั้น โดย package เปรียบเสมือนกับ Folder ต่าง ๆ ที่บรรจุ Source Code เอาไว้</string>
     <string name="datahide_private">4. private เป็นการประกาศระดับการเข้าถึงที่เข้มงวดที่สุด สามารถเข้าถึงได้เฉพาะภายใน Class เท่านั้น หรือเข้าใช้งานผ่าน Method Public ที่กำหนดเอาไว้โดยเฉพาะ</string>
-    <string name="poly_detail">"Polymorphism" ถูกให้ความหมายว่า "various form" หรือการเป็นได้หลากหลายรูปแบบ ในทางการเขียนโปรแกรมมันก็มีความหมายเช่นนั้น คือการเป็นได้หลากหลายรูปแบบ ในทางปฏิบัติมันคือการที่เราสามารถประกาศตัวแปรชนิดหนึ่งแต่สามารถอ้างอิงไปยังออบเจกต์ได้หลายชนิด</string>
-    <string name="ply_detail2">Note: object ที่ถูกสร้างในรูปของ polymorphism สามารถอ้างอิงถึงตัวแปรได้เฉพาะในขอบเขตของ class ที่ใช้ประกาศ object เท่านั้น</string>
-    <string name="constructor_detail">Constructor คือสิ่งที่มีไว้สำหรับกำหนดค่าเริ่มต้นให้กับตัวแปรคลาสของอ็อปเจ็ค คอนสตรัคเตอร์จะทำงานอัตโนมัติเมื่อมีการ new อ็อปเจ็คขึ้นมา ระบบจะทำการจองพื้นที่ในหน่วยความจำสำหรับแปรอ็อปเจ็คแล้วตามด้วยConstructor</string>
+    <string name="poly_detail">Polymorphism (การพ้องรูป) เป็นคุณสมบัติที่ชนิดของวัตถุที่เกิดจากชนิดของวัตถุแม่เดียวกันสามารถมีความสามารถ (เมธอด) เหมือนแม่แต่ผลลัพธ์การดำเนินงานไม่เหมือน คือ มีลักษณะเฉพาะตัว ตัวอย่างเช่น พฤติกรรมการบินของของคลาสสัตว์ทั้ง 3 ชนิด ที่มีความแตกต่างกันแต่ชื่อพฤติกรรมเหมือนกัน</string>
+    <string name="poly_detail2">จากโค้ดดังกล่าว\nในบรรทัดที่ 24 จะเห็นได้ว่าเรียกใช้ a1.makeNoise()
+ซึ่ง a1 ได้ถูกกำหนดไว้ในบรรทัดที่ 23 แล้วว่าเป็น Class Cat
+ดังนั้น Output จึงควรเป็น Meawoo
+ในทางกลับกันหากเปลี่ยนโค้ดในส่วนของ main ให้เป็นดังภาพข้างล่าง
+Output จะกลายเป็น Bark!!</string>
+    <string name="constructor_detail1">เวลาสร้างคลาส จะมีเมธอดตัวหนึ่งที่กำหนดค่าเริ่มต้น หรือเตรียมงานของคลาส เรียกว่า Constructor ซึ่ง Constructor จะใช้รูป public ClassName() เสมอ (เหมือนเมธอด แต่ไม่มี type) และสามารถมี arguments ได้ตามต้องการ เช่น</string>
+    <string name="constructor_detail2">ในตัวอย่างนี้เรามี constructor ของคลาส Car 2 ตัว
+ซึ่งเวลาเรียกใช้ Constructor ก็เรียกเหมือนเมธอด เพียงแต่ต้องมีคำว่า new นำหน้าเสมอ เช่น</string>
+    <string name ="constructor_detail3">Car prius = new Car(); เรียกตัวบน\nCar vios = new Car(30); เรียกตัวล่าง เพราะเราส่ง int เข้าไปในวงเล็บ</string>
     <string name="title_Correct">คำตอบถูกต้อง</string>
     <string name="message_Correct">ถูกต้องต้องค่ะ เก่งมากกก</string>
     <string name="title_Wrong">คำตอบผิด</string>

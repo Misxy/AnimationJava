@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imageView4"
         android:src="@drawable/inhe"
@@ -13,39 +14,77 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:scaleType="fitStart" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:id="@+id/imageView5"
-        android:layout_marginBottom="200dp"
-        android:scaleType="fitXY"
-        android:layout_above="@+id/goDatahide"
-        android:layout_alignParentStart="true"
-        android:layout_height="150dp"
-        android:background="@drawable/inherit_new2" />
+        android:scaleType="fitStart"
+        android:layout_weight="1" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_above="@+id/goDatahide"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true">
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="210dp"
+        android:layout_marginBottom="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="#A5D6A7"
             android:weightSum="1">
 
             <TextView
                 android:text="@string/inheritance_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView11"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:background="#fffd88"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/inheritancepicture"
+                android:id="@+id/imageView19" />
+
+            <TextView
+                android:text="@string/inheritance_detail4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView"
                 android:textColor="@android:color/black"
                 android:layout_weight="1"
-                android:textAlignment="viewStart" />
+                android:textAlignment="viewStart"
+                android:background="#ffbd80" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/inhe_code_1"
+                android:id="@+id/imageView17"
+                android:layout_weight="1"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp" />
+
+            <TextView
+                android:text="@string/inheritance_detail2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                android:textColor="@android:color/black"
+                android:layout_weight="1"
+                android:textAlignment="viewStart"
+                android:background="#89C4F4"
+                android:layout_marginBottom="5dp" />
+
+            <TextView
+                android:text="@string/inheritance_detail3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:layout_weight="1"
+                android:textColor="@android:color/black"
+                android:background="@color/colorAccent" />
+
         </LinearLayout>
     </ScrollView>
 

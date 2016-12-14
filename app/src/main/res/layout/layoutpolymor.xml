@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -15,31 +16,13 @@
         android:layout_alignParentTop="true"
         android:scaleType="fitStart" />
 
-    <ImageButton
-        android:id="@+id/goDatahide"
-        android:background="@drawable/nextbtn"
-        android:layout_marginEnd="12dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="21dp"
-        android:layout_width="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/imageView5" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:id="@+id/imageView5"
-        android:src="@drawable/poly_new2"
-        android:layout_marginBottom="162dp"
-        android:scaleType="fitXY"
-        android:layout_height="180dp"
-        android:layout_above="@+id/goDatahide"
-        android:layout_alignParentStart="true" />
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="match_parent"
         android:layout_above="@+id/goDatahide"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="210dp"
+        android:layout_marginBottom="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,17 +35,57 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView12"
                 android:textColor="@android:color/black"
-                android:background="#A5D6A7" />
+                android:background="#aac2d3" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pm_p_1"
+                android:id="@+id/imageView22"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp" />
 
             <TextView
-                android:text="@string/ply_detail2"
+                android:text="ตัวอย่าง"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView13"
+                android:textColor="@android:color/black" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pm_c_1"
+                android:id="@+id/imageView23" />
+
+            <TextView
+                android:text="@string/poly_detail2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView17"
                 android:textColor="@android:color/black"
-                android:background="#89C4F4" />
+                android:background="@color/colorAccent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/pm_c_2_e"
+                android:id="@+id/imageView24" />/>
 
         </LinearLayout>
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/goDatahide"
+        android:background="@drawable/nextbtn"
+        android:layout_marginEnd="12dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="21dp"
+        android:layout_width="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/imageView5"
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>

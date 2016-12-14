@@ -267,7 +267,18 @@ public class polymor_animation extends AppCompatActivity {
                     @Override
                     public void onFinish() {
                         //Go line14
-                        GoLine14();
+                        new CountDownTimer(6000,1000)
+                        {
+                            @Override
+                            public void onTick(long millisUntilFinished) {
+
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                GoLine14();
+                            }
+                        }.start();
                     }
                 }.start();
             }
@@ -471,7 +482,7 @@ public class polymor_animation extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animation) {
-               final Toast toastline22 = Toast.makeText(polymor_animation.this, "ณสมบัติ Polymorphism จะไม่เรียกใช้เมธอด makeNoise() ของคลาส Animal เพราะทราบว่า a1 เป็น object ของคลาส Cat ", Toast.LENGTH_SHORT);
+               final Toast toastline22 = Toast.makeText(polymor_animation.this, "คุณสมบัติ Polymorphism จะไม่เรียกใช้เมธอด makeNoise() ของคลาส Animal เพราะทราบว่า a1 เป็น object ของคลาส Cat ", Toast.LENGTH_SHORT);
                 new CountDownTimer(12000,1000)
                 {
                     @Override
@@ -483,7 +494,18 @@ public class polymor_animation extends AppCompatActivity {
                     public void onFinish() {
                         Log.d("State", "line22 finished");
                         //goLine16
-                        GoLine16();
+                        new CountDownTimer(6000,1000)
+                        {
+                            @Override
+                            public void onTick(long millisUntilFinished) {
+
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                GoLine16();
+                            }
+                        }.start();
                     }
                 }.start();
             }
