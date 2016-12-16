@@ -252,7 +252,7 @@ public class polymor_animation extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
 
-                class_PM.setImageResource(R.drawable.polymor2);
+                class_PM.setImageResource(R.drawable.polymor_2);
                 class_PM.setScaleType(ImageView.ScaleType.FIT_XY);
                 class_PM.setVisibility(View.VISIBLE);
                 Log.d("State", "line21 finished");

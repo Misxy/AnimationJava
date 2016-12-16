@@ -1241,6 +1241,7 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 text_returnChap2.setVisibility(View.INVISIBLE);
+                result.setText("");
             }
 
             @Override
@@ -1270,7 +1271,6 @@ public class Chapter2 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                text_returnChap2.setVisibility(View.INVISIBLE);
                 testPointerLine8();
             }
 
@@ -1503,6 +1503,7 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 text_returnChap2.setVisibility(View.INVISIBLE);
+                result.setText("");
             }
 
             @Override
@@ -1769,6 +1770,7 @@ public class Chapter2 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 text_returnChap2.setVisibility(View.INVISIBLE);
+                result.setText("");
             }
 
             @Override
