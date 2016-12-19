@@ -26,7 +26,6 @@
     <ScrollView
         android:layout_width="290dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/frameLayout"
         android:layout_marginStart="14dp"
         android:layout_height="220dp"
         android:fillViewport="true"
@@ -54,7 +53,6 @@
         android:layout_height="60dp"
         android:layout_width="200dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/scrollView2"
         android:layout_marginLeft="50dp"
         android:id="@+id/linearLayout2">
 
@@ -85,7 +83,6 @@
         android:layout_height="15dp"
         app:srcCompat="@drawable/arrow"
         android:layout_alignParentTop="true"
-        android:layout_alignEnd="@+id/linearLayout"
         android:layout_marginEnd="235dp"
         android:id="@+id/pointer" />
 

@@ -862,7 +862,6 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                textReturn.setVisibility(View.VISIBLE);
                final Toast toastline20 = Toast.makeText(Chap1.this, "นำค่าจาก attribute ของคลาสมาบวกกัน", Toast.LENGTH_SHORT);
                 new CountDownTimer(6000,1000)
                 {
@@ -873,6 +872,7 @@ public class Chap1 extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
+                        textReturn.setVisibility(View.VISIBLE);
                         //Goto line5 again
                         testPointerLine5_1();
 
@@ -892,6 +892,47 @@ public class Chap1 extends AppCompatActivity {
         });
     }
 
+    private void testPointerLine5_1() {
+        scrollingup();
+        objLine5_1 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 225);
+        objLine5_1.setDuration(3000);
+        checkState = "5_1";
+        objLine5_1.start();
+        objLine5_1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                final Toast toastline5_1 = Toast.makeText(Chap1.this, "ตัวแปร result ได้รับค่าที่ส่งกลับจากเมธอด plus()", Toast.LENGTH_SHORT);
+                new CountDownTimer(9000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline5_1.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        //Moving text into result's box
+                        movingTextToResultBox();
+                    }
+                }.start();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
     //movingTextToResultBox's function
     private void movingTextToResultBox() {
         ObjectAnimator objMovingtext = ObjectAnimator.ofFloat(textReturn, View.TRANSLATION_X, -500);
@@ -909,6 +950,9 @@ public class Chap1 extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animator) {
                 textReturn.setVisibility(View.INVISIBLE);
+                textResult.setTextColor(Color.parseColor("#ECF0F1"));
+                textResult.setText("15");
+                textResult.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -955,51 +999,6 @@ public class Chap1 extends AppCompatActivity {
             }
         });
     }
-
-    private void testPointerLine5_1() {
-        scrollingup();
-        objLine5_1 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 225);
-        objLine5_1.setDuration(3000);
-        checkState = "5_1";
-        objLine5_1.start();
-        objLine5_1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                textResult.setTextColor(Color.parseColor("#ECF0F1"));
-                textResult.setText("15");
-                final Toast toastline5_1 = Toast.makeText(Chap1.this, "ตัวแปร result ได้รับค่าที่ส่งกลับจากเมธอด plus()", Toast.LENGTH_SHORT);
-                new CountDownTimer(9000,1000)
-                {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        toastline5_1.show();
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        //Moving text into result's box
-                        movingTextToResultBox();
-                    }
-                }.start();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-
-            }
-        });
-    }
-
     //Line6
     private void testpointerLine6() {
         objLine6 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 290);
@@ -1159,6 +1158,47 @@ public class Chap1 extends AppCompatActivity {
         });
     }
 
+    //Line7 again
+    private void testpointerLine7_1() {
+        scrollingup();
+        objLine7_1 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 330);
+        objLine7_1.setDuration(3500);
+        checkState = "7_1";
+        objLine7_1.start();
+        objLine7_1.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                final Toast toastline7_1 = Toast.makeText(Chap1.this, "ตัวแปร result ได้รับค่าที่ส่งกลับจากเมธอด minus()", Toast.LENGTH_SHORT);
+                new CountDownTimer(9000,1000)
+                {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        toastline7_1.show();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        movingTextToResultBox2();
+                    }
+                }.start();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
     //movingTextToResultBox2
     private void movingTextToResultBox2() {
         ObjectAnimator objGoX = ObjectAnimator.ofFloat(textReturn, View.TRANSLATION_X, -500);
@@ -1175,7 +1215,7 @@ public class Chap1 extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-
+                textResult.setText("5");
             }
 
             @Override
@@ -1222,50 +1262,6 @@ public class Chap1 extends AppCompatActivity {
             }
         });
     }
-
-    //Line7 again
-    private void testpointerLine7_1() {
-        scrollingup();
-        objLine7_1 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 330);
-        objLine7_1.setDuration(3500);
-        checkState = "7_1";
-        objLine7_1.start();
-        objLine7_1.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                textResult.setText("5");
-                final Toast toastline7_1 = Toast.makeText(Chap1.this, "ตัวแปร result ได้รับค่าที่ส่งกลับจากเมธอด minus()", Toast.LENGTH_SHORT);
-                new CountDownTimer(9000,1000)
-                {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        toastline7_1.show();
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        movingTextToResultBox2();
-                    }
-                }.start();
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-
-            }
-        });
-    }
-
     //line8
     private void testpointerLine8() {
         objLine8 = ObjectAnimator.ofFloat(imgPointer, View.TRANSLATION_Y, 410);
